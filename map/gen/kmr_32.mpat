@@ -1,0 +1,126 @@
+% Auto-generated script for kmr_32
+
+#new:Header $Header
+{
+	[MainScript] $Script_Main
+	[Background] 80200000
+	[EntryList] $EntryList
+	[EntryCount] 5
+}
+
+#new:EntryList $EntryList
+{
+	~Vec4f:entry_n
+	~Vec4f:entry_e
+	~Vec4f:entry_s
+	~Vec4f:entry_w
+	~Vec4f:SavePoint
+}
+
+#new:Script_Main $Script_Main
+{
+	Set   *GB_WorldLocation  .Location:GoombaRoad
+	Call  SetCamPerspective  ( .Cam:Default 00000003 00000019 00000010 00001000 )
+	Call  SetCamBGColor      ( .Cam:Default 00000000 00000000 00000000 )
+	Call  SetCamEnabled      ( .Cam:Default .True
+	Call  SetCamLeadPlayer   ( .Cam:Default .False )
+	Exec  $Script_MakeEntities
+	Exec  $Script_SetupMusic
+	Exec  $Script_EnterMap
+	Return
+	End
+}
+
+#new:Script $Script_MakeEntities
+{
+	Call  MakeEntity    ( .Entity:SavePoint ~Vec4d:SaveBlock 80000000 )
+	Return
+	End
+}
+
+#new:Script $Script_SetupMusic
+{
+	Call  SetMusicTrack ( 00000000 .Song:PleasantPath 00000000 00000008 )
+	Call  ClearAmbientSounds ( 250` )
+	Return
+	End
+}
+
+#new:Script $Script_EnterMap
+{
+	Call  GetLoadType   ( *Var[0] )
+	If  *Var[0]  ==  1
+		Exec  EnterSavePoint
+		Exec $Script_CreateExitTriggers
+		Return
+	EndIf
+	Call  GetEntryID    ( *Var[0] )
+	Switch  *Var[0]
+		CaseOR  ==  ~Entry:entry_w
+		CaseOR  ==  ~Entry:entry_s
+		CaseOR  ==  ~Entry:entry_e
+		CaseOR  ==  ~Entry:entry_n
+			Set   *Var[0] $Script_CreateExitTriggers
+			Exec  EnterWalk
+		EndCaseGroup
+		Default
+			Exec  $Script_CreateExitTriggers
+	EndSwitch
+	Return
+	End
+}
+
+#new:Script $Script_Exit_N
+{
+	SetGroup 0000001B
+	Call     UseExitHeading ( 60` ~Entry:entry_n )
+	Exec     ExitWalk
+	Call  GotoMap   ( "iwa_12" ~Entry:iwa_12:entry_s )
+	Wait  100`
+	Return
+	End
+}
+
+#new:Script $Script_Exit_W
+{
+	SetGroup 0000001B
+	Call     UseExitHeading ( 60` ~Entry:entry_w )
+	Exec     ExitWalk
+	Call  GotoMap   ( "kmr_33" ~Entry:kmr_33:entry_e )
+	Wait  100`
+	Return
+	End
+}
+
+#new:Script $Script_Exit_E
+{
+	SetGroup 0000001B
+	Call     UseExitHeading ( 60` ~Entry:entry_e )
+	Exec     ExitWalk
+	Call  GotoMap   ( "kmr_31" ~Entry:kmr_31:entry_w )
+	Wait  100`
+	Return
+	End
+}
+
+#new:Script $Script_Exit_S
+{
+	SetGroup 0000001B
+	Call     UseExitHeading ( 60` ~Entry:entry_s )
+	Exec     ExitWalk
+	Call  GotoMap   ( "kmr_34" ~Entry:kmr_34:entry_n )
+	Wait  100`
+	Return
+	End
+}
+
+#new:Script $Script_CreateExitTriggers
+{
+	Bind  $Script_Exit_N .Trigger:FloorAbove ~Collider:exit_trigger_n 00000001 00000000
+	Bind  $Script_Exit_W .Trigger:FloorAbove ~Collider:exit_trigger_w 00000001 00000000
+	Bind  $Script_Exit_E .Trigger:FloorAbove ~Collider:exit_trigger_e 00000001 00000000
+	Bind  $Script_Exit_S .Trigger:FloorAbove ~Collider:exit_trigger_s 00000001 00000000
+	Return
+	End
+}
+

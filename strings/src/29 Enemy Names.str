@@ -1,0 +1,655 @@
+#message:29:000
+{
+	Goomba[End]
+}
+
+#message:29:001
+{
+	Spiked Goomba[End]
+}
+
+#message:29:002
+{
+	Paragoomba[End]
+}
+
+#message:29:003
+{
+	Red Goomba[End]
+}
+
+#message:29:004
+{
+	Blue Goomba[End]
+}
+
+#message:29:005
+{
+	Goomba King[End]
+}
+
+#message:29:006
+{
+	Goomnut Tree[End]
+}
+
+#message:29:007
+{
+	Koopa Brigand[End]
+}
+
+#message:29:008
+{
+	Paratroopa[End]
+}
+
+#message:29:009
+{
+	Fuzzy[End]
+}
+
+#message:29:00A
+{
+	Bob-omb[End]
+}
+
+#message:29:00B
+{
+	Bullet Bill[End]
+}
+
+#message:29:00C
+{
+	Bill Blaster[End]
+}
+
+#message:29:00D
+{
+	Bowser???[End]
+}
+
+#message:29:00E
+{
+	R Ninjakoopa[End]
+}
+
+#message:29:00F
+{
+	B Ninjakoopa[End]
+}
+
+#message:29:010
+{
+	Sandy K. Desperado[End]
+}
+
+#message:29:011
+{
+	G Ninjakoopa[End]
+}
+
+#message:29:012
+{
+	Koopa Bros.[End]
+}
+
+#message:29:013
+{
+	Jr. Troopa[End]
+}
+
+#message:29:014
+{
+	Minty Mole[End]
+}
+
+#message:29:015
+{
+	Cleft[End]
+}
+
+#message:29:016
+{
+	Prickle[End]
+}
+
+#message:29:017
+{
+	Mini Bandito[End]
+}
+
+#message:29:018
+{
+	Pokey Mummy[End]
+}
+
+#message:29:019
+{
+	Buzzy Beetle[End]
+}
+
+#message:29:01A
+{
+	Swooper[End]
+}
+
+#message:29:01B
+{
+	Buzzar[End]
+}
+
+#message:29:01C
+{
+	Tutankoopa[End]
+}
+
+#message:29:01D
+{
+	Chomp[End]
+}
+
+#message:29:01E
+{
+	Stone Chomp[End]
+}
+
+#message:29:01F
+{
+	Piranha Plant[End]
+}
+
+#message:29:020
+{
+	Forest Fuzzy[End]
+}
+
+#message:29:021
+{
+	Hyper Goomba[End]
+}
+
+#message:29:022
+{
+	Hyper Paragoomba[End]
+}
+
+#message:29:023
+{
+	Hyper Cleft[End]
+}
+
+#message:29:024
+{
+	Clubba[End]
+}
+
+#message:29:025
+{
+	Tubba Blubba[End]
+}
+
+#message:29:026
+{
+	Tubba's Heart[End]
+}
+
+#message:29:027
+{
+	Shy Guy[End]
+}
+
+#message:29:028
+{
+	Groove Guy[End]
+}
+
+#message:29:029
+{
+	Spy Guy[End]
+}
+
+#message:29:02A
+{
+	Pyro Guy[End]
+}
+
+#message:29:02B
+{
+	Sky Guy[End]
+}
+
+#message:29:02C
+{
+	Medi Guy[End]
+}
+
+#message:29:02D
+{
+	Anti Guy[End]
+}
+
+#message:29:02E
+{
+	Big Lantern Ghost[End]
+}
+
+#message:29:02F
+{
+	General Guy[End]
+}
+
+#message:29:030
+{
+	Shy Squad[End]
+}
+
+#message:29:031
+{
+	Shy Stack[End]
+}
+
+#message:29:032
+{
+	Stilt Guy[End]
+}
+
+#message:29:033
+{
+	Hurt Plant[End]
+}
+
+#message:29:034
+{
+	M. Bush[End]
+}
+
+#message:29:035
+{
+	Jungle Fuzzy[End]
+}
+
+#message:29:036
+{
+	Spear Guy[End]
+}
+
+#message:29:037
+{
+	Putrid Piranha[End]
+}
+
+#message:29:038
+{
+	Lava Bubble[End]
+}
+
+#message:29:039
+{
+	Spike Top[End]
+}
+
+#message:29:03A
+{
+	Lava Piranha[End]
+}
+
+#message:29:03B
+{
+	Lava Bud[End]
+}
+
+#message:29:03C
+{
+	Petit Piranha[End]
+}
+
+#message:29:03D
+{
+	Lakitu[End]
+}
+
+#message:29:03E
+{
+	Spiny[End]
+}
+
+#message:29:03F
+{
+	Flapjacket[End]
+}
+
+#message:29:040
+{
+	Crazee Dayzee[End]
+}
+
+#message:29:041
+{
+	Amazy Dayzee[End]
+}
+
+#message:29:042
+{
+	Monty Mole[End]
+}
+
+#message:29:043
+{
+	Spike?[End]
+}
+
+#message:29:044
+{
+	Ruff Puff[End]
+}
+
+#message:29:045
+{
+	Huff N. Puff[End]
+}
+
+#message:29:046
+{
+	Tuff Puff[End]
+}
+
+#message:29:047
+{
+	Gulpit[End]
+}
+
+#message:29:048
+{
+	Gulpits' Rocks[End]
+}
+
+#message:29:049
+{
+	Monstar[End]
+}
+
+#message:29:04A
+{
+	Frost Piranha[End]
+}
+
+#message:29:04B
+{
+	White Clubba[End]
+}
+
+#message:29:04C
+{
+	Duplighost[End]
+}
+
+#message:29:04D
+{
+	Watt???[End]
+}
+
+#message:29:04E
+{
+	Kooper???[End]
+}
+
+#message:29:04F
+{
+	Goombario???[End]
+}
+
+#message:29:050
+{
+	Sushie???[End]
+}
+
+#message:29:051
+{
+	Lakilester???[End]
+}
+
+#message:29:052
+{
+	Parakarry???[End]
+}
+
+#message:29:053
+{
+	Bombette???[End]
+}
+
+#message:29:054
+{
+	Bow???[End]
+}
+
+#message:29:055
+{
+	Albino Dino[End]
+}
+
+#message:29:056
+{
+	Swoopula[End]
+}
+
+#message:29:057
+{
+	Crystal King[End]
+}
+
+#message:29:058
+{
+	Crystal Bit[End]
+}
+
+#message:29:059
+{
+	Ember[End]
+}
+
+#message:29:05A
+{
+	Helvetica[End]
+}
+
+#message:29:05B
+{
+	Bony Beetle[End]
+}
+
+#message:29:05C
+{
+	Magikoopa[End]
+}
+
+#message:29:05D
+{
+	Koopatrol[End]
+}
+
+#message:29:05E
+{
+	Hammer Bros.[End]
+}
+
+#message:29:05F
+{
+	Bombshell Bill[End]
+}
+
+#message:29:060
+{
+	B. Bill Blaster[End]
+}
+
+#message:29:061
+{
+	Bowser[End]
+}
+
+#message:29:062
+{
+	Kammy Koopa[End]
+}
+
+#message:29:063
+{
+	Kent C. Koopa[End]
+}
+
+#message:29:064
+{
+	Blooper[End]
+}
+
+#message:29:065
+{
+	Electro Blooper[End]
+}
+
+#message:29:066
+{
+	Super Blooper[End]
+}
+
+#message:29:067
+{
+	Blooper Baby[End]
+}
+
+#message:29:068
+{
+	The Master[End]
+}
+
+#message:29:069
+{
+	Chan[End]
+}
+
+#message:29:06A
+{
+	Lee[End]
+}
+
+#message:29:06B
+{
+	Gloomba[End]
+}
+
+#message:29:06C
+{
+	Paragloomba[End]
+}
+
+#message:29:06D
+{
+	Spiked Gloomba[End]
+}
+
+#message:29:06E
+{
+	Dark Koopa[End]
+}
+
+#message:29:06F
+{
+	D. Paratroopa[End]
+}
+
+#message:29:070
+{
+	R Magikoopa[End]
+}
+
+#message:29:071
+{
+	GRN Magikoopa[End]
+}
+
+#message:29:072
+{
+	Y Magikoopa[End]
+}
+
+#message:29:073
+{
+	GRY Magikoopa[End]
+}
+
+#message:29:074
+{
+	W Magikoopa[End]
+}
+
+#message:29:075
+{
+	Mario[End]
+}
+
+#message:29:076
+{
+	Slot Machine (start)[End]
+}
+
+#message:29:077
+{
+	Slot Machine (stop)[End]
+}
+
+#message:29:078
+{
+	Whacka[End]
+}
+
+#message:29:079
+{
+	General Guy[End]
+}
+
+#message:29:07A
+{
+	Bulb[End]
+}
+
+#message:29:07B
+{
+	Shy Squad[End]
+}
+
+#message:29:07C
+{
+	Fuzzipede[End]
+}
+
+#message:29:07D
+{
+	Monty's Hole[End]
+}
+
+#message:29:07E
+{
+	Balloon[End]
+}
+
+#message:29:07F
+{
+	Lantern[End]
+}
+
+#message:29:080
+{
+	Aqua Fuzzy[End]
+}
+
+#message:29:081
+{
+	Red Goomba[End]
+}
+
+#message:29:082
+{
+	R Paragoomba[End]
+}
+

@@ -1,0 +1,723 @@
+#define .NpcID:Virgil_01        01
+#define .NpcID:Goomba_00        02
+#define .NpcID:Helvetica_00     03
+
+
+#new:Header $Header
+{
+	[MainScript] $Script_Main
+	[Background] 80200000
+	[EntryList] $EntryList
+	[EntryCount] 4
+	[MapTattle]   00190041
+}
+
+#new:EntryList $EntryList
+{
+	~Vec4f:entry_n
+	~Vec4f:entry_e
+	~Vec4f:entry_s
+	~Vec4f:entry_w
+}
+
+#new:Script_Main $Script_Main
+{
+	Set   *GB_WorldLocation  .Location:GoombaRoad
+	Call  SetCamPerspective  ( .Cam:Default 00000003 00000019 00000010 00001000 )
+	Call  SetCamBGColor      ( .Cam:Default 00000000 00000000 00000000 )
+	Call  SetCamEnabled      ( .Cam:Default .True )
+	Call  SetCamLeadPlayer   ( .Cam:Default .False )
+	Call  MakeNpcs  ( .False $NpcGroupList_8024E1A8 )
+	ExecWait  $Script_MakeEntities
+	Exec  $Script_SetupMusic
+   Set   *Var0  $Script_CreateExitTriggers
+	Exec  EnterWalk
+   Wait  1`
+	Return
+	End
+}
+
+#new:NpcGroupList $NpcGroupList_8024E1A8
+{
+	00000001 $NpcGroup_8024F214 00000000
+	00000001 $NpcGroup_80242014 00020004
+   00000001 $NpcGroup_Helvetica 00000004
+	00000000 00000000 00000000
+}
+
+#new:NpcGroup $NpcGroup_8024F214
+{
+	.NpcID:Virgil_01 $NpcSettings_80245D10 ~Vec3f:Virgil_01 % -200 0 100
+	00002809 $Script_Init_8024BED8 00000000 00000000 00000139
+	~NoDrops
+	~Movement:Virgil_01
+	~AnimationTable:Virgil_01 % .Sprite:Virgil
+	00000000 00000000 00000000 001A0066 % She's my mom, Goomama. She sometimes gets on my ne ...
+}
+
+#new:Script $Script_Init_8024BED8
+{
+    0:  Call  BindNpcInteract   ( .Npc:Self $Script_Interact_8024BA54 )
+   14:  Return
+   1C:  End
+}
+
+#new:Script $Script_Interact_8024BA54
+{
+  Call  SpeakToPlayer ( .Npc:Self 00010008 00010008 00000000 00000001 ) % variable string ID
+  Call  $Function_802439A0 ( )
+  Exec  $Script_80243C0C
+  Wait  10`
+  Call  ShowMessageAtScreenPos    ( 001D0189  160`  40` ) % Goombario joined your party!! Press to have him te ...
+  Exec  $Script_80243C30
+  Call  $Function_80241E90    ( 00000001 00000001 )
+  Set   *GB_StoryProgress  .Story:Ch0_GoombarioJoinedParty
+  Wait  10`
+  Call  SetNpcPos ( 00000001  0`  -1000`  0` )
+  Call  EnablePartnerAI ( )
+  Return
+  End
+}
+
+#new:NpcSettings $NpcSettings_80245D10
+{
+	00000000 001E0018 00000000 00000000 00000000 00000000 00000000 00000000
+	00000000 00000000 00630000
+}
+
+#new:Script $Script_80243C0C
+{
+   Call  PushSong  ( 00000082 00000000 )
+   Return
+   End
+}
+
+#new:Script $Script_80243C30
+{
+   Call  FadeOutMusic  ( 00000000 000001F4 )
+   Wait  15`
+   Call  PopSong ( )
+   Return
+   End
+}
+
+#new:NpcGroup $NpcGroup_80242014
+{
+	.NpcID:Goomba_00 $NpcSettings_80241B00 ~Vec3f:Goomba_00 % 305 50 -13
+	00000400 00000000 00000000 00000000 0000005A
+	~Items:5:Mushroom:A ~HP:GenerousWhenLow:2 ~FP:GenerousWhenLow:2 ~NoCoinBonus
+	~Movement:Goomba_00
+	~AnimationTable:Goomba_00 % .Sprite:Goomba
+	00000001 00000000 00000000 00000000 % no tattle string
+}
+
+#new:NpcSettings $NpcSettings_80241B00
+{
+	00000000 00140017 00000000 00000000 $Script_NpcAI_80241AE0 80077F70 00000000 8007809C
+	00000000 00000000 00050000
+}
+
+#new:Script $Script_NpcAI_80241AE0
+{
+    0:  Call  DoBasicAI ( $AISettings_80241AB0 )
+   10:  Return
+   18:  End
+}
+
+#new:AISettings $AISettings_80241AB0
+{
+    1.5 % move speed
+    30` % move time
+    30` % wait time
+  130.0 % alert radius
+    0.0
+    1`
+    2.5 % chase speed
+    180`
+    3`
+  150.0 % chase radius
+    0.0
+    1`
+}
+
+#new:NpcGroup $NpcGroup_Helvetica
+{
+	.NpcID:Helvetica_00 $NpcSettings_80241840 ~Vec3f:Helvetica_00 % 250 0 35
+	00002C01 $Script_Init_Helvetica 00000000 00000000 0000005A
+	~NoDrops
+	~Movement:Helvetica_00
+	~AnimationTable:Helvetica_00 % .Sprite:Goomba
+	00000000 00000000 00000000 00000000 % no tattle string
+}
+
+#new:NpcSettings $NpcSettings_80241840
+{
+	00000000 001E0018 00000000 00000000 00000000 00000000 00000000 00000000
+	00000000 00000000 00630000
+}
+
+#new:Script $Script_Init_Helvetica
+{
+  % Call  BindNpcIdle       ( .Npc:Self $Script_Idle_Helvetica )
+   Call  BindNpcInteract   ( .Npc:Self $Script_Interact_Helvetica )
+   Call  BindNpcDefeat     ( .Npc:Self $Script_Defeat_Helvetica )
+   Return
+   End
+}
+
+#new:Script $Script_Interact_Helvetica
+{
+   Call  DisablePlayerInput    ( .True )
+   Call  SetMusicTrack ( 00000000 .Song:MinibossBattle 00000000 00000008 )
+   Call  SpeakToPlayer ( .Npc:Self 00530002 00530002 00000000 00010000 ) % variable string ID
+   Call  ShowChoice    ( 001E0010 ) % Yes No
+   If  *Var0  ==  00000001
+     Call  ContinueSpeech    ( .NpcID:Helvetica_00 00530002 00530002 00000000 00010001 ) % That's probably for the best.
+     Call  SetMusicTrack ( 00000000 .Song:WhaleTheme 00000000 00000008 )
+     Call  DisablePlayerInput    ( .False )
+     Goto  9
+     EndIf
+   Call  ContinueSpeech    ( .NpcID:Helvetica_00 00530002 00530002 00000000 00010002 ) % Here goes nothing.
+   Call  StartBossBattle   ( .Song:MasterBattle )
+  % Call  SetNpcVar ( .Npc:Self 00000000 00000001 )
+   Label 9
+  % Call  SetMusicTrack ( 00000000 .Song:WhaleTheme 00000000 00000008 )
+   Call  DisablePlayerInput    ( .False )
+   Return
+   End
+}
+
+#new:Script $Script_Idle_Helvetica
+{
+    0:  Label  0
+    %C:  Call  $Function_80241028 ( )
+   18:  Call  GetSelfVar    ( 00000000 *Var0 )
+   2C:  If  *Var0  ==  00000000
+   3C:  	Wait  1`
+   48:  	Goto  0
+   54:  EndIf
+   5C:  If  *Var0  ==  00000001
+   6C:  	Call  StartBossBattle   ( .Song:MasterBattle )
+         Label 1
+   7C:  	Call  GetSelfVar        ( 00000000 *Var0 )
+         If  *Var0  !=  00000000
+            Wait  1`
+            Goto  1
+      C4:  	EndIf
+   9C:  	Goto  0
+   D8:  EndIf
+  268:  Wait  1`
+  274:  Goto  0
+  280:  Return
+  288:  End
+}
+
+#new:Script $Script_Defeat_Helvetica
+{
+    0:  Call  GetBattleOutcome  ( *Var0 )
+   10:  Switch  *Var0
+   1C:  	Case  ==  .Outcome:PlayerWon % 0
+        		Call  SetMusicTrack ( 00000000 .Song:WhaleTheme 00000000 00000008 )
+            Set   *GF_OMO13_Defeated_AntiGuy  .True
+            Call  DisablePlayerInput    ( .False )
+            Call  DoNpcDefeat ( )
+   5C:  	Case  ==  .Outcome:PlayerLost % 1
+   68:  		Call  SetSelfVar    ( 00000000 00000000 )
+   7C:  	Case  ==  .Outcome:PlayerFled % 2
+   88:  		Call  SetSelfVar    ( 00000000 00000000 )
+   9C:  EndSwitch
+   A4:  Return
+   AC:  End
+}
+
+
+
+
+
+
+#new:Script $Script_MakeEntities
+{
+   Call  MakeItemEntity    ( .Item:UltraShroom ~Vec3d:Mushroom_00 .ItemSpawnMode:Fixed_NeverVanish *GF_JAN22_Item_JamminJelly )
+   Call  MakeEntity        ( .Entity:BlueSwitch ~Vec4d:DoorSwitch 80000000 )
+   Call  AssignAreaFlag    ( 00000000 )
+   Bind  $Script_Door .Trigger:AreaFlagSet *AreaFlag[000] 00000001 00000000
+   Call  MakeEntity        ( .Entity:BlueSwitch ~Vec4d:PipeSwitch 80000000 )
+   Call  AssignAreaFlag    ( 00000002 )
+   Bind  $Script_8024293C .Trigger:AreaFlagSet *AreaFlag[002] 00000001 00000000
+   Call  MakeEntity    ( .Entity:BlueWarpPipe ~Vec4d:Pipe ~Entry:entry_pipe $Script_802428AC ~Index:*GF_TIK01_WarpPipes 80000000 )
+   Call  MakeEntity    ( .Entity:HiddenYellowBlock ~Vec4d:HiddenBlock .Item:LemonCandy 80000000)
+   Call  MakeEntity    ( .Entity:GiantChest ~Vec4d:GiantChest .Item:SuperHammer 80000000 )
+   Call  AssignFlag    ( *GF_ISK09_GiantChest )
+   Exec  $Script_802408BC
+   Call  MakeEntity    ( .Entity:Chest ~Vec4d:SmallChest 00000000 80000000 )
+   Call  AssignFlag    ( *GF_OMO04_Chest_StoreroomKey )
+   Exec $Script_80241344
+   Return
+   End
+}
+
+#new:Script $Script_80241344
+{
+    0:  Call  $Function_SetHP ( )
+    C:  Return
+   14:  End
+}
+
+#new:Script $Script_802408BC
+{
+    0:  If  *GF_ISK09_GiantChest  ==  .False
+   1C:  	Loop
+   28:  		If  *GF_ISK09_GiantChest  ==  .True
+   38:  			BreakLoop
+   40:  		EndIf
+   48:  		Wait  1`
+   54:  	EndLoop
+   5C:  	Call  PartnerIsFlying   ( *Var0 )
+   6C:  	If  *Var0  ==  .False
+   7C:  		Thread
+   84:  			Call  DisablePartnerAI  ( 00000000 )
+   94:  			Call  NpcFlyTo  ( .Npc:Partner  -222`  -347`  -531`  20`  0` .Easing:Linear )
+   BC:  			Call  InterpNpcYaw      ( .Npc:Partner  70`  0` )
+   D4:  			Loop
+   E0:  				If  *GB_StoryProgress  ==  .Story:Ch2_GotSuperHammer % FFFFFFC5
+   F0:  					BreakLoop
+   F8:  				EndIf
+  100:  				Wait  1`
+  10C:  			EndLoop
+  114:  			Call  EnablePartnerAI ( )
+  120:  		EndThread
+  128:  	EndIf
+  130:  	Wait  60`
+  13C:  	Exec  $Script_8024053C
+  148:  	Call  ShowMessageAtScreenPos    ( 001D017D  160`  40` ) % You got the Super Hammer! The attack power of Mari ...
+  160:  	Call  $Function_802402BC ( )
+  16C:  	Set   *GB_StoryProgress  .Story:Ch2_GotSuperHammer
+  17C:  EndIf
+  190:  Return
+  198:  End
+}
+
+#new:Script $Script_8024053C
+{
+    0:  Call  PushSong  ( 00000042 00000001 )
+   14:  Wait  130`
+   20:  Call  PopSong ( )
+   2C:  Return
+   34:  End
+}
+
+#new:Script $Script_Door
+{
+   Wait  10`
+   Call  PlaySound ( 0000208E )
+   Call  MakeLerp  ( 00000000 FFFFFF90 00000015 .Easing:Linear )
+                    Label  0
+                Call  UpdateLerp ( )
+                Call  TranslateModel  ( ~Model:Door 00000000 *Var0 00000000 )
+                Wait  1`
+                If  *Var1  ==  00000001 
+                  	Goto  0
+                EndIf
+   Call  ModifyColliderFlags   ( 00000000 ~Collider:DoorCollider 7FFFFE00 )
+   Unbind
+   Return
+   End
+}
+
+#new:Script $Script_802428AC
+{
+    0:  Call  GotoMap ( "kmr_31" ~Entry:kmr_31:entry_p )
+   14:  Wait  100`
+   20:  Return
+   28:  End
+}
+
+#new:Script $Script_8024293C
+{
+    0:  Wait  10`
+    C:  Call  PlaySound ( 0000208E )
+   1C:  Set   *GF_TIK01_WarpPipes  .True
+   2C:  Unbind
+   34:  Return
+   3C:  End
+}
+
+#new:ASCII $ASCII_80243270
+{
+	"kmr_02"
+}
+
+#new:ASCII $ASCII_80257F10
+{
+	"party_kurio"
+}
+
+#new:Function $Function_80241028
+{
+    0:  ADDIU     SP, SP, FFC8
+    4:  SW        S2, 18 (SP)
+    8:  COPY      S2, A0
+    C:  SW        RA, 1C (SP)
+   10:  SW        S1, 14 (SP)
+   14:  SW        S0, 10 (SP)
+   18:  SDC1      F24, 30 (SP)
+   1C:  SDC1      F22, 28 (SP)
+   20:  SDC1      F20, 20 (SP)
+   24:  JAL       ~Func:get_npc_safe
+   28:  CLEAR     A0
+   2C:  LA        S1, 8010EFC8
+   34:  COPY      S0, V0
+   38:  LW        A2, 28 (S1)
+   3C:  LW        A3, 30 (S1)
+   40:  LIF       F20, 110.0
+   48:  LIF       F22, -45.0
+   50:  MOV.S     F12, F20
+   54:  JAL       ~Func:dist2D
+   58:  MOV.S     F14, F22
+   5C:  MOV.S     F12, F20
+   60:  LW        A2, 28 (S1)
+   64:  LW        A3, 30 (S1)
+   68:  JAL       ~Func:atan2
+   6C:  MOV.S     F14, F22
+   70:  JAL       ~Func:clamp_angle
+   74:  MOV.S     F12, F0
+   78:  MOV.S     F22, F0
+   7C:  JAL       ~Func:sin_deg
+   80:  MOV.S     F12, F22
+   84:  LIF       F2, 30.0
+   8C:  NOP
+   90:  MUL.S     F0, F0, F2
+   94:  NOP
+   98:  LW        V0, B0 (S2)
+   9C:  BEQ       V0, R0, .oC4
+   A0:  ADD.S     F24, F0, F20
+   A4:  LWC1      F2, 2C (S1)
+   A8:  LIF       F0, 0.7
+   B4:  NOP
+   B8:  MUL.S     F20, F2, F0
+   BC:  BEQ       R0, R0, .oC8
+   C0:  NOP
+        .oC4
+   C4:  LWC1      F20, 3C (S0)
+        .oC8
+   C8:  JAL       ~Func:cos_deg
+   CC:  MOV.S     F12, F22
+   D0:  LIF       F2, 30.0
+   D8:  NOP
+   DC:  MUL.S     F0, F0, F2
+   E0:  NOP
+   E4:  LIF       F2, -45.0
+   EC:  LW        V0, B0 (S2)
+   F0:  BEQ       V0, R0, .o114
+   F4:  SUB.S     F4, F2, F0
+   F8:  LWC1      F2, 3C (S0)
+   FC:  MTC1      R0, F0
+  100:  NOP
+  104:  C.EQ.S    F2, F0
+  108:  NOP
+  10C:  BC1TL     .o114
+  110:  SW        R0, B0 (S2)
+        .o114
+  114:  LWC1      F0, 38 (S0)
+  118:  C.EQ.S    F0, F24
+  11C:  NOP
+  120:  BC1F      .o154
+  124:  LUI       A0, 3B
+  128:  LWC1      F0, 3C (S0)
+  12C:  C.EQ.S    F0, F20
+  130:  NOP
+  134:  BC1F      .o154
+  138:  NOP
+  13C:  LWC1      F0, 40 (S0)
+  140:  C.EQ.S    F0, F4
+  144:  NOP
+  148:  BC1T      .o1B4
+  14C:  LUI       V1, 3B
+  150:  LUI       A0, 3B
+        .o154
+  154:  LW        V0, 28 (S0)
+  158:  ORI       A0, A0, 502
+  15C:  BEQL      V0, A0, .o188
+  160:  SWC1      F24, 38 (S0)
+  164:  LW        V0, AC (S2)
+  168:  COPY      V1, V0
+  16C:  ADDIU     V0, V0, 1
+  170:  SLTI      V1, V1, 6
+  174:  BNE       V1, R0, .o184
+  178:  SW        V0, AC (S2)
+  17C:  SW        A0, 28 (S0)
+  180:  SW        R0, AC (S2)
+        .o184
+  184:  SWC1      F24, 38 (S0)
+        .o188
+  188:  MOV.S     F0, F24
+  18C:  LWC1      F2, 3C (S0)
+  190:  LW        V0, 0 (S0)
+  194:  LUI       V1, 1
+  198:  SWC1      F4, 40 (S0)
+  19C:  SWC1      F0, 6C (S0)
+  1A0:  SWC1      F4, 74 (S0)
+  1A4:  OR        V0, V0, V1
+  1A8:  SWC1      F2, 70 (S0)
+  1AC:  BEQ       R0, R0, .o1C4
+  1B0:  SW        V0, 0 (S0)
+        .o1B4
+  1B4:  LW        V0, 28 (S0)
+  1B8:  ORI       V1, V1, 501
+  1BC:  BNEL      V0, V1, .o1C4
+  1C0:  SW        V1, 28 (S0)
+        .o1C4
+  1C4:  LWC1      F12, 38 (S0)
+  1C8:  LWC1      F14, 40 (S0)
+  1CC:  LW        A2, 28 (S1)
+  1D0:  JAL       ~Func:atan2
+  1D4:  LW        A3, 30 (S1)
+  1D8:  SWC1      F0, C (S0)
+  1DC:  LW        RA, 1C (SP)
+  1E0:  LW        S2, 18 (SP)
+  1E4:  LW        S1, 14 (SP)
+  1E8:  LW        S0, 10 (SP)
+  1EC:  LDC1      F24, 30 (SP)
+  1F0:  LDC1      F22, 28 (SP)
+  1F4:  LDC1      F20, 20 (SP)
+  1F8:  LI        V0, 2
+  1FC:  JR        RA
+  200:  ADDIU     SP, SP, 38
+}
+
+#new:Function $Function_802402BC
+{
+    0:  ADDIU     SP, SP, FFE8
+    4:  SW        RA, 10 (SP)
+    8:  JAL       ~Func:get_entity_by_index
+    C:  LW        A0, 84 (A0)
+   10:  LW        A0, 40 (V0)
+   14:  LI        V1, 1
+   18:  SB        V1, 30 (A0)
+   1C:  LW        RA, 10 (SP)
+   20:  LI        V0, 2
+   24:  JR        RA
+   28:  ADDIU     SP, SP, 18
+}
+
+#new:Function $Function_802439A0
+{
+    0:  ADDIU     SP, SP, FFD8
+    4:  LA        A0, $ASCII_80257F10
+    C:  ADDIU     A1, SP, 10
+   10:  SW        RA, 20 (SP)
+   14:  SW        S1, 1C (SP)
+   18:  JAL       ~Func:load_asset_by_name
+   1C:  SW        S0, 18 (SP)
+   20:  COPY      S0, V0
+   24:  COPY      A0, S0
+   28:  LA        S1, $End[220]
+   30:  JAL       ~Func:decode_yay0
+   34:  COPY      A1, S1
+   38:  JAL       ~Func:general_heap_free
+   3C:  COPY      A0, S0
+   40:  LA        A0, $End[41B0]
+   48:  LA        V0, $End[420]
+   50:  SW        V0, 0 (A0)
+   54:  LI        V0, 96
+   58:  SH        V0, 8 (A0)
+   5C:  LI        V0, 69
+   60:  SH        V0, A (A0)
+   64:  LI        V0, 2
+   68:  SW        V0, C (A0)
+   6C:  LI        V0, 1
+   70:  SW        S1, 4 (A0)
+   74:  JAL       ~Func:set_message_images
+   78:  SW        V0, 10 (A0)
+   7C:  LW        RA, 20 (SP)
+   80:  LW        S1, 1C (SP)
+   84:  LW        S0, 18 (SP)
+   88:  LI        V0, 2
+   8C:  JR        RA
+   90:  ADDIU     SP, SP, 28
+}
+
+#new:Function $Function_80241E90
+{
+    0:  ADDIU     SP, SP, FFD8
+    4:  SW        S2, 18 (SP)
+    8:  COPY      S2, A0
+    C:  SW        S1, 14 (SP)
+   10:  COPY      S1, A1
+   14:  SW        RA, 24 (SP)
+   18:  SW        S4, 20 (SP)
+   1C:  SW        S3, 1C (SP)
+   20:  SW        S0, 10 (SP)
+   24:  LW        S0, C (S2)
+   28:  LW        A1, 0 (S0)
+   2C:  JAL       ~Func:get_variable
+   30:  ADDIU     S0, S0, 4
+   34:  COPY      A0, S2
+   38:  LW        A1, 0 (S0)
+   3C:  JAL       ~Func:get_variable
+   40:  COPY      S0, V0
+   44:  COPY      A0, S0
+   48:  JAL       ~Func:get_npc_safe
+   4C:  COPY      S4, V0
+   50:  LA        S3, 8010F290
+   58:  BEQ       S1, R0, .o74
+   5C:  COPY      S0, V0
+   60:  LB        V0, 12 (S3)
+   64:  BNEL      V0, R0, .o74
+   68:  SW        R0, 70 (S2)
+   6C:  LI        V0, 2
+   70:  SW        V0, 70 (S2)
+        .o74
+   74:  LW        V1, 70 (S2)
+   78:  LI        S1, 1
+   7C:  BEQ       V1, S1, .oCC
+   80:  SLTI      V0, V1, 2
+   84:  BEQ       V0, R0, .o9C
+   88:  LI        V0, 2
+   8C:  BEQ       V1, R0, .oB4
+   90:  CLEAR     V0
+   94:  BEQ       R0, R0, .o164
+   98:  NOP
+        .o9C
+   9C:  BEQ       V1, V0, .oEC
+   A0:  LI        V0, 3
+   A4:  BEQ       V1, V0, .o120
+   A8:  CLEAR     V0
+   AC:  BEQ       R0, R0, .o164
+   B0:  NOP
+        .oB4
+   B4:  JAL       ~Func:switch_to_partner
+   B8:  CLEAR     A0
+   BC:  LI        V0, 1E
+   C0:  SW        V0, 74 (S2)
+   C4:  BEQ       R0, R0, .o160
+   C8:  SW        S1, 70 (S2)
+        .oCC
+   CC:  LW        V0, 74 (S2)
+   D0:  LI        V1, FFFF
+   D4:  ADDIU     V0, V0, FFFF
+   D8:  BNE       V0, V1, .o160
+   DC:  SW        V0, 74 (S2)
+   E0:  LI        V0, 2
+   E4:  BEQ       R0, R0, .o160
+   E8:  SW        V0, 70 (S2)
+        .oEC
+   EC:  COPY      A0, S0
+   F0:  SLL       V0, S4, 18
+   F4:  SRA       V0, V0, 15
+   F8:  ADDU      V0, S3, V0
+   FC:  SB        S4, 12 (S3)
+  100:  JAL       ~Func:partner_clear_player_tracking
+  104:  SB        S1, 14 (V0)
+  108:  LB        A0, 12 (S3)
+  10C:  JAL       800EB2A4
+  110:  NOP
+  114:  LI        V0, 3
+  118:  BEQ       R0, R0, .o160
+  11C:  SW        V0, 70 (S2)
+        .o120
+  120:  JAL       ~Func:get_npc_safe
+  124:  LI        A0, FFFC
+  128:  LW        A1, C (S0)
+  12C:  JAL       ~Func:set_npc_yaw
+  130:  COPY      A0, V0
+  134:  COPY      A0, S0
+  138:  LW        V0, 0 (S0)
+  13C:  LI        V1, FFFB
+  140:  AND       V0, V0, V1
+  144:  JAL       ~Func:disable_npc_shadow
+  148:  SW        V0, 0 (S0)
+  14C:  LIF       F0, -1000.0
+  154:  LI        V0, 2
+  158:  BEQ       R0, R0, .o164
+  15C:  SWC1      F0, 3C (S0)
+        .o160
+  160:  CLEAR     V0
+        .o164
+  164:  LW        RA, 24 (SP)
+  168:  LW        S4, 20 (SP)
+  16C:  LW        S3, 1C (SP)
+  170:  LW        S2, 18 (SP)
+  174:  LW        S1, 14 (SP)
+  178:  LW        S0, 10 (SP)
+  17C:  JR        RA
+  180:  ADDIU     SP, SP, 28
+}
+
+#new:Function_Init $Function_Init
+{
+	PUSH    RA
+	LIA     A0, 800B0CF0
+	LIA     A1, "kmr_tex"
+	JAL     800654F0 % sprintf
+	RESERVED
+	CLEAR  V0
+	JPOP   RA
+}
+
+#new:Function $Function_SetHP
+{
+    0:  LI        A1, 1
+    4:  LA        V0, 8010F290
+    C:  ADDIU     A0, V0, 8
+   10:  LI        V1, 32
+   14:  SB        V1, 2 (V0)
+   18:  SB        V1, 3 (V0)
+   1C:  COPY      V1, A1
+   20:  SB        R0, 0 (V0)
+   24:  SB        R0, 1 (V0)
+   28:  SB        R0, E (V0)
+   2C:  SB        V1, 14 (V0)
+        .o30
+   30:  SB        R0, 14 (A0)
+   34:  ADDIU     A1, A1, 1
+   38:  SLTI      V0, A1, C
+   3C:  BNE       V0, R0, .o30
+   40:  ADDIU     A0, A0, 8
+   44:  JR        RA
+   48:  LI        V0, 2
+}
+
+#new:Script $Script_SetupMusic
+{
+	Call  SetMusicTrack ( 00000000 .Song:WhaleTheme 00000000 00000008 )
+	Call  ClearAmbientSounds ( 250` )
+	Return
+	End
+}
+
+#new:Script $Script_EnterMap
+{
+	Return
+	End
+}
+
+#new:Script $Script_CreateExitTriggers
+{
+	Bind  $Script_ExitWalk_80244B8C .Trigger:FloorAbove ~Collider:exit_trigger_n 00000001 00000000
+   Bind  $Script_ExitWalk_Oink .Trigger:FloorAbove ~Collider:exit_trigger_w 00000001 00000000
+	Return
+	End
+}
+
+#new:Script $Script_ExitWalk_80244B8C
+{
+    0:  SetGroup  0000001B
+    C:  Call  UseExitHeading    ( 0000003C ~Entry:entry_s )
+   20:  Exec  ExitWalk
+   2C:  Call  GotoMap ("dbg_01" 00000002)
+   40:  Wait  100`
+   4C:  Return
+   54:  End
+}
+
+#new:Script $Script_ExitWalk_Oink
+{
+    0:  SetGroup  0000001B
+    C:  Call  UseExitHeading    ( 0000003C ~Entry:entry_e )
+   20:  Exec  ExitWalk
+   2C:  Call  GotoMap ("dbg_02" 00000002)
+   40:  Wait  100`
+   4C:  Return
+   54:  End
+}

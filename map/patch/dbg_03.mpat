@@ -1,0 +1,122 @@
+#define .NpcID:Shopkeep          01
+
+@ $Script_Main
+{
+	Call  SetCamPerspective  ( .Cam:Default 00000003 00000019 00000010 00001000 )
+	Call  SetCamBGColor      ( .Cam:Default 00000000 00000000 00000000 )
+	Call  SetCamEnabled      ( .Cam:Default .True )
+	Call  SetCamLeadPlayer   ( .Cam:Default .False )
+    Call  MakeNpcs  ( .False $NpcGroupList_Debug_03 )
+    Exec  $Script_ShopkeepShop
+	Exec  $Script_SetupMusic
+	Exec  $Script_EnterMap
+	Return
+	End
+}
+
+#new:NpcGroupList $NpcGroupList_Debug_03
+{
+	00000001 $NpcGroup_Shopkeep 00000000
+    00000000 00000000 00000000
+}
+
+#new:NpcGroup $NpcGroup_Shopkeep
+{
+    .NpcID:Shopkeep $NpcSettings_Shopkeep ~Vec3f:Shopkeep
+	00000001 $Script_Init_Shopkeep 00000000 00000000 00000000
+	~NoDrops
+	~Movement:Shopkeep
+	~AnimationTable:Shopkeep
+	00000000 00000000 00000000 001A0066 % Tattle ID
+}
+
+#new:NpcSettings $NpcSettings_Shopkeep
+{
+	00000000 001E0018 00000000 00000000 00000000 00000000 00000000 00000000
+	00000000 00000000 00630000
+}
+
+#new:Script $Script_Init_Shopkeep
+{
+     0:  Call  ModifyColliderFlags   ( 00000000 ~Collider:mono1 7FFFFE00 )
+    18:  Call  ModifyColliderFlags   ( 00000000 ~Collider:mono2 7FFFFE00 )
+    30:  Call  ModifyColliderFlags   ( 00000000 ~Collider:mono3 7FFFFE00 )
+    48:  Call  ModifyColliderFlags   ( 00000000 ~Collider:mono4 7FFFFE00 )
+    60:  Call  ModifyColliderFlags   ( 00000000 ~Collider:mono5 7FFFFE00 )
+    78:  Call  ModifyColliderFlags   ( 00000000 ~Collider:mono6 7FFFFE00 )
+    Call  BindNpcInteract   ( .Npc:Self $Script_Interact_Shopkeep )
+    Return
+    End
+}
+
+#new:Script $Script_Interact_Shopkeep
+{
+    0:  ExecWait  ItemShopInteract
+    C:  Return
+   14:  End
+}
+
+#new:Script $Script_ShopkeepShop
+{
+    0:  Call  MakeShop      ( $ShopItemPositions_Shopkeep $ShopInventory_Shopkeep $ShopPriceList_Shopkeep 00000000 )
+   1C:  Call  MakeShopOwner ( $ShopOwnerNPC_Shopkeep )
+   2C:  Return
+   34:  End
+}
+
+#new:ShopItemPositions $ShopItemPositions_Shopkeep
+{
+	~Short:Model:syouhin1 ~Short:Collider:mono1
+	~Short:Model:syouhin2 ~Short:Collider:mono2
+	~Short:Model:shouhin3 ~Short:Collider:mono3
+	~Short:Model:shouhin4 ~Short:Collider:mono4
+	~Short:Model:shouhin5 ~Short:Collider:mono5
+	~Short:Model:shouhin6 ~Short:Collider:mono6
+}
+
+#new:ShopInventory $ShopInventory_Shopkeep
+{
+	.Item:FrightJar      00000005 0024002A % Makes a scary spirit appear and chase some enemies ...
+	.Item:SleepySheep    0000000A 00240026 % If it works, makes all enemies sleep for a little  ...
+	.Item:POWBlock       00000005 00240027 % Flips shell enemies and inflicts 2 damage points o ...
+	.Item:FireFlower     0000000A 00240000 % A flower that burns all enemies with fireballs. At ...
+	.Item:HoneySyrup     0000000A 00240016 % Sweet honey syrup. Restores 5 FP.
+	.Item:Mushroom       00000005 00240009 % A regular Mushroom. Restores 5 HP.
+	00000000 00000000 00000000
+}
+
+#new:ShopPriceList $ShopPriceList_Shopkeep
+{
+	.Item:DriedShroom    00000003 00000000
+	.Item:DriedPasta     00000005 00000000
+	.Item:DustyHammer    00000003 00000000
+	.Item:WhackasBump    00000040 00000000
+	.Item:DriedFruit     00000014 00000000
+	.Item:Lime           00000004 00000000
+	.Item:Lemon          00000004 00000000
+	00000000 00000000 00000000
+}
+
+#new:ShopOwnerNPC $ShopOwnerNPC_Shopkeep
+{
+	.NpcID:Shopkeep 00CD0301 00CD0304 $Script_ShopVariables 00000000 00000000 $IntTable_ShopkeepStrings
+}
+
+#new:Script $Script_ShopVariables
+{
+    0:  Switch  *Var0
+    C:  	Case  ==  00000003
+   18:  	Case  ==  00000004
+   24:  	Case  ==  00000001
+   30:  	Case  ==  00000002
+   3C:  EndSwitch
+   44:  Return
+   4C:  End
+}
+
+#new:IntTable $IntTable_ShopkeepStrings
+{
+	00270000 00270001 00270002 00270003 00270004 00270005 00270006 00270007
+	00270008 00270009 0027000A 0027000B 0027000C 0027000D 0027000E 0027000F
+	00270010 00270011 00270012 00270013 00270014 00270015 00270016
+}

@@ -1,0 +1,40 @@
+@ $ASCII_802483A0
+{
+	"kmr_31"
+}
+
+@ $Script_80240E08 {
+	Call  GetEntryID    ( *Var0 )
+	Thread
+		Call  $Function_80240010 ( )
+	EndThread
+	Wait  50`
+	Call  $Function_80240208 ( )
+	Call  FadeOutMusic  ( 00000000 000007D0 )
+	Wait  30`
+	Call  GetEntryID    ( *Var0 )
+	Switch  *Var0
+		Case  ==  ~Entry:Entry0
+			Call  GotoMapSpecial    ( "kmr_31" ~Entry:kmr_31:entry_p 00000006 ) % Paradise Entrance
+		Case  ==  ~Entry:Entry1
+			Call  GotoMapSpecial    ( $ASCII_80248398 00000000 00000006 ) % nok_11
+		Case  ==  ~Entry:Entry2
+			Call  GotoMapSpecial    ( $ASCII_80248390 00000000 00000006 ) % iwa_10
+		Case  ==  ~Entry:Entry3
+			Call  GotoMapSpecial    ( $ASCII_80248388 00000001 00000006 ) % mim_01
+		Case  ==  ~Entry:Entry4
+			Call  GotoMapSpecial    ( $ASCII_80248380 00000004 00000006 ) % omo_03
+		Case  ==  ~Entry:Entry5
+			Call  GotoMapSpecial    ( $ASCII_80248378 00000000 00000006 ) % jan_00
+		Case  ==  ~Entry:Entry6
+			Call  GotoMapSpecial    ( $ASCII_80248370 00000000 00000006 ) % flo_00
+		Case  ==  ~Entry:Entry7
+			Call  GotoMapSpecial    ( $ASCII_80248368 00000002 00000006 ) % sam_02
+		Case  ==  ~Entry:Entry8
+			Call  GotoMapSpecial    ( $ASCII_80248360 00000001 00000006 ) % kpa_63
+	EndSwitch
+	Call  $Function_802401E0 ( )
+	Wait  100`
+	Return
+	End
+}

@@ -1,0 +1,20 @@
+@ $Script_Main {
+    Set   *GB_WorldLocation  .Location:GoombaRoad
+    Call  SetCamPerspective  ( .Cam:Default 00000003 00000019 00000010 00001000 )
+    Call  SetCamBGColor      ( .Cam:Default 00000000 00000000 00000000 )
+    Call  SetCamEnabled      ( .Cam:Default .True
+    Call  SetCamLeadPlayer   ( .Cam:Default .False )
+    Thread
+        Call  ResetFromLava ( $LavaResetList_Inferno )
+    EndThread
+    Exec  $Script_SetupMusic
+    Exec  $Script_EnterMap
+    Return
+    End
+}
+
+#new:LavaResetList $LavaResetList_Inferno
+{
+	~Collider:FloorCollider ~Vec3f:LavaReset_Inferno
+	FFFFFFFF 00000000 00000000 00000000
+}

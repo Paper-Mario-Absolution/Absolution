@@ -1,0 +1,106 @@
+#define .NpcID:ChuckQuizmo_06       06
+#define .NpcID:Toad_07              07
+#define .NpcID:Toad_08              08
+#define .NpcID:Toad_09              09
+#define .NpcID:Toad_10              0A
+#define .NpcID:ThreeSisters_11      0B
+#define .NpcID:ThreeSisters_12      0C
+#define .NpcID:ThreeSisters_13      0D
+#define .NpcID:ThreeSisters_14      0E
+#define .NpcID:Toad_15              0F
+#define .NpcID:Toad_16              10
+#define .NpcID:Toad_17              11
+#define .NpcID:ThreeSisters_18      12
+#define .NpcID:ToadKid_19           13
+#define .NpcID:ToadKid_20           14
+#define .NpcID:ShyGuy_21            15
+#define .NpcID:ShyGuy_22            16
+#define .NpcID:ShyGuy_23            17
+#define .NpcID:Toad_24              18
+#define .NpcID:Luigi_25             19
+#define .NpcID:Goompapa_26          1A
+#define .NpcID:Goomama_27           1B
+#define .NpcID:Gooma_28             1C
+#define .NpcID:HarryT_29            1D
+#define .NpcID:VannaT_30            1E
+
+@ $NpcGroup_80251124 {
+    .NpcID:Toad_07 $NpcSettings_8024EC90 ~Vec3f:Toad_07 % -150 0 -275
+    00112D09 $Script_Init_80250EE4 00000000 00000000 0000005A
+    ~NoDrops
+    ~Movement:Toad_07
+    ~AnimationTable:Toad_07 % .Sprite:Toad
+    00000000 00000000 00000000 001A0013 % This Toad is always standing in front of the gate. ...
+    %
+    % $NpcGroup_80251124[1F0]
+    .NpcID:Toad_08 $NpcSettings_8024EB90 ~Vec3f:Toad_08 % 219 0 -45
+    00012D09 $Script_Init_80250F5C 00000000 00000000 0000005A
+    ~NoDrops
+    ~Movement:Toad_08
+    ~AnimationTable:Toad_08 % .Sprite:Toad
+    00000000 00000000 00000000 001A0014 % This Toad always stands in front of the shop. He k ...
+    %
+    % $NpcGroup_80251124[3E0]
+    .NpcID:Toad_09 $NpcSettings_8024EC38 ~Vec3f:Toad_09 % -290 0 -120
+    00012D09 $Script_Init_80250F80 00000000 00000000 0000005A
+    ~NoDrops
+    ~Movement:Toad_09
+    ~AnimationTable:Toad_09 % .Sprite:Toad
+    00000000 00000000 00000000 001A0015 % This Toad is always very excited about whatever ne ...
+    %
+    % $NpcGroup_80251124[5D0]
+    .NpcID:Toad_10 $NpcSettings_8024EC90 ~Vec3f:Toad_10 % -40 0 61
+    00412D09 $Script_Init_80250FA4 00000000 00000000 0000005A
+    ~NoDrops
+    ~Movement:Toad_10
+    ~AnimationTable:Toad_10 % .Sprite:Toad
+    00000000 00000000 00000000 001A0016 % This Toad claims that he and his girl are in love. ...
+    %
+    % $NpcGroup_80251124[7C0]
+    .NpcID:ThreeSisters_11 $NpcSettings_8024EC90 ~Vec3f:ThreeSisters_11 % -15 0 60
+    00412D09 $Script_Init_80250FC8 00000000 00000000 0000010E
+    ~NoDrops
+    ~Movement:ThreeSisters_11
+    ~AnimationTable:ThreeSisters_11 % .Sprite:ThreeSisters
+    00000000 00000000 00000000 001A0017 % Those Toads are in love. They're so in love, they  ...
+    %
+    % $NpcGroup_80251124[9B0]
+    .NpcID:ThreeSisters_12 $NpcSettings_8024EC90 ~Vec3f:ThreeSisters_12 % 426 20 268
+    00012D09 $Script_Init_80251000 00000000 00000000 0000005A
+    ~NoDrops
+    ~Movement:ThreeSisters_12
+    ~AnimationTable:ThreeSisters_12 % .Sprite:ThreeSisters
+    00000000 00000000 00000000 001A0018 % She is the oldest of these three Toad sisters. App ...
+    %
+    % $NpcGroup_80251124[BA0]
+    .NpcID:ThreeSisters_13 $NpcSettings_8024EC90 ~Vec3f:ThreeSisters_13 % 381 20 326
+    00012D09 $Script_Init_80251038 00000000 00000000 000000B4
+    ~NoDrops
+    ~Movement:ThreeSisters_13
+    ~AnimationTable:ThreeSisters_13 % .Sprite:ThreeSisters
+    00000000 00000000 00000000 001A0019 % She is the second oldest of these three Toad siste ...
+    %
+    % $NpcGroup_80251124[D90]
+    .NpcID:ThreeSisters_14 $NpcSettings_8024EC90 ~Vec3f:ThreeSisters_14 % 476 20 326
+    00012D09 $Script_Init_80251070 00000000 00000000 0000010E
+    ~NoDrops
+    ~Movement:ThreeSisters_14
+    ~AnimationTable:ThreeSisters_14 % .Sprite:ThreeSisters
+    00000000 00000000 00000000 001A001A % She is the youngest of these three Toad sisters. A ...
+    %
+    % $NpcGroup_80251124[F80]
+    .NpcID:Toad_15 $NpcSettings_8024EC90 ~Vec3f:Toad_15 % 424 20 -85
+    00012D09 $Script_Init_802510A8 00000000 00000000 0000010E
+    ~NoDrops
+    ~Movement:Toad_15
+    ~AnimationTable:Toad_15 % .Sprite:Toad
+    00000000 00000000 00000000 001A001B % He doesn't seem to have any particular reason to b ...
+    %
+    % $NpcGroup_80251124[1170]
+    .NpcID:Toad_16 $NpcSettings_8024EC90 ~Vec3f:Toad_16 % 373 0 22
+    00012D09 $Script_Init_80251100 00000000 00000000 0000010E
+    ~NoDrops
+    ~Movement:Toad_16
+    ~AnimationTable:Toad_16 % .Sprite:Toad
+    00000000 00000000 00000000 001A0020 % This Toad has tried his skills at the Dojo. That t ...
+}

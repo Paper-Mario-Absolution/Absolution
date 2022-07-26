@@ -1,0 +1,13 @@
+@Hook:Global 800E92B0 {
+    JAL $testFunction
+    NOP
+    LW ra, 008C (sp)
+    J 800E92B8
+    NOP
+    }
+    
+    #new:Function $testFunction {
+    %code here
+    JR RA
+    NOP
+    }

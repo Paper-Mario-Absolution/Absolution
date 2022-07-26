@@ -1,0 +1,57 @@
+#import enemy/27_Pokey.bpat
+#import enemy/27_MontyMole.bpat
+#import enemy/27_BanditA.bpat
+#import enemy/0D_Bzzap.bpat
+#import enemy/06_KoopaTroopa.bpat
+
+#new:FormationTable $FormationTable
+{
+	00000000 00000002 $Formation_00 $Stage_SHA_01 00000000
+	00000000 00000002 $Formation_01 $Stage_SHA_01 00000000
+	00000000 00000002 $Formation_02 $Stage_SHA_01 00000000
+	00000000 00000002 $Formation_03 $Stage_SHA_01 00000000
+	00000000 00000000 00000000 00000000 00000000
+}
+
+#new:Formation $Formation_00
+{
+	$27_BanditA 00000001 0000000A 00000000 00000000 00000000 00000000
+	$27_BanditA 00000002 00000009 00000000 00000000 00000000 00000000
+}
+
+#new:Formation $Formation_01
+{
+	$27_BanditA 00000001 0000000A 00000000 00000000 00000000 00000000
+	$27_Pokey 00000002 00000009 00000000 00000000 00000000 00000000
+}
+
+#new:Formation $Formation_02
+{
+	$27_MontyMole 00000001 0000000A 00000000 00000000 00000000 00000000
+	$27_MontyMole 00000002 00000009 00000000 00000000 00000000 00000000
+}
+
+#new:Formation $Formation_03
+{
+	$27_Pokey 00000001 0000000A 00000000 00000000 00000000 00000000
+	$27_Pokey 00000002 00000009 00000000 00000000 00000000 00000000
+}
+
+#new:StageTable $StageTable
+{
+	"sha_bt01" $Stage_SHA_01
+}
+
+#new:Stage $Stage_SHA_01
+{
+  "iwa_tex"
+  "sha_bt01_shape"
+  "sha_bt01_hit"
+  00000000
+  00000000
+  "iwa_bg"
+  00000000
+  00000000
+  00000000
+  00000000
+}

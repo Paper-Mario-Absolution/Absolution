@@ -1,0 +1,10 @@
+$Script_Main#Script_Main#0#80240000#9C
+$Start#Unknown#0#80240000#0
+$Script_EnterMap#Script#9C#8024009C#70
+$Header#Header#10C#8024010C#40
+$Script_SetupMusic#Script#14C#8024014C#34
+$EntryList#EntryList#180#80240180#30
+$Function_Init#Function_Init#1B0#802401B0#2C
+$Script_CreateExitTriggers#Script#1DC#802401DC#10
+$ASCII_"kmr_tex"_Literal#ASCII#1EC#802401EC#8
+$End#Unknown#200#80240200#27E00
