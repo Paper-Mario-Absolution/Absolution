@@ -27,15 +27,15 @@
 		<Raster id="6" palette="0" src="Raster_06.png"/>
 	</RasterList>
 	<AnimationList>
-		<Animation name="Anim_00">
-			<Component name="Comp_00" xyz="0,-5,0">
+		<Animation name="Static">
+			<Component name="Comp_00" xyz="0,-3,0">
 				<Command val="1000"/>
 				<Command val="2"/>
 				<Command val="2000"/>
 			</Component>
 		</Animation>
-		<Animation name="Anim_01">
-			<Component xyz="0,-5,0">
+		<Animation name="Idle">
+			<Component xyz="0,-3,0">
 				<Command val="1000"/>
 				<Command val="10"/>
 				<Command val="1001"/>
@@ -45,8 +45,8 @@
 				<Command val="2000"/>
 			</Component>
 		</Animation>
-		<Animation name="Anim_02">
-			<Component xyz="0,-5,0">
+		<Animation name="Walk">
+			<Component xyz="0,-3,0">
 				<Command val="1000"/>
 				<Command val="10"/>
 				<Command val="1003"/>
@@ -54,8 +54,8 @@
 				<Command val="2000"/>
 			</Component>
 		</Animation>
-		<Animation name="Anim_03">
-			<Component xyz="0,-5,0">
+		<Animation name="Run">
+			<Component xyz="0,-3,0">
 				<Command val="1000"/>
 				<Command val="8"/>
 				<Command val="1003"/>
@@ -63,16 +63,17 @@
 				<Command val="2000"/>
 			</Component>
 		</Animation>
-		<Animation name="Anim_04">
-			<Component xyz="0,-5,0">
+		<Animation name="Bite">
+			<Component xyz="0,-3,0">
 				<Command val="1003"/>
 				<Command val="10"/>
 				<Command val="1004"/>
 				<Command val="20"/>
 				<Command val="1005"/>
+				<Command val="10"/>
 			</Component>
 		</Animation>
-		<Animation name="Anim_05">
+		<Animation name="Hurt">
 			<Component xyz="0,-5,0">
 				<Command val="1006"/>
 				<Command val="2"/>

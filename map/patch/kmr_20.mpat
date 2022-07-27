@@ -125,9 +125,10 @@
   Call  $Function_80240434 ( ) % Gain Hammer?
   Call  AddKeyItem        ( *Var0 )
   Call  $Function_80240908 ( ) % Gain Lucky Star
+  Call AddBadge ( .Item:CloseCall *Var0 )
 %  Call  $Function_80241E90    ( 00000001 00000001 ) % Get Goombario
 %  Set   *GB_StoryProgress  .Story:Ch0_GoombarioJoinedParty
-  Call GotoMap ( "dbg_03" ~Entry:dbg_03:entry_e )
+  Call GotoMap ( "dbg_00" ~Entry:dbg_00:entry_n )
   Return
   End
 }

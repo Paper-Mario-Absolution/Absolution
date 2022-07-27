@@ -3122,3 +3122,9 @@
 	peeved.[Wait][End]
 }
 
+#message:1C:096
+{
+	[Style Right]
+	This is a Fatal Syrup.[BR]
+	[Wait][End]
+}
