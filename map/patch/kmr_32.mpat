@@ -2,6 +2,7 @@
 #define .NpcID:Shopkeep          02
 #define .NpcID:ToadHouseToad     03
 #define .NpcID:Landlord          04
+#define .NpcID:Joy               05
 
 
 
@@ -163,9 +164,23 @@
     End
 }
 
+@ $Script_MakeEntities 
+{
+    Call  MakeEntity    ( .Entity:SavePoint ~Vec4d:SaveBlock 80000000 )
+    Call  MakeEntity    ( .Entity:MultiCoinBrick ~Vec4d:MultiCoinBlock 80000000 )
+        Call  AssignBlockFlag   ( *GF_KMR02_Goomama_SaidFarewell )
+    Call  MakeItemEntity    ( .Item:Peekaboo ~Vec3d:Peekaboo .ItemSpawnMode:Fixed_NeverVanish *GF_KMR04_Tree3_Dolly )
+    Call  MakeItemEntity    ( .Item:DodgeMaster ~Vec3d:DodgeMaster .ItemSpawnMode:Fixed_NeverVanish *GF_KMR02_KeptDolly )
+    Call  MakeItemEntity    ( .Item:DoublePain ~Vec3d:DoublePain .ItemSpawnMode:Fixed_NeverVanish *GF_KMR02_Met_Goompapa )
+    Call  MakeItemEntity    ( .Item:CloseCall ~Vec3d:CloseCall .ItemSpawnMode:Fixed_NeverVanish *GF_KMR02_Goompapa_SaidFarewell )
+    Call  MakeItemEntity    ( .Item:PowerSmash1 ~Vec3d:PowerSmash .ItemSpawnMode:Fixed_NeverVanish *GF_KMR02_Met_Goomama )
+    Return
+    End
+}
+
 #new:NpcGroupList $NpcGroupList_ParadiseSquare
 {
-	00000004 $NpcGroup_Standard 00000000
+	00000005 $NpcGroup_Standard 00000000
     00000000 00000000 00000000
 }
 
@@ -197,6 +212,13 @@
 	~NoDrops
 	~Movement:Landlord
 	~AnimationTable:Landlord
+	00000000 00000000 00000000 001A0066 % Tattle ID
+    %
+    .NpcID:Joy $NpcSettings_Joy ~Vec3f:Joy
+	00000001 $Script_Init_Joy 00000000 00000000 00000000
+	~NoDrops
+	~Movement:Joy
+	~AnimationTable:Joy
 	00000000 00000000 00000000 001A0066 % Tattle ID
 }
 
@@ -236,6 +258,49 @@
 #new:Script $Script_Interact_Landlord
 {
   Call  SpeakToPlayer ( .Npc:Self 00830304 00830301 00000000 00000001 ) % String
+  Return
+  End
+}
+
+#new:NpcSettings $NpcSettings_Joy
+{
+	00000000 001E0018 00000000 00000000 $Script_NpcAI_Joy 00000000 00000000 00000000
+	00000000 00000000 00630010
+}
+
+#new:Script $Script_NpcAI_Joy
+{
+    0:  Call  DoBasicAI ( $AISettings_Joy )
+   10:  Return
+   18:  End
+}
+
+#new:AISettings $AISettings_Joy
+{
+    0.7 % move speed
+    30` % move time
+    30` % wait time
+    0.0 % alert radius
+    0.0
+    -1`
+    0.0 % chase speed
+    0`
+    0`
+    0.0 % chase radius
+    0.0
+    1`
+}
+
+#new:Script $Script_Init_Joy
+{
+   14:  Call  BindNpcInteract   ( .Npc:Self $Script_Interact_Joy )
+        Return
+   1C:  End
+}
+
+#new:Script $Script_Interact_Joy
+{
+  Call  SpeakToPlayer ( .Npc:Self 00860004 00860001 00000000 00000001 ) % String
   Return
   End
 }
@@ -848,3 +913,5 @@
    20:  JR        RA
    24:  ADDIU     SP, SP, 18
 }
+
+

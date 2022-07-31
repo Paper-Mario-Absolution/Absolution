@@ -1,0 +1,14 @@
+$Start#Unknown#0#80240000#0
+$Function_SetDarkRoom#Function#0#80240000#158
+$Script_Main#Script_Main#158#80240158#A8
+$Script_EnterMap#Script#200#80240200#70
+$Script_Exit1#Script#270#80240270#5C
+$Header#Header#2CC#802402CC#40
+$Script_SetupMusic#Script#30C#8024030C#3C
+$Function_Init#Function_Init#348#80240348#2C
+$Script_SetDarkRoom#Script#374#80240374#2C
+$Script_CreateExitTriggers#Script#3A0#802403A0#2C
+$EntryList#EntryList#3CC#802403CC#10
+$ASCII_"sha_00"_Literal#ASCII#3DC#802403DC#C
+$ASCII_"iwa_tex"_Literal#ASCII#3E8#802403E8#8
+$End#Unknown#3F0#802403F0#27C10

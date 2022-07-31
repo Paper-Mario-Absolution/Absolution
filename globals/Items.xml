@@ -159,7 +159,7 @@
 	<Item index="09C" nameMsg="26-015" desc1Msg="23-015" desc2Msg="25-015" typeFlags="1087" targetFlags="0009" name="Lemon" sellValue="1" powA="1" powB="2"/>
 	<Item index="09D" nameMsg="26-014" desc1Msg="23-014" desc2Msg="25-014" typeFlags="1087" targetFlags="0009" name="Lime" sellValue="1" powB="3"/>
 	<Item index="09E" nameMsg="26-010" desc1Msg="23-010" desc2Msg="25-010" typeFlags="1087" targetFlags="0009" name="BlueBerry" sellValue="2" powB="5"/>
-	<Item index="09F" nameMsg="26-011" desc1Msg="23-011" desc2Msg="25-011" typeFlags="1087" targetFlags="0009" name="RedBerry" sellValue="2" powA="5"/>
+	<Item index="09F" nameMsg="26-011" desc1Msg="23-011" desc2Msg="25-011" typeFlags="1087" targetFlags="0009" name="FreshFlower" hudElement="RedBerry" itemEntity="RedBerry" sellValue="1" powB="1"/>
 	<Item index="0A0" nameMsg="26-012" desc1Msg="23-012" desc2Msg="25-012" typeFlags="1087" targetFlags="0009" name="YellowBerry" sellValue="2" powA="3" powB="3"/>
 	<Item index="0A1" nameMsg="26-013" desc1Msg="23-013" desc2Msg="25-013" typeFlags="1087" targetFlags="0009" name="BubbleBerry" sellValue="3" powA="5"/>
 	<Item index="0A2" nameMsg="26-018" desc1Msg="23-018" desc2Msg="25-018" typeFlags="1087" targetFlags="0009" name="JamminJelly" sellValue="50" powB="50"/>
@@ -301,7 +301,7 @@
 	<Item index="12A" nameMsg="00-000" desc1Msg="00-000" desc2Msg="00-000" typeFlags="1040" targetFlags="0000" sortValue="34" name="SuperFocus" move="SuperFocus" sellValue="100"/>
 	<Item index="12B" nameMsg="26-067" desc1Msg="23-067" desc2Msg="25-067" typeFlags="1040" targetFlags="0000" sortValue="1B" name="ShrinkSmash" move="ShrinkSmash" sellValue="75"/>
 	<Item index="12C" nameMsg="00-000" desc1Msg="00-000" desc2Msg="00-000" typeFlags="1040" targetFlags="0000" sortValue="1E" name="ShellCrack" hudElement="Present" itemEntity="Placeholder" move="ShellCrack" sellValue="100"/>
-	<Item index="12D" nameMsg="00-000" desc1Msg="00-000" desc2Msg="00-000" typeFlags="1040" targetFlags="0000" sortValue="27" name="Kaiden" move="Kaiden" sellValue="300"/>
+	<Item index="12D" nameMsg="26-10D" desc1Msg="24-010" desc2Msg="24-010" typeFlags="1040" targetFlags="0000" sortValue="27" name="DoublePain" hudElement="Kaiden" itemEntity="Kaiden" move="Kaiden" sellValue="300"/>
 	<Item index="12E" nameMsg="26-060" desc1Msg="23-060" desc2Msg="25-060" typeFlags="1040" targetFlags="0000" sortValue="0C" name="DDownJump" move="DDownJump" sellValue="100"/>
 	<Item index="12F" nameMsg="26-05F" desc1Msg="23-05F" desc2Msg="25-05F" typeFlags="1040" targetFlags="0000" sortValue="08" name="ShrinkStomp" move="ShrinkStomp" sellValue="75"/>
 	<Item index="130" nameMsg="26-075" desc1Msg="23-075" desc2Msg="25-075" typeFlags="1040" targetFlags="0000" sortValue="49" name="DamageDodgeA" hudElement="DamageDodge" itemEntity="DamageDodge" move="DamageDodge" sellValue="150"/>

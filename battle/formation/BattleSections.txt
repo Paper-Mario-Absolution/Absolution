@@ -46,5 +46,5 @@ empty
 80231000 : 2D Area OMO2_5
 80231000 : 2E Area OMO2_6
 empty
-80218000 : 2F Area SHA Part 1
-80218000 : 30 Area SHA Part 2
+80218000 : 30 Area SHA Part 1
+80218000 : 31 Area SHA Part 2

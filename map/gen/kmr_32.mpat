@@ -75,7 +75,7 @@
 	SetGroup 0000001B
 	Call     UseExitHeading ( 60` ~Entry:entry_n )
 	Exec     ExitWalk
-	Call  GotoMap   ( "iwa_12" ~Entry:iwa_12:entry_s )
+	Call  GotoMap   ( "sha_00" ~Entry:sha_00:entry_s )
 	Wait  100`
 	Return
 	End

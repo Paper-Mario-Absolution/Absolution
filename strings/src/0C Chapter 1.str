@@ -84,55 +84,21 @@
 #message:0C:00C
 {
 	[Style Right]
-	Hey, thanks![BR]
-	[Pause 5]You came at a good time.[BR]
-	[Pause 5]I was just about to send a[BR]
-	letter myself. [BR]
-	[Wait][Next]
-	Oh, would you look at this![BR]
-	[Pause 5]It's a letter from Muss T.![BR]
-	[Pause 10]The two of us are always[BR]
-	thinking along the same lines.[BR]
-	[Wait][Next]
-	He's one of my fishing pals.[BR]
-	I'll tell you, if you don't fish,[BR]
-	you should! What a hobby![BR]
-	[Wait][Next]
-	And to think, I was just about[BR]
-	to send letters to all my fishing[BR]
-	buddies about a trip![BR]
-	[Wait][Next]
-	Once we have a good place set[BR]
-	up, I'll write a letter back to [BR]
-	Muss T.[BR]
-	[Wait][Next]
-	So...[BR]
-	[Pause 5]...could you send this along for[BR]
-	me?[BR]
-	[Pause 10]Thanks so much.[BR]
-	[Wait][Next]
-	It's to a friend of mine who's[BR]
-	always fishing at the Toad Town[BR]
-	port. He's easy to find.[BR]
-	[Wait][Next]
-	Thanks again![Wait][End]
+	Password?
+	[Wait][End]
 }
 
 #message:0C:00D
 {
 	[Style Right]
-	Mr. Koover. Parakarry here.[BR]
-	[Wait][Next]
-	I have a letter for you.[BR]
-	[Pause 10]Hang on a moment.[Wait][End]
+	Uh...[Wait][End]
 }
 
 #message:0C:00E
 {
 	[Style Right]
-	Oh...no! Confound it![BR]
-	[Pause 10]I seem to have lost it.[BR]
-	[Pause 10]...I'm terribly sorry.[Wait][End]
+	Yeah, that's what I thought.[BR]
+	No password, no entry.[Wait][End]
 }
 
 #message:0C:00F

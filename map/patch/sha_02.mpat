@@ -1,0 +1,86 @@
+#define .NpcID:Brigand1            01
+
+@ $Script_Main {
+    Set   *GB_WorldLocation  .Location:GoombaRoad
+    Call  SetCamPerspective  ( .Cam:Default 00000003 00000019 00000010 00001000 )
+    Call  SetCamBGColor      ( .Cam:Default 00000000 00000000 00000000 )
+    Call  SetCamEnabled      ( .Cam:Default .True )
+    Call  SetCamLeadPlayer   ( .Cam:Default .False )
+    Exec  $Script_MakeNPCs
+    Exec  $Script_SetupMusic
+    Exec  $Script_SetupTexturePan
+    Exec  $Script_BindFoliage
+    Exec  $Script_BindStuff
+    Exec  $Script_EnterMap
+    Return
+    End
+}
+
+#new:Script $Script_MakeNPCs
+{
+    Call  MakeNpcs  ( .False $NpcGroupList_Brigands )
+    Return
+    End
+}
+
+#new:NpcGroupList $NpcGroupList_Brigands
+{
+	00000001 $NpcGroup_Brigands 00000000
+    00000000 00000000 00000000
+}
+
+#new:NpcGroup $NpcGroup_Brigands
+{
+	.NpcID:Brigand1 $NpcSettings_Brigand ~Vec3f:Brigand1
+	00000001 $Script_Init_Brigand 00000000 00000000 00000000
+	~NoDrops
+	~Movement:Brigand1
+	~AnimationTable:Brigand1
+	00000000 00000000 00000000 00000000 % Tattle ID
+}
+
+#new:NpcSettings $NpcSettings_Brigand
+{
+	00000000 001E0018 00000000 00000000 00000000 00000000 00000000 00000000
+	00000000 00000000 00630000
+}
+
+#new:Script $Script_Init_Brigand
+{
+    Return
+    End
+}
+
+#new:Script $Script_BindStuff
+{
+    Bind  $Script_KnockTree .Trigger:WallHammer ~Collider:TreeF 00000001 00000000
+    Bind  $Script_AnswerGate .Trigger:WallPressA ~Collider:GateCollider 00000001 00000000
+    Return
+    End
+}
+
+#new:Script $Script_KnockTree
+{
+    Call  MakeLerp  ( 00000000 88` 00000025 .Easing:Linear )
+                    Label  0
+                Call  UpdateLerp ( )
+                Call  RotateModel ( ~Model:FallingTree *Var0 FFFFFFFF 00000000 FFFFFFFF )
+                Wait  1`
+                If  *Var1  ==  00000001 
+                  	Goto  0
+                EndIf
+    Call  ModifyColliderFlags   ( 00000000 ~Collider:TreeF 7FFFFE00 )
+    Return
+    End
+}
+
+#new:Script $Script_AnswerGate
+{
+    Call  DisablePlayerInput    ( .True )
+    Call  SpeakToPlayer ( .NpcID:Brigand1 00290014 00290004 00000000 000C000C )
+    Call  SpeakToPlayer ( .Npc:Partner 00010008 00010001 00000000 000C000D )
+    Call  SpeakToPlayer ( .NpcID:Brigand1 00290014 00290004 00000000 000C000E )
+    Call  DisablePlayerInput    ( .False )
+    Return
+    End
+}

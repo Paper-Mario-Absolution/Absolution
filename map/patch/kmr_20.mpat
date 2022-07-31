@@ -120,15 +120,33 @@
   180:  ADDIU     SP, SP, 28
 }
 
+#new:Function $GivePlayerStartingStats {
+     LIO t0, 8010F290
+     ORI t2, r0, F % hex for 15
+     ORI t3, r0, A % hex for 10
+     ORI t4, r0, 6 % hex for 6
+     ORI t5, r0, 4 % hex for 4
+     SB t2, 0002 (t0) % set hp
+     SB t2, 0003 (t0) % max hp
+     SB t2, 0004 (t0) % true max hp
+     SB t3, 0005 (t0) % set fp
+     SB t3, 0006 (t0) % max fp
+     SB t3, 0007 (t0) % true max fp
+     SB t4, 0008 (t0) % max BP
+     SB t5, 0009 (t0) % level
+     JR RA
+     ORI v0, r0, 2
+ }
+
 @ $Script_8024FD70 {
   Set   *Var0  00000007
   Call  $Function_80240434 ( ) % Gain Hammer?
   Call  AddKeyItem        ( *Var0 )
   Call  $Function_80240908 ( ) % Gain Lucky Star
-  Call AddBadge ( .Item:CloseCall *Var0 )
+  Call  $GivePlayerStartingStats (  ) % Set player to level 4
 %  Call  $Function_80241E90    ( 00000001 00000001 ) % Get Goombario
 %  Set   *GB_StoryProgress  .Story:Ch0_GoombarioJoinedParty
-  Call GotoMap ( "dbg_00" ~Entry:dbg_00:entry_n )
+  Call GotoMap ( "kmr_22" ~Entry:kmr_22:Entry0 )
   Return
   End
 }

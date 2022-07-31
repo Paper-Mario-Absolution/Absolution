@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Map name="kmr_32" author="unnamed" background="iwa_bg" textures="kmr_tex">
 	<Editor>
-		<Camera pos="-120.653152,199.042450,355.869049" pitch="52.319969" yaw="173.851395"/>
-		<Camera pos="-166.331619,65536.000000,481.115356"/>
-		<Camera pos="65536.000000,-0.037765,235.962173"/>
-		<Camera pos="-120.981476,114.665619,65536.000000"/>
+		<Camera pos="314.410797,218.100830,-157.962570" pitch="80.000000" yaw="90.879936"/>
+		<Camera pos="443.320892,65536.000000,-126.522804"/>
+		<Camera pos="65536.000000,-3.150534,-225.764252"/>
+		<Camera pos="230.086563,114.665619,65536.000000"/>
 	</Editor>
 	<ModelTree>
-		<Node name="Root" id="6B">
+		<Node name="Root" id="73">
 			<Node name="Stage" id="A">
 				<Node name="MainFloor" id="0"/>
 				<Node name="main_edges" id="1"/>
@@ -133,6 +133,15 @@
 			<Node name="boo" id="68"/>
 			<Node name="OinkFence" id="69"/>
 			<Node name="OinkMud" id="6A"/>
+			<Node name="Flowers" id="72">
+				<Node name="Planar GridModel" id="6B"/>
+				<Node name="Planar GridModel" id="6C"/>
+				<Node name="Planar GridModel" id="6D"/>
+				<Node name="Planar GridModel" id="6E"/>
+				<Node name="Planar GridModel" id="6F"/>
+				<Node name="Planar GridModel" id="70"/>
+				<Node name="Planar GridModel" id="71"/>
+			</Node>
 		</Node>
 	</ModelTree>
 	<ColliderTree>
@@ -221,7 +230,7 @@
 		</Node>
 	</ZoneTree>
 	<MarkerTree>
-		<Node name="Root" id="F">
+		<Node name="Root" id="17">
 			<Node name="Entrances" id="4">
 				<Node name="entry_n" id="FFFFFFFF"/>
 				<Node name="entry_e" id="0"/>
@@ -235,12 +244,21 @@
 				<Node name="ToadHouseToad" id="7"/>
 				<Node name="Landlord" id="8"/>
 			</Node>
-			<Node name="Entities" id="B">
+			<Node name="Entities" id="11">
 				<Node name="SaveBlock" id="A"/>
+				<Node name="Charity's Badges" id="10">
+					<Node name="Peekaboo" id="B"/>
+					<Node name="DodgeMaster" id="C"/>
+					<Node name="DoublePain" id="D"/>
+					<Node name="PowerSmash" id="E"/>
+					<Node name="CloseCall" id="F"/>
+				</Node>
 			</Node>
-			<Node name="Marker" id="C"/>
-			<Node name="VirgilPosition" id="D"/>
-			<Node name="MarioPosition" id="E"/>
+			<Node name="Marker" id="12"/>
+			<Node name="VirgilPosition" id="13"/>
+			<Node name="MarioPosition" id="14"/>
+			<Node name="MultiCoinBlock" id="15"/>
+			<Node name="Joy" id="16"/>
 		</Node>
 	</MarkerTree>
 	<LightSets>
@@ -249,9 +267,211 @@
 	</LightSets>
 	<Models>
 		<Model ver="2" type="ROOT" lightset="0">
-			<MapObject name="Root" id="6B"/>
+			<MapObject name="Root" id="73"/>
 			<BoundingBox empty="false" min="-600,-100,-600" max="600,183,600"/>
 			<PropertyList>
+			</PropertyList>
+		</Model>
+		<Model ver="2" type="GROUP" lightset="0">
+			<MapObject name="Flowers" id="72"/>
+			<BoundingBox empty="false" min="404,0,-244" max="459,20,-223"/>
+			<PropertyList>
+				<Property v="60,0,0"/>
+				<Property v="60,0,1"/>
+			</PropertyList>
+		</Model>
+		<Model ver="2" type="MODEL" lightset="0">
+			<MapObject name="Planar GridModel" id="71"/>
+			<ShapeMesh ver="3" texture="kmr_flower_01tif">
+				<DisplayList>
+					<F3DEX2 cmd="E7000000,0"/>
+					<F3DEX2 cmd="D9FDFFFF,0"/>
+					<F3DEX2 cmd="D9FFFFFF,200400"/>
+					<TriangleBatch ver="0">
+						<VertexTable>
+							<Vertex xyz="420,0,-223" uv="511,4"/>
+							<Vertex xyz="432,20,-223" uv="-4,994" rgba="254,15,15,255"/>
+							<Vertex xyz="420,20,-223" uv="510,994" rgba="254,15,15,255"/>
+							<Vertex xyz="432,20,-223" uv="-4,994" rgba="254,15,15,255"/>
+							<Vertex xyz="420,0,-223" uv="511,4"/>
+							<Vertex xyz="432,0,-223" uv="-3,4"/>
+						</VertexTable>
+						<TriangleList>
+							<Triangle ijk="0,1,2"/>
+							<Triangle ijk="3,4,5"/>
+						</TriangleList>
+					</TriangleBatch>
+				</DisplayList>
+			</ShapeMesh>
+			<PropertyList>
+				<Property v="5C,0,11"/>
+				<Property v="5F,0,0"/>
+			</PropertyList>
+		</Model>
+		<Model ver="2" type="MODEL" lightset="0">
+			<MapObject name="Planar GridModel" id="70"/>
+			<ShapeMesh ver="3" texture="kmr_flower_01tif">
+				<DisplayList>
+					<F3DEX2 cmd="E7000000,0"/>
+					<F3DEX2 cmd="D9FDFFFF,0"/>
+					<F3DEX2 cmd="D9FFFFFF,200400"/>
+					<TriangleBatch ver="0">
+						<VertexTable>
+							<Vertex xyz="437,0,-226" uv="511,4"/>
+							<Vertex xyz="449,20,-226" uv="-4,994" rgba="254,15,15,255"/>
+							<Vertex xyz="437,20,-226" uv="510,994" rgba="254,15,15,255"/>
+							<Vertex xyz="449,20,-226" uv="-4,994" rgba="254,15,15,255"/>
+							<Vertex xyz="437,0,-226" uv="511,4"/>
+							<Vertex xyz="449,0,-226" uv="-3,4"/>
+						</VertexTable>
+						<TriangleList>
+							<Triangle ijk="0,1,2"/>
+							<Triangle ijk="3,4,5"/>
+						</TriangleList>
+					</TriangleBatch>
+				</DisplayList>
+			</ShapeMesh>
+			<PropertyList>
+				<Property v="5C,0,11"/>
+				<Property v="5F,0,0"/>
+			</PropertyList>
+		</Model>
+		<Model ver="2" type="MODEL" lightset="0">
+			<MapObject name="Planar GridModel" id="6F"/>
+			<ShapeMesh ver="3" texture="kmr_flower_01tif">
+				<DisplayList>
+					<F3DEX2 cmd="E7000000,0"/>
+					<F3DEX2 cmd="D9FDFFFF,0"/>
+					<F3DEX2 cmd="D9FFFFFF,200400"/>
+					<TriangleBatch ver="0">
+						<VertexTable>
+							<Vertex xyz="404,0,-227" uv="511,4"/>
+							<Vertex xyz="416,20,-227" uv="-4,994" rgba="254,15,15,255"/>
+							<Vertex xyz="404,20,-227" uv="510,994" rgba="254,15,15,255"/>
+							<Vertex xyz="416,20,-227" uv="-4,994" rgba="254,15,15,255"/>
+							<Vertex xyz="404,0,-227" uv="511,4"/>
+							<Vertex xyz="416,0,-227" uv="-3,4"/>
+						</VertexTable>
+						<TriangleList>
+							<Triangle ijk="0,1,2"/>
+							<Triangle ijk="3,4,5"/>
+						</TriangleList>
+					</TriangleBatch>
+				</DisplayList>
+			</ShapeMesh>
+			<PropertyList>
+				<Property v="5C,0,11"/>
+				<Property v="5F,0,0"/>
+			</PropertyList>
+		</Model>
+		<Model ver="2" type="MODEL" lightset="0">
+			<MapObject name="Planar GridModel" id="6E"/>
+			<ShapeMesh ver="3" texture="kmr_flower_01tif">
+				<DisplayList>
+					<F3DEX2 cmd="E7000000,0"/>
+					<F3DEX2 cmd="D9FDFFFF,0"/>
+					<F3DEX2 cmd="D9FFFFFF,200400"/>
+					<TriangleBatch ver="0">
+						<VertexTable>
+							<Vertex xyz="428,0,-234" uv="511,4"/>
+							<Vertex xyz="440,20,-234" uv="-4,994" rgba="254,15,15,255"/>
+							<Vertex xyz="428,20,-234" uv="510,994" rgba="254,15,15,255"/>
+							<Vertex xyz="440,20,-234" uv="-4,994" rgba="254,15,15,255"/>
+							<Vertex xyz="428,0,-234" uv="511,4"/>
+							<Vertex xyz="440,0,-234" uv="-3,4"/>
+						</VertexTable>
+						<TriangleList>
+							<Triangle ijk="0,1,2"/>
+							<Triangle ijk="3,4,5"/>
+						</TriangleList>
+					</TriangleBatch>
+				</DisplayList>
+			</ShapeMesh>
+			<PropertyList>
+				<Property v="5C,0,11"/>
+				<Property v="5F,0,0"/>
+			</PropertyList>
+		</Model>
+		<Model ver="2" type="MODEL" lightset="0">
+			<MapObject name="Planar GridModel" id="6D"/>
+			<ShapeMesh ver="3" texture="kmr_flower_01tif">
+				<DisplayList>
+					<F3DEX2 cmd="E7000000,0"/>
+					<F3DEX2 cmd="D9FDFFFF,0"/>
+					<F3DEX2 cmd="D9FFFFFF,200400"/>
+					<TriangleBatch ver="0">
+						<VertexTable>
+							<Vertex xyz="447,0,-234" uv="511,4"/>
+							<Vertex xyz="459,20,-234" uv="-4,994" rgba="254,15,15,255"/>
+							<Vertex xyz="447,20,-234" uv="510,994" rgba="254,15,15,255"/>
+							<Vertex xyz="459,20,-234" uv="-4,994" rgba="254,15,15,255"/>
+							<Vertex xyz="447,0,-234" uv="511,4"/>
+							<Vertex xyz="459,0,-234" uv="-3,4"/>
+						</VertexTable>
+						<TriangleList>
+							<Triangle ijk="0,1,2"/>
+							<Triangle ijk="3,4,5"/>
+						</TriangleList>
+					</TriangleBatch>
+				</DisplayList>
+			</ShapeMesh>
+			<PropertyList>
+				<Property v="5C,0,11"/>
+				<Property v="5F,0,0"/>
+			</PropertyList>
+		</Model>
+		<Model ver="2" type="MODEL" lightset="0">
+			<MapObject name="Planar GridModel" id="6C"/>
+			<ShapeMesh ver="3" texture="kmr_flower_01tif">
+				<DisplayList>
+					<F3DEX2 cmd="E7000000,0"/>
+					<F3DEX2 cmd="D9FDFFFF,0"/>
+					<F3DEX2 cmd="D9FFFFFF,200400"/>
+					<TriangleBatch ver="0">
+						<VertexTable>
+							<Vertex xyz="436,0,-244" uv="511,4"/>
+							<Vertex xyz="448,20,-244" uv="-4,994" rgba="254,15,15,255"/>
+							<Vertex xyz="436,20,-244" uv="510,994" rgba="254,15,15,255"/>
+							<Vertex xyz="448,20,-244" uv="-4,994" rgba="254,15,15,255"/>
+							<Vertex xyz="436,0,-244" uv="511,4"/>
+							<Vertex xyz="448,0,-244" uv="-3,4"/>
+						</VertexTable>
+						<TriangleList>
+							<Triangle ijk="0,1,2"/>
+							<Triangle ijk="3,4,5"/>
+						</TriangleList>
+					</TriangleBatch>
+				</DisplayList>
+			</ShapeMesh>
+			<PropertyList>
+				<Property v="5C,0,11"/>
+				<Property v="5F,0,0"/>
+			</PropertyList>
+		</Model>
+		<Model ver="2" type="MODEL" lightset="0">
+			<MapObject name="Planar GridModel" id="6B"/>
+			<ShapeMesh ver="3" texture="kmr_flower_01tif">
+				<DisplayList>
+					<F3DEX2 cmd="E7000000,0"/>
+					<F3DEX2 cmd="D9FDFFFF,0"/>
+					<F3DEX2 cmd="D9FFFFFF,200400"/>
+					<TriangleBatch ver="0">
+						<VertexTable>
+							<Vertex xyz="416,0,-234" uv="511,4"/>
+							<Vertex xyz="428,20,-234" uv="-4,994" rgba="254,15,15,255"/>
+							<Vertex xyz="416,20,-234" uv="510,994" rgba="254,15,15,255"/>
+							<Vertex xyz="428,0,-234" uv="-3,4"/>
+						</VertexTable>
+						<TriangleList>
+							<Triangle ijk="0,1,2"/>
+							<Triangle ijk="1,0,3"/>
+						</TriangleList>
+					</TriangleBatch>
+				</DisplayList>
+			</ShapeMesh>
+			<PropertyList>
+				<Property v="5C,0,11"/>
+				<Property v="5F,0,0"/>
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
@@ -10805,7 +11025,7 @@
 			<HitObject type="ROOT"/>
 		</Zone>
 		<Zone ver="0">
-			<MapObject name="BehindHouseRight" id="4"/>
+			<MapObject name="BehindHouseRight" id="4" hidden="true"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
@@ -10824,7 +11044,7 @@
 			<Camera type="TYPE_4" flag="false" boomLength="350.000000" boomPitch="26.000000" viewPitch="-10.000000" posA="400,10,50" posB="400,10,-50" posC="10,0,10"/>
 		</Zone>
 		<Zone ver="0">
-			<MapObject name="BehindHouseLeft" id="3"/>
+			<MapObject name="BehindHouseLeft" id="3" hidden="true"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
@@ -10843,7 +11063,7 @@
 			<Camera type="TYPE_4" flag="false" boomLength="350.000000" boomPitch="16.000000" viewPitch="-6.000000" posA="-80,10,-420" posB="80,10,-440" posC="10,0,10"/>
 		</Zone>
 		<Zone ver="0">
-			<MapObject name="RestTest" id="2"/>
+			<MapObject name="RestTest" id="2" hidden="true"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
@@ -10913,7 +11133,7 @@
 			<Camera type="TYPE_4" flag="false" boomLength="100.000000" boomPitch="109.000000" viewPitch="-68.000000" posA="100,10,-100" posB="180,10,-150" posC="10,0,10"/>
 		</Zone>
 		<Zone ver="0">
-			<MapObject name="ShopCam" id="1"/>
+			<MapObject name="ShopCam" id="1" hidden="true"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
@@ -10936,7 +11156,7 @@
 			<Camera type="TYPE_6" flag="true" boomLength="220.000000" boomPitch="10.000000" viewPitch="-10.000000" posA="380,10,170" posB="200,10,360" posC="10,0,10"/>
 		</Zone>
 		<Zone ver="0">
-			<MapObject name="main_cam" id="0"/>
+			<MapObject name="main_cam" id="0" hidden="true"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
@@ -11007,19 +11227,45 @@
 	</Zones>
 	<Markers>
 		<Marker ver="4" type="Root">
-			<MapObject name="Root" id="F"/>
+			<MapObject name="Root" id="17"/>
+		</Marker>
+		<Marker ver="4" type="NPC" pos="431,0,-179" yaw="0.000000">
+			<MapObject name="Joy" id="16"/>
+			<Movement type="Wander" data="1AF,14,FFFFFF4D,3C,1E,FFFF8001,1,1AF,14,FFFFFF4D,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"/>
+			<Sprite sprite="86" palette="0" animations="1,2,3,3,0,0,5,5,0,0,0,0,0,0,0,0"/>
+		</Marker>
+		<Marker ver="4" type="Position" pos="170,60,-455" yaw="0.000000">
+			<MapObject name="MultiCoinBlock" id="15"/>
 		</Marker>
 		<Marker ver="4" type="Position" pos="-130,100,385" yaw="0.000000">
-			<MapObject name="MarioPosition" id="E"/>
+			<MapObject name="MarioPosition" id="14"/>
 		</Marker>
 		<Marker ver="4" type="Position" pos="-185,105,385" yaw="0.000000">
-			<MapObject name="VirgilPosition" id="D"/>
+			<MapObject name="VirgilPosition" id="13"/>
 		</Marker>
 		<Marker ver="4" type="Position" pos="320,18,-320" yaw="0.000000">
-			<MapObject name="Marker" id="C"/>
+			<MapObject name="Marker" id="12"/>
 		</Marker>
 		<Marker ver="4" type="Group">
-			<MapObject name="Entities" id="B"/>
+			<MapObject name="Entities" id="11"/>
+		</Marker>
+		<Marker ver="4" type="Group">
+			<MapObject name="Charity's Badges" id="10"/>
+		</Marker>
+		<Marker ver="4" type="Position" pos="-167,0,-287" yaw="0.000000">
+			<MapObject name="CloseCall" id="F"/>
+		</Marker>
+		<Marker ver="4" type="Position" pos="-105,0,-324" yaw="0.000000">
+			<MapObject name="PowerSmash" id="E"/>
+		</Marker>
+		<Marker ver="4" type="Position" pos="-148,0,-324" yaw="0.000000">
+			<MapObject name="DoublePain" id="D"/>
+		</Marker>
+		<Marker ver="4" type="Position" pos="-189,0,-327" yaw="0.000000">
+			<MapObject name="DodgeMaster" id="C"/>
+		</Marker>
+		<Marker ver="4" type="Position" pos="-130,0,-360" yaw="0.000000">
+			<MapObject name="Peekaboo" id="B"/>
 		</Marker>
 		<Marker ver="4" type="Entity" pos="-80,60,-460" yaw="0.000000">
 			<MapObject name="SaveBlock" id="A"/>
@@ -11092,7 +11338,7 @@
 			<Entrance name="Entry_S" type="Walk" hasCallback="false" entry="entry_s"/>
 			<Entrance name="Entry_E" type="Walk" hasCallback="false" entry="entry_e"/>
 			<Entrance name="Entry_N" type="Walk" hasCallback="false" entry="entry_n"/>
-			<Exit name="Exit_N" type="Walk" hasCallback="false" entry="entry_n" destMap="iwa_12" destEntry="entry_s" trigger="exit_trigger_n"/>
+			<Exit name="Exit_N" type="Walk" hasCallback="false" entry="entry_n" destMap="sha_00" destEntry="entry_s" trigger="exit_trigger_n"/>
 			<Exit name="Exit_W" type="Walk" hasCallback="false" entry="entry_w" destMap="kmr_33" destEntry="entry_e" trigger="exit_trigger_w"/>
 			<Exit name="Exit_E" type="Walk" hasCallback="false" entry="entry_e" destMap="kmr_31" destEntry="entry_w" trigger="exit_trigger_e"/>
 			<Exit name="Exit_S" type="Walk" hasCallback="false" entry="entry_s" destMap="kmr_34" destEntry="entry_n" trigger="exit_trigger_s"/>

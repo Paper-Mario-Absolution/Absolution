@@ -583,7 +583,11 @@
 		<Map name="inf_00" nickname="The Inferno"/>
 	</Area>
 	<Area name="sha" nickname="Valley of Shadows">
+		<Map name="sha_00" nickname="Ruin Road"/>
+		<Map name="sha_01" nickname="Flare's Cave"/>
+		<Map name="sha_02" nickname="Oasis"/>
 		<Stage name="sha_bt01"/>
+		<Stage name="sha_bt02"/>
 	</Area>
 	<Resource name="mac_tex" compressed="false"/>
 	<Resource name="tik_tex" compressed="false"/>

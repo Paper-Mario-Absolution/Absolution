@@ -35,7 +35,7 @@
 020 = Flag_KMR_02 = GF_KMR02_Met_Goompapa
 021 = Flag_KMR_03 = GF_KMR02_Goompapa_SaidFarewell
 022 = Flag_KMR_04 = GF_KMR02_Met_Goomama
-023 = Flag_KMR_05 = GF_KMR02_Goomama_SaidFarewell
+023 = Flag_KMR_05 = GF_KMR02_Goomama_SaidFarewell %MARKER
 024 = Flag_KMR_06 = GF_KMR02_Met_Goombario
 025 = Flag_KMR_07 = GF_KMR02_Goombario_SwapDialogue
 026 = Flag_KMR_08 = GF_KMR02_Met_Gooma
