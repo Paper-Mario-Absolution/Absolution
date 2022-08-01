@@ -420,13 +420,16 @@ $EmptyMoleHole_27 $Vector3D_80226FB8_27 00000000 00000001 00000000 00000000 0000
 
 #new:Function $Function_SetHP
 {
-    LI t0, 8010F290
-    LBU t1, 0002 (t0) %load current hp
-    LBU t2, 0004 (t0) %max hp
-    ADDIU t1, t1, 2 %add 2 hp
-    BGTL t2, t1, .setToMaxHP
-    ADDU t1, t2, r0 %move max hp into t1
-    .setToMaxHP
+    LA        v0, 8010F290 %Load Address of current HP
+    LBU       t0, 2 (v0) %Load value of the address, current HP
+    LBU       t1, 4 (v0) %Load Max HP value
+    ADDIU     t0, t0, 2 %Add the current HP value to 2
+    SUBU      t2, t0, t1 %Subtract Max HP from Current HP
+    BLTZ      t2, .o31 %Jump to .031 if less than 0
+    NOP
+    COPY      t0, t1 %Sets Current HP to Max HP if it was equal to or greater than max
+    .o31 %Label!
+    SB        t0, 2 (v0) %Set the current HP value to t0
     JR RA
-    SB t1, 0002 (t0)
+    ORI v0, r0, 2
 }
