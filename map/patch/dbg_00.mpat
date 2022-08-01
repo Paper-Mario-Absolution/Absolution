@@ -1,6 +1,6 @@
 #define .NpcID:Virgil_01        01
-#define .NpcID:Goomba_00        02
-#define .NpcID:Helvetica_00     03
+#define .NpcID:Slime_02        02
+#define .NpcID:Helvetica_03     03
 
 
 #new:Header $Header
@@ -39,30 +39,30 @@
 
 #new:NpcGroupList $NpcGroupList_8024E1A8
 {
-	00000001 $NpcGroup_8024F214 00000000
-	00000001 $NpcGroup_80242014 00020004
+	00000001 $NpcGroup_Virgil 00000000
+	00000001 $NpcGroup_Slime 00020004
    00000001 $NpcGroup_Helvetica 00000004
 	00000000 00000000 00000000
 }
 
-#new:NpcGroup $NpcGroup_8024F214
+#new:NpcGroup $NpcGroup_Virgil
 {
-	.NpcID:Virgil_01 $NpcSettings_80245D10 ~Vec3f:Virgil_01 % -200 0 100
-	00002809 $Script_Init_8024BED8 00000000 00000000 00000139
+	.NpcID:Virgil_01 $NpcSettings_Virgil ~Vec3f:Virgil_01 % -200 0 100
+	00002809 $Script_Init_Virgil 00000000 00000000 00000139
 	~NoDrops
 	~Movement:Virgil_01
 	~AnimationTable:Virgil_01 % .Sprite:Virgil
 	00000000 00000000 00000000 001A0066 % She's my mom, Goomama. She sometimes gets on my ne ...
 }
 
-#new:Script $Script_Init_8024BED8
+#new:Script $Script_Init_Virgil
 {
-    0:  Call  BindNpcInteract   ( .Npc:Self $Script_Interact_8024BA54 )
+    0:  Call  BindNpcInteract   ( .Npc:Self $Script_Interact_Virgil )
    14:  Return
    1C:  End
 }
 
-#new:Script $Script_Interact_8024BA54
+#new:Script $Script_Interact_Virgil
 {
   Call  SpeakToPlayer ( .Npc:Self 00010008 00010008 00000000 00000001 ) % variable string ID
   Call  $Function_802439A0 ( )
@@ -79,7 +79,7 @@
   End
 }
 
-#new:NpcSettings $NpcSettings_80245D10
+#new:NpcSettings $NpcSettings_Virgil
 {
 	00000000 001E0018 00000000 00000000 00000000 00000000 00000000 00000000
 	00000000 00000000 00630000
@@ -101,30 +101,30 @@
    End
 }
 
-#new:NpcGroup $NpcGroup_80242014
+#new:NpcGroup $NpcGroup_Slime
 {
-	.NpcID:Goomba_00 $NpcSettings_80241B00 ~Vec3f:Goomba_00 % 305 50 -13
+	.NpcID:Slime_02 $NpcSettings_Slime ~Vec3f:Slime_02 % 305 50 -13
 	00000400 00000000 00000000 00000000 0000005A
 	~Items:5:Mushroom:A ~HP:GenerousWhenLow:2 ~FP:GenerousWhenLow:2 ~NoCoinBonus
-	~Movement:Goomba_00
-	~AnimationTable:Goomba_00 % .Sprite:Goomba
+	~Movement:Slime_02
+	~AnimationTable:Slime_02 % .Sprite:Slime
 	00000001 00000000 00000000 00000000 % no tattle string
 }
 
-#new:NpcSettings $NpcSettings_80241B00
+#new:NpcSettings $NpcSettings_Slime
 {
-	00000000 00140017 00000000 00000000 $Script_NpcAI_80241AE0 80077F70 00000000 8007809C
+	00000000 00140017 00000000 00000000 $Script_NpcAI_Slime 80077F70 00000000 8007809C
 	00000000 00000000 00050000
 }
 
-#new:Script $Script_NpcAI_80241AE0
+#new:Script $Script_NpcAI_Slime
 {
-    0:  Call  DoBasicAI ( $AISettings_80241AB0 )
+    0:  Call  DoBasicAI ( $AISettings_Slime )
    10:  Return
    18:  End
 }
 
-#new:AISettings $AISettings_80241AB0
+#new:AISettings $AISettings_Slime
 {
     1.5 % move speed
     30` % move time
@@ -142,15 +142,15 @@
 
 #new:NpcGroup $NpcGroup_Helvetica
 {
-	.NpcID:Helvetica_00 $NpcSettings_80241840 ~Vec3f:Helvetica_00 % 250 0 35
+	.NpcID:Helvetica_03 $NpcSettings_Helvetica ~Vec3f:Helvetica_03 % 250 0 35
 	00002C01 $Script_Init_Helvetica 00000000 00000000 0000005A
 	~NoDrops
-	~Movement:Helvetica_00
-	~AnimationTable:Helvetica_00 % .Sprite:Goomba
+	~Movement:Helvetica_03
+	~AnimationTable:Helvetica_03 % .Sprite:Goomba
 	00000000 00000000 00000000 00000000 % no tattle string
 }
 
-#new:NpcSettings $NpcSettings_80241840
+#new:NpcSettings $NpcSettings_Helvetica
 {
 	00000000 001E0018 00000000 00000000 00000000 00000000 00000000 00000000
 	00000000 00000000 00630000
@@ -172,12 +172,12 @@
    Call  SpeakToPlayer ( .Npc:Self 00530002 00530002 00000000 00010000 ) % variable string ID
    Call  ShowChoice    ( 001E0010 ) % Yes No
    If  *Var0  ==  00000001
-     Call  ContinueSpeech    ( .NpcID:Helvetica_00 00530002 00530002 00000000 00010001 ) % That's probably for the best.
+     Call  ContinueSpeech    ( .NpcID:Helvetica_03 00530002 00530002 00000000 00010001 ) % That's probably for the best.
      Call  SetMusicTrack ( 00000000 .Song:WhaleTheme 00000000 00000008 )
      Call  DisablePlayerInput    ( .False )
      Goto  9
      EndIf
-   Call  ContinueSpeech    ( .NpcID:Helvetica_00 00530002 00530002 00000000 00010002 ) % Here goes nothing.
+   Call  ContinueSpeech    ( .NpcID:Helvetica_03 00530002 00530002 00000000 00010002 ) % Here goes nothing.
    Call  StartBossBattle   ( .Song:MasterBattle )
   % Call  SetNpcVar ( .Npc:Self 00000000 00000001 )
    Label 9

@@ -264,7 +264,7 @@
   Call  UseBattleCamPreset    ( 00000002 )
   Call  MoveBattleCamOver (  20` )
   Call  SetAnimationRate      ( .Actor:Self 00000001 *Fixed[2.0] )
-  Call  SetAnimation      ( .Actor:Self 00000001 .SlimeAnimRun )
+  Call  SetAnimation      ( .Actor:Self 00000001 .SlimeAnimWalk )
   Call  SetGoalToHome     ( .Actor:Self )
   Call  SetActorSpeed ( .Actor:Self *Fixed[4.0] )
   Call  RunToGoal     ( .Actor:Self  0` .False )
