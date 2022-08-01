@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Map name="dbg_00" author="unnamed" background="iwa_bg" textures="kmr_tex">
 	<Editor>
-		<Camera pos="183.578827,48.257835,-56.172024" pitch="26.320026" yaw="357.759949"/>
+		<Camera pos="279.516815,146.470718,121.877022" pitch="29.520025" yaw="31.839947"/>
 		<Camera pos="-132.316223,65536.000000,150.108109"/>
 		<Camera pos="65536.000000,32.429012,178.670624"/>
 		<Camera pos="-363.043732,-0.055851,65536.000000"/>
@@ -78,8 +78,8 @@
 			</Node>
 			<Node name="NPCs" id="8">
 				<Node name="Virgil_01" id="5"/>
-				<Node name="Goomba_00" id="6"/>
-				<Node name="Helvetica_00" id="7"/>
+				<Node name="Slime_02" id="6"/>
+				<Node name="Helvetica_03" id="7"/>
 			</Node>
 			<Node name="Items" id="A">
 				<Node name="Mushroom_00" id="9"/>
@@ -1429,12 +1429,12 @@
 			<MapObject name="NPCs" id="8"/>
 		</Marker>
 		<Marker ver="4" type="NPC" pos="150,0,353" yaw="0.000000">
-			<MapObject name="Helvetica_00" id="7"/>
+			<MapObject name="Helvetica_03" id="7"/>
 			<Movement type="Stationary" data="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"/>
 			<Sprite sprite="53" palette="0" animations="2,3,4,4,0,0,8,7,0,0,0,0,0,0,0,0"/>
 		</Marker>
 		<Marker ver="4" type="NPC" pos="200,0,-200" yaw="0.000000">
-			<MapObject name="Goomba_00" id="6"/>
+			<MapObject name="Slime_02" id="6"/>
 			<Movement type="Wander" data="C8,0,FFFFFF38,32,32,FFFF8001,1,C8,0,FFFFFF38,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"/>
 			<Sprite sprite="EC" palette="1" animations="1,2,3,3,0,0,5,5,0,0,0,0,0,0,0,0"/>
 		</Marker>
