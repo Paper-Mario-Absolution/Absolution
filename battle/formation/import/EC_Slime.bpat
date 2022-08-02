@@ -81,16 +81,19 @@
 }
 
 #new:Script $Script_Init_Slime {
-    0:  Call  BindTakeTurn      ( .Actor:Self $Script_TakeTurn_Slime )
-   14:  Call  BindIdle  ( .Actor:Self $Script_Idle_Slime )
-   28:  Call  BindHandleEvent   ( .Actor:Self $Script_HandleEvent_Slime )
-   3C:  Return
-   44:  End
+  Call  BindTakeTurn      ( .Actor:Self $Script_TakeTurn_Slime )
+  Call  BindIdle  ( .Actor:Self $Script_Idle_Slime )
+  Call  BindHandleEvent   ( .Actor:Self $Script_HandleEvent_Slime )
+  %Set *Var0 1`
+  Call  SetActorVar ( .Actor:Self 0` 1` )  
+
+  Return
+  End
 }
 
 #new:Script $Script_Idle_Slime {
-  2CC:  Return
-  2D4:  End
+  Return
+  End
 }
 
 #new:Script $Script_HandleEvent_Slime {
@@ -211,6 +214,19 @@
 }
 
 #new:Script $Script_TakeTurn_Slime {
+  Call  GetActorVar ( .Actor:Self 0` *Var0 )
+  If  *Var0 != 0`
+    ExecWait $Script_Special_Attack_Slime
+  Else
+    If *Var0 == 0`
+       ExecWait $Script_Bite_Slime
+    EndIf
+  EndIf
+  Return
+  End
+}
+
+#new:Script $Script_Bite_Slime {
   Call  UseIdleAnimation  ( .Actor:Self .False )
   Call  EnableIdleScript ( .Actor:Self .False )
   Call  SetTargetActor ( .Actor:Self .Actor:Player )
@@ -269,6 +285,82 @@
   Call  SetActorSpeed ( .Actor:Self *Fixed[4.0] )
   Call  RunToGoal     ( .Actor:Self  0` .False )
   Call  SetAnimationRate      ( .Actor:Self 00000001 *Fixed[1.0] )
+  Return
+  End
+}
+
+#new:Script $Script_FP_Drain
+{
+	%Call  $Function_FPHeal ( *VarE )
+	Call	GetActorPos ( .Actor:Self *Var0 *Var1 *Var2 )
+	Add	 *Var0 10
+	Add	 *Var1 12
+	Call	PlayEffect ( 00000040 00000001 *Var0 *Var1 *Var2 *VarE 00000000 00000000 00000000 00000000 00000000 00000000 )
+	/%If  *VarE > -1`
+		Return %skip reduction
+	EndIf
+	If  *VarE < -9`
+		Set  *VarE -9`
+	EndIf%/
+	%Call  $Function_FPHeal ( *VarE )
+	Call	GetActorPos ( .Actor:Self *Var0 *Var1 *Var2 )
+	Add	 *Var0 10
+	Add  *Var1 12
+	Call	PlayEffect ( 00000040 00000001 *Var0 *Var1 *Var2 *VarE 00000000 00000000 00000000 00000000 00000000 00000000 )
+	Return
+	End
+}
+
+#new:Script $Script_Special_Attack_Slime {
+  Call  UseIdleAnimation  ( .Actor:Self .False )
+  Call  EnableIdleScript ( .Actor:Self .False )
+  Call  SetTargetActor ( .Actor:Self .Actor:Player )
+  Call  SetAnimation ( .Actor:Self 00000001 .SlimeAnimIdle )
+  Call  EnemyTestTarget   ( .Actor:Self *Var0 ~Flags:DamageType:0 00000000 00000001 00000010 )
+  Switch  *Var0
+    CaseOR == .HitResult:Miss % 6
+    CaseOR == .HitResult:Lucky % 5
+      Set    *VarA  *Var0
+      Wait 5`
+      If *VarA == .HitResult:Lucky % 5
+        Call  PlaySoundAtActor  ( .Actor:Self 000020B9 )
+        Call  SetAnimation ( .Actor:Self 00000001 .SlimeAnimIdle )
+        Call  GetActorPos ( .Actor:Self *Var0 *Var1 *Var2 )
+        Add   *Var1  00000010
+        Call  PlayEffect        ( ~FX:GatherMagic:Pink *Var0 *Var1 *Var2 *Fixed[0.5] 0000001E 00000000 00000000 00000000 00000000 00000000 00000000 00000000 )
+        Call  SetGoalPos    ( .Actor:Self *Var0 *Var1 *Var2 )
+        Call  GetGoalPos        ( .Actor:Self *Var4 *Var5 *Var6 )
+        Wait  10`
+        Call  EnemyTestTarget ( .Actor:Self *Var0 ~Flags:DamageType:TriggerLucky 00000000 00000000 00000000 )
+      EndIf
+      Wait 5`
+      Call  AddActorVar ( .Actor:Self *Var0 -1` )
+      Call  YieldTurn ( )
+      Return
+    EndCaseGroup
+  EndSwitch
+  Call  PlaySoundAtActor  ( .Actor:Self 000020B9 )
+  Call  SetAnimation ( .Actor:Self 00000001 .SlimeAnimIdle )
+  Call  GetActorPos ( .Actor:Self *Var0 *Var1 *Var2 )
+  Add   *Var1  00000010
+  Call  PlayEffect        ( ~FX:GatherMagic:Pink *Var0 *Var1 *Var2 *Fixed[0.5] 0000001E 00000000 00000000 00000000 00000000 00000000 00000000 00000000 )
+  Call  SetGoalPos    ( .Actor:Self *Var0 *Var1 *Var2 )
+  Call  GetGoalPos        ( .Actor:Self *Var4 *Var5 *Var6 )
+  Wait  10`
+  Call  EnemyDamageTarget ( .Actor:Self *Var0 ~Flags:DamageType:NoContact|Magic 00000000 00000000 6` 00000020 )
+  Switch *Var0
+    CaseOR == .HitResult:Hit % 0
+    CaseOR == .HitResult:QuakeImmune % 2
+      Set *VarE -1`
+      ExecWait $Script_FP_Drain
+      Call  SetAnimation ( .Actor:Self 00000001 .SlimeAnimIdle )
+      Call  AddActorVar ( .Actor:Self 0` -1` )
+      Call  YieldTurn ( )
+      %ExecWait $Script_Return_Home_Slime
+    EndCaseGroup
+  EndSwitch
+  Call  UseIdleAnimation  ( .Actor:Self .True )
+  Call  EnableIdleScript ( .Actor:Self .True )
   Return
   End
 }
