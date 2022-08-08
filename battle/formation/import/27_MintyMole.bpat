@@ -1,17 +1,17 @@
 % Automatically dumped from section 27
 
-#new:Actor $27_MontyMole {
+#new:Actor $27_MintyMole {
 % stats
 [Index]        12b 
 [Level]         8`b 
 [MaxHP]         3`b 
 [Coins]         1`b 
 [Flags]       00000000 
-[StatusTable] $StatusTable_80226D5C_27 
+[StatusTable] $StatusTable_MintyMole_27 
 % ai
 [PartsCount]    5`s 
-[PartsTable]  $PartsTable_80226E08_27 
-[Script]      $Script_Init_802270B0_27 
+[PartsTable]  $PartsTable_MintyMole_27 
+[Script]      $Script_Init_MintyMole_27 
 % move effectiveness
 [Escape]       80`b 
 [Item]         85`b 
@@ -27,12 +27,12 @@
 [StatusIcon]   10`b  20`b % dx dy
 }
 
-#new:DefenseTable $DefenseTable_80226D50_27 {
+#new:DefenseTable $DefenseTable_MintyMole_27 {
 .Element:Normal 00000000
 .Element:End
 }
 
-#new:StatusTable $StatusTable_80226D5C_27 {
+#new:StatusTable $StatusTable_MintyMole_27 {
 .Status:Normal      0`
 .Status:Default     0`
 .Status:Sleep      90`
@@ -57,7 +57,7 @@
 .Status:End
 }
 
-#new:PartsTable $PartsTable_80226E08_27 {
+#new:PartsTable $PartsTable_MintyMole_27 {
 00020000 01000000 FE1000FF $IdleAnimations_80226E9C_27 $DefenseTable_80226D50_27 00000000 00000000 00F90000 00000000 
 80800001 020000F1 FE0C00FF $IdleAnimations_80226E9C_27 $DefenseTable_80226D50_27 00000000 00000000 00F90000 00000000 
 00120001 03000000 000000FF $IdleAnimations_80226EE8_27 $DefenseTable_80226D50_27 00000000 00000000 00000000 00000000 
@@ -102,7 +102,7 @@
 00022000 01000000 000000FF $IdleAnimations_80226EF4_27 00000000 00000000 00000000 00000000 00000000 
 }
 
-#new:Script $Script_Init_80226F30_27 {
+#new:Script $Script_Init_MoleHole_27 {
     0:  Call  GetActorVar   ( .Actor:Self 00000000 *Var0 )
    18:  If  *Var0  ==  00000001 
    28:  	Call  SetPartScale  ( .Actor:Self 00000001 *Fixed[0.4] *Fixed[0.4] *Fixed[0.4] )
@@ -122,7 +122,7 @@
 % ai
 [PartsCount]    1`s 
 [PartsTable]  $PartsTable_80226F0C_27 
-[Script]      $Script_Init_80226F30_27 
+[Script]      $Script_Init_MoleHole_27 
 % move effectiveness
 [Escape]       80`b 
 [Item]         80`b 
@@ -164,21 +164,21 @@ $EmptyMoleHole_27 $Vector3D_80226FB8_27 00000000 00000001 00000000 00000000 0000
    AC:  End
 }
 
-#new:Script $Script_Init_802270B0_27 {
-    0:  Call  BindTakeTurn      ( .Actor:Self $Script_TakeTurn_802278AC_27 )
-   14:  Call  BindIdle  ( .Actor:Self $Script_Idle_80227114_27 )
-   28:  Call  BindHandleEvent   ( .Actor:Self $Script_HandleEvent_80227124_27 )
+#new:Script $Script_Init_MintyMole_27 {
+    0:  Call  BindTakeTurn      ( .Actor:Self $Script_TakeTurn_MintyMole_27 )
+   14:  Call  BindIdle  ( .Actor:Self $Script_Idle_MintyMole_27 )
+   28:  Call  BindHandleEvent   ( .Actor:Self $Script_HandleEvent_MintyMole_27 )
    3C:  Call  SetActorFlagBits  ( .Actor:Self 00000004 .True )
    54:  Return
    5C:  End
 }
 
-#new:Script $Script_Idle_80227114_27 {
+#new:Script $Script_Idle_MintyMole_27 {
     0:  Return
     8:  End
 }
 
-#new:Script $Script_HandleEvent_80227124_27 {
+#new:Script $Script_HandleEvent_MintyMole_27 {
     0:  Call  UseIdleAnimation  ( .Actor:Self .False )
    14:  Call  EnableIdleScript  ( .Actor:Self 00000000 )
    28:  Call  GetLastElement    ( *VarE )
@@ -306,7 +306,7 @@ $EmptyMoleHole_27 $Vector3D_80226FB8_27 00000000 00000001 00000000 00000000 0000
   780:  End
 }
 
-#new:Script $Script_TakeTurn_802278AC_27 {
+#new:Script $Script_TakeTurn_MintyMole_27 {
     0:  Call  UseIdleAnimation  ( .Actor:Self .False )
    14:  Call  EnableIdleScript  ( .Actor:Self 00000000 )
    28:  Call  SetTargetActor    ( .Actor:Self .Actor:Player )

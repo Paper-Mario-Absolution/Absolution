@@ -7,11 +7,11 @@
 [MaxHP]         2`b 
 [Coins]         1`b 
 [Flags]       00000000 
-[StatusTable] $StatusTable_80221610_27 
+[StatusTable] $StatusTable_BanditA_27 
 % ai
 [PartsCount]    2`s 
-[PartsTable]  $PartsTable_802216BC_27 
-[Script]      $Script_Init_802217A0_27 
+[PartsTable]  $PartsTable_BanditA_27 
+[Script]      $Script_Init_BanditA_27 
 % move effectiveness
 [Escape]       40`b 
 [Item]         90`b 
@@ -133,9 +133,9 @@ $BanditB_27 $Vector3D_80221778_27 00000000 00000000 00000000 00000000 00000000
 }
 
 #new:Script $Script_Init_802217A0_27 {
-    0:  Call  BindTakeTurn  ( .Actor:Self $Script_TakeTurn_80222950_27 )
-   14:  Call  BindIdle      ( .Actor:Self $Script_Idle_80221860_27 )
-   28:  Call  BindHandleEvent   ( .Actor:Self $Script_HandleEvent_80221FD8_27 )
+    0:  Call  BindTakeTurn  ( .Actor:Self $Script_TakeTurn_BanditA_27 )
+   14:  Call  BindIdle      ( .Actor:Self $Script_Idle_BanditA_27 )
+   28:  Call  BindHandleEvent   ( .Actor:Self $Script_HandleEvent_BanditA_27 )
    3C:  Call  SetActorVar   ( .Actor:Self 00000000 00000000 )
    54:  Return
    5C:  End
@@ -154,7 +154,7 @@ $BanditB_27 $Vector3D_80221778_27 00000000 00000000 00000000 00000000 00000000
    44:  End
 }
 
-#new:Script $Script_Idle_80221860_27 {
+#new:Script $Script_Idle_BanditA_27 {
     0:  Return
     8:  End
 }
@@ -258,7 +258,7 @@ $BanditB_27 $Vector3D_80221778_27 00000000 00000000 00000000 00000000 00000000
   760:  End
 }
 
-#new:Script $Script_HandleEvent_80221FD8_27 {
+#new:Script $Script_HandleEvent_BanditA_27 {
     0:  UseArray  $End[0] 
     C:  Call  UseIdleAnimation  ( .Actor:Self .False )
    20:  Call  EnableIdleScript  ( .Actor:Self 00000000 )
@@ -445,7 +445,7 @@ $BanditB_27 $Vector3D_80221778_27 00000000 00000000 00000000 00000000 00000000
   970:  End
 }
 
-#new:Script $Script_TakeTurn_80222950_27 {
+#new:Script $Script_TakeTurn_BanditA_27 {
     0:  Call  UseIdleAnimation  ( .Actor:Self .False )
    14:  Call  EnableIdleScript  ( .Actor:Self 00000000 )
    28:  Call  SetTargetActor    ( .Actor:Self .Actor:Player )

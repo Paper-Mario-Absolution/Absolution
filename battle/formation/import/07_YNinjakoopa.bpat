@@ -7,11 +7,11 @@
 [MaxHP]         1`b 
 [Coins]         0`b 
 [Flags]       00000000 
-[StatusTable] $StatusTable_8022E458_07 
+[StatusTable] $StatusTable_YNinjakoopa_07 
 % ai
 [PartsCount]    1`s 
-[PartsTable]  $PartsTable_8022E504_07 
-[Script]      $Script_Init_80230BCC_07 
+[PartsTable]  $PartsTable_YNinjakoopa_07 
+[Script]      $Script_Init_YNinjakoopa_07 
 % move effectiveness
 [Escape]        0`b 
 [Item]          0`b 
@@ -37,7 +37,7 @@
 .Element:End
 }
 
-#new:StatusTable $StatusTable_8022E458_07 {
+#new:StatusTable $StatusTable_YNinjakoopa_07 {
 .Status:Normal      0`
 .Status:Default     0`
 .Status:Sleep      60`
@@ -62,7 +62,7 @@
 .Status:End
 }
 
-#new:PartsTable $PartsTable_8022E504_07 {
+#new:PartsTable $PartsTable_YNinjakoopa_07 {
 00800000 01000000 FB2400FF $IdleAnimations_8022E550_07 $DefenseTable_8022E440_07 00001000 00000000 00000000 00000000 
 }
 
@@ -108,11 +108,11 @@
     .Status:End
     }
 
-#new:Script $Script_Init_80230BCC_07 {
-    0:  Call  BindTakeTurn  ( .Actor:Self $Script_TakeTurn_802313B4_07 )
-   14:  Call  BindIdle      ( .Actor:Self $Script_Idle_80230CC0_07 )
-   28:  Call  BindHandleEvent   ( .Actor:Self $Script_HandleEvent_80230D28_07 )
-   3C:  Call  BindNextTurn  ( .Actor:Self $Script_NextTurn_802313C4_07 )
+#new:Script $Script_Init_YNinjakoopa_07 {
+    0:  Call  BindTakeTurn  ( .Actor:Self $Script_TakeTurn_YNinjakoopa_07 )
+   14:  Call  BindIdle      ( .Actor:Self $Script_Idle_YNinjakoopa_07 )
+   28:  Call  BindHandleEvent   ( .Actor:Self $Script_HandleEvent_YNinjakoopa_07 )
+   3C:  Call  BindNextTurn  ( .Actor:Self $Script_NextTurn_YNinjakoopa_07 )
    88:  Call  HPBarToHome   ( .Actor:Self )
    B4:  Call  SetActorVar   ( .Actor:Self 00000001 00000000 )
    CC:  Call  SetActorVar   ( .Actor:Self 00000002 00000000 )
@@ -120,7 +120,7 @@
    EC:  End
 }
 
-#new:Script $Script_Idle_80230CC0_07 {
+#new:Script $Script_Idle_YNinjakoopa_07 {
     
     0:  Return
     8:  End
@@ -153,7 +153,7 @@
 00000007 00000006 00000004 00000000 00000002 00000000 
 }
 
-#new:Script $Script_HandleEvent_80230D28_07 {
+#new:Script $Script_HandleEvent_YNinjakoopa_07 {
     0:  Call  UseIdleAnimation  ( .Actor:Self .False )
    14:  Call  EnableIdleScript  ( .Actor:Self 00000000 )
    28:  Call  GetLastEvent      ( .Actor:Self *Var0 )
@@ -264,7 +264,7 @@
   684:  End
 }
 
-#new:Script $Script_TakeTurn_802313B4_07 {
+#new:Script $Script_TakeTurn_YNinjakoopa_07 {
     0:  Return
     8:  End
 }
@@ -427,7 +427,7 @@
   End
 }
 
-#new:Script $Script_NextTurn_802313C4_07 {
+#new:Script $Script_NextTurn_YNinjakoopa_07 {
     0:  Return
     8:  End
 }

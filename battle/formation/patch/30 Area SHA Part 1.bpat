@@ -1,8 +1,8 @@
-#import enemy/27_Pokey.bpat
-#import enemy/27_MontyMole.bpat
-#import enemy/27_BanditA.bpat
-#import enemy/0D_Bzzap.bpat
-#import enemy/06_KoopaTroopa.bpat
+#import 27_Pokey.bpat
+#import 27_MintyMole.bpat
+#import 27_BanditA.bpat
+#import 0D_Bzzap.bpat
+#import 06_KoopaTroopa.bpat
 
 #new:FormationTable $FormationTable
 {
@@ -27,15 +27,15 @@
 
 #new:Formation $Formation_02
 {
-	$27_MontyMole 00000001 0000000A 00000000 00000000 00000000 00000000
-	$27_MontyMole 00000002 00000009 00000000 00000000 00000000 00000000
+	$27_MintyMole 00000001 0000000A 00000000 00000000 00000000 00000000
+	$27_MintyMole 00000002 00000009 00000000 00000000 00000000 00000000
 }
 
 #new:Formation $Formation_03
 {
-	$27_MontyMole 00000001 0000000A 00000000 00000000 00000000 00000000
+	$27_MintyMole 00000001 0000000A 00000000 00000000 00000000 00000000
 	$27_BanditA 00000002 00000009 00000000 00000000 00000000 00000000
-	$27_MontyMole 00000003 00000008 00000000 00000000 00000000 00000000
+	$27_MintyMole 00000003 00000008 00000000 00000000 00000000 00000000
 }
 
 #new:StageTable $StageTable

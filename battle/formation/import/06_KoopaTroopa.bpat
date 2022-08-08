@@ -8,11 +8,11 @@
 	[MaxHP]         3`b
 	[Coins]         1`b
 	[Flags]       00000000
-	[StatusTable] $StatusTable_8021C998_06
+	[StatusTable] $StatusTable_KoopaTroopa_06
 	% ai
 	[PartsCount]    1`s
-	[PartsTable]  $PartsTable_8021CA44_06
-	[Script]      $Script_Init_8021CB74_06
+	[PartsTable]  $PartsTable_KoopaTroopa_06
+	[Script]      $Script_Init_KoopaTroopa_06
 	% move effectiveness
 	[Escape]       70`b
 	[Item]         90`b
@@ -96,7 +96,7 @@
 .Element:End
 }
 
-#new:StatusTable $StatusTable_8021C998_06 {
+#new:StatusTable $StatusTable_KoopaTroopa_06 {
 .Status:Normal      0`
 .Status:Default     0`
 .Status:Sleep      90`
@@ -121,7 +121,7 @@
 .Status:End
 }
 
-#new:PartsTable $PartsTable_8021CA44_06 {
+#new:PartsTable $PartsTable_KoopaTroopa_06 {
 00800000 01000000 FE2400FF $IdleAnimations_80220010 $DefenseTable_8021FEE0 00001000 00000000 00F90000 00000000 
 }
 
@@ -167,10 +167,10 @@
 	.Status:End
 }
 
-#new:Script $Script_Init_8021CB74_06 {
-    0:  Call  BindTakeTurn  ( .Actor:Self $Script_TakeTurn_8021DD9C_06 )
-   14:  Call  BindIdle      ( .Actor:Self $Script_Idle_8021CD30_06 )
-   28:  Call  BindHandleEvent   ( .Actor:Self $Script_HandleEvent_8021D218_06 )
+#new:Script $Script_Init_KoopaTroopa_06 {
+    0:  Call  BindTakeTurn  ( .Actor:Self $Script_TakeTurn_KoopaTroopa_06 )
+   14:  Call  BindIdle      ( .Actor:Self $Script_Idle_KoopaTroopa_06 )
+   28:  Call  BindHandleEvent   ( .Actor:Self $Script_HandleEvent_KoopaTroopa_06 )
    3C:  Call  SetActorVar   ( .Actor:Self 00000008 00000000 )
    54:  Return
    5C:  End
@@ -197,7 +197,7 @@
   150:  End
 }
 
-#new:Script $Script_Idle_8021CD30_06 {
+#new:Script $Script_Idle_KoopaTroopa_06 {
     0:  Label  0
     C:  Call  RandInt   ( 00000050 *VarA )
    20:  Add   *VarA  00000050 
@@ -283,7 +283,7 @@
 00000007 00000006 00000004 00000000 00000002 00000000 
 }
 
-#new:Script $Script_HandleEvent_8021D218_06
+#new:Script $Script_HandleEvent_KoopaTroopa_06
 {
     0:  Call  UseIdleAnimation  ( .Actor:Self .False )
    14:  Call  EnableIdleScript  ( .Actor:Self 00000000 )
@@ -477,7 +477,7 @@
   B7C:  End
 }
 
-#new:Script $Script_TakeTurn_8021DD9C_06 %Koopa Brigand's TakeTurn
+#new:Script $Script_TakeTurn_KoopaTroopa_06 %Koopa Brigand's TakeTurn
 {
     0:  Call  UseIdleAnimation  ( .Actor:Self .False )
    14:  Call  EnableIdleScript  ( .Actor:Self 00000000 )

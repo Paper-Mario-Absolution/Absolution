@@ -1,10 +1,10 @@
-#define .NpcID:GuardToad            01
-#define .NpcID:Bandito1             02
-#define .NpcID:Bandito2             03
-#define .NpcID:MintyMole1           04
-#define .NpcID:MintyMole1b          05
-#define .NpcID:MintyMole2           06
-#define .NpcID:MintyMole2b          07
+#define .NpcID:GuardToad            00
+#define .NpcID:Bandito1             01
+#define .NpcID:Bandito2             02
+#define .NpcID:MintyMole1           03
+#define .NpcID:MintyMole1b          04
+#define .NpcID:MintyMole2           05
+#define .NpcID:MintyMole2b          06
 
 @ $Header {
     [MainScript] $Script_Main
@@ -28,7 +28,7 @@
 
 #new:NpcGroupList $NpcGroupList_RuinRoad
 {
-	00000001 $NpcGroup_Guard 00000000
+      00000001 $NpcGroup_Guard 00000000
     00000001 $NpcGroup_Bandito1 30010000
     00000001 $NpcGroup_Bandito2 30000000
     00000002 $NpcGroup_Minty1 30020000
@@ -185,7 +185,7 @@
 	%
 	% $NpcGroup_80244C40[1F0]
 	.NpcID:MintyMole1b $NpcSettings_ThrownRock ~Vec3f:MintyMole1b % 340 70 101
-	00800F21 00000000 00000000 00000000 00000000
+	00800C00 00000000 00000000 00000000 0000005A
 	~NoDrops
 	~Movement:MintyMole1b
 	~AnimationTable:MintyMole1b % .Sprite:MontyMole
@@ -203,7 +203,7 @@
 	%
 	% $NpcGroup_80244C40[1F0]
 	.NpcID:MintyMole2b $NpcSettings_ThrownRock ~Vec3f:MintyMole2b % 340 70 101
-	00800F21 00000000 00000000 00000000 00000000
+	00800C00 00000000 00000000 00000000 0000005A
 	~NoDrops
 	~Movement:MintyMole2b
 	~AnimationTable:MintyMole2b % .Sprite:MontyMole
