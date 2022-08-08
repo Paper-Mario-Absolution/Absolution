@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Map name="sha_00" author="unnamed" background="iwa_bg" textures="iwa_tex">
 	<Editor>
-		<Camera pos="67.284660,92.237808,-946.351746" pitch="7.520017" yaw="339.194366"/>
+		<Camera pos="-1.188192,214.923080,-241.207428" pitch="33.199986" yaw="271.355194"/>
 		<Camera pos="-138.058868,65536.000000,-495.707520"/>
-		<Camera pos="65536.000000,9.573041,-1059.953247"/>
-		<Camera pos="-262.887939,73.808487,65536.000000"/>
+		<Camera pos="65536.000000,52.310925,570.747253"/>
+		<Camera pos="-446.999023,195.785614,65536.000000"/>
 	</Editor>
 	<ModelTree>
 		<Node name="Root" id="1E">
@@ -47,7 +47,7 @@
 		</Node>
 	</ModelTree>
 	<ColliderTree>
-		<Node name="Root" id="F">
+		<Node name="Root" id="10">
 			<Node name="Stage" id="2">
 				<Node name="ProjectionCollider" id="0"/>
 				<Node name="HullCollider" id="1"/>
@@ -65,6 +65,7 @@
 			<Node name="MeshCollider" id="C"/>
 			<Node name="GateCollider" id="D"/>
 			<Node name="ExitTriggerCave" id="E"/>
+			<Node name="Planar GridCollider" id="F"/>
 		</Node>
 	</ColliderTree>
 	<ZoneTree>
@@ -110,7 +111,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="Planar GridModel" id="1D" hidden="true"/>
+			<MapObject name="Planar GridModel" id="1D"/>
 			<ShapeMesh ver="3" texture="iwa_rock_edgetif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -136,7 +137,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="Planar GridModel" id="1C" hidden="true"/>
+			<MapObject name="Planar GridModel" id="1C"/>
 			<ShapeMesh ver="3" texture="iwa_rock_edgetif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -186,7 +187,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="Planar GridModel" id="1B" hidden="true"/>
+			<MapObject name="Planar GridModel" id="1B"/>
 			<ShapeMesh ver="3" texture="iwa_rock_edgetif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -220,7 +221,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="CubeModel" id="19" hidden="true"/>
+			<MapObject name="CubeModel" id="19"/>
 			<ShapeMesh ver="3" texture="iwa_mac_fieldtif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -710,7 +711,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="CylinderModel" id="17" hidden="true"/>
+			<MapObject name="CylinderModel" id="17"/>
 			<ShapeMesh ver="3" texture="iwa_mac_fieldtif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -794,7 +795,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="ConeModel" id="16" hidden="true"/>
+			<MapObject name="ConeModel" id="16"/>
 			<ShapeMesh ver="3" texture="iwa_mac_roof1tif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -878,7 +879,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="ConeModel" id="15" hidden="true"/>
+			<MapObject name="ConeModel" id="15"/>
 			<ShapeMesh ver="3" texture="iwa_mac_roof1tif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -934,7 +935,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="CylinderModel" id="14" hidden="true"/>
+			<MapObject name="CylinderModel" id="14"/>
 			<ShapeMesh ver="3" texture="iwa_mac_fieldtif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -988,7 +989,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="CubeModel" id="13" hidden="true"/>
+			<MapObject name="CubeModel" id="13"/>
 			<ShapeMesh ver="3" texture="iwa_mac_fieldtif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -1038,7 +1039,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="Path" id="12" hidden="true"/>
+			<MapObject name="Path" id="12"/>
 			<ShapeMesh ver="3" texture="iwa_s_roadtif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -1084,7 +1085,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="BackWall" id="11" hidden="true"/>
+			<MapObject name="BackWall" id="11"/>
 			<ShapeMesh ver="3" texture="iwa_rock_edge_atif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -1180,7 +1181,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="CaveEntrance" id="10" hidden="true"/>
+			<MapObject name="CaveEntrance" id="10"/>
 			<ShapeMesh ver="3" texture="iwa_mac_fieldtif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -1446,7 +1447,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="SunkenWall" id="F" hidden="true"/>
+			<MapObject name="SunkenWall" id="F"/>
 			<ShapeMesh ver="3" texture="iwa_mac_fieldtif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -1496,7 +1497,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="Split Model" id="E" hidden="true"/>
+			<MapObject name="Split Model" id="E"/>
 			<ShapeMesh ver="3" texture="iwa_mac_fieldtif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -1556,7 +1557,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="CylinderModel" id="D" hidden="true"/>
+			<MapObject name="CylinderModel" id="D"/>
 			<ShapeMesh ver="3" texture="iwa_mac_fieldtif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -1646,7 +1647,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="Split Model" id="C" hidden="true"/>
+			<MapObject name="Split Model" id="C"/>
 			<ShapeMesh ver="3" texture="iwa_mac_fieldtif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -1702,7 +1703,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="ProjectionModel" id="B" hidden="true"/>
+			<MapObject name="ProjectionModel" id="B"/>
 			<ShapeMesh ver="3" texture="iwa_mac_fieldtif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -1817,7 +1818,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="Gate" id="9" hidden="true"/>
+			<MapObject name="Gate" id="9"/>
 			<ShapeMesh ver="3" texture="iwa_mac_pistontif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -1851,7 +1852,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="ex_s_edge" id="7" hidden="true"/>
+			<MapObject name="ex_s_edge" id="7"/>
 			<ShapeMesh ver="3" texture="iwa_berosaidetif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -1889,7 +1890,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="ex_s_floor" id="6" hidden="true"/>
+			<MapObject name="ex_s_floor" id="6"/>
 			<ShapeMesh ver="3" texture="iwa_s_road_3tif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -1923,7 +1924,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="ex_n_edge" id="4" hidden="true"/>
+			<MapObject name="ex_n_edge" id="4"/>
 			<ShapeMesh ver="3" texture="iwa_berosaidetif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -1961,7 +1962,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="ex_n_floor" id="3" hidden="true"/>
+			<MapObject name="ex_n_floor" id="3"/>
 			<ShapeMesh ver="3" texture="iwa_s_road_3tif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -1995,7 +1996,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="HullModel" id="1" hidden="true"/>
+			<MapObject name="HullModel" id="1"/>
 			<ShapeMesh ver="3" texture="iwa_rock_edge_atif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -2073,7 +2074,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="DrawnModel" id="0" hidden="true"/>
+			<MapObject name="DrawnModel" id="0"/>
 			<ShapeMesh ver="3" texture="iwa_s_road_3tif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -2122,8 +2123,26 @@
 	</Models>
 	<Colliders>
 		<Collider ver="0" flags="0">
-			<MapObject name="Root" id="F"/>
+			<MapObject name="Root" id="10"/>
 			<HitObject type="ROOT"/>
+		</Collider>
+		<Collider ver="0" flags="0">
+			<MapObject name="Planar GridCollider" id="F"/>
+			<HitObject type="HIT"/>
+			<HitMesh ver="0">
+				<TriangleBatch ver="0">
+					<VertexTable>
+						<Vertex xyz="-500,200,577" uv="-512,512"/>
+						<Vertex xyz="-452,0,577" uv="512,-512"/>
+						<Vertex xyz="-500,0,577" uv="-512,-512"/>
+						<Vertex xyz="-452,200,577" uv="512,512"/>
+					</VertexTable>
+					<TriangleList>
+						<Triangle ijk="0,1,2"/>
+						<Triangle ijk="1,0,3"/>
+					</TriangleList>
+				</TriangleBatch>
+			</HitMesh>
 		</Collider>
 		<Collider ver="0" flags="0">
 			<MapObject name="ExitTriggerCave" id="E"/>
@@ -2361,13 +2380,13 @@
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
 					<VertexTable>
-						<Vertex xyz="-443,64,743" uv="8132,1024"/>
-						<Vertex xyz="-449,64,1000" uv="4019,1024"/>
+						<Vertex xyz="-443,200,743" uv="8132,1024"/>
+						<Vertex xyz="-449,200,1000" uv="4019,1024"/>
 						<Vertex xyz="-449,0,1000" uv="4019,0"/>
 						<Vertex xyz="-443,0,743" uv="8132,0"/>
-						<Vertex xyz="-442,64,689" uv="8996,1024"/>
+						<Vertex xyz="-442,200,689" uv="8996,1024"/>
 						<Vertex xyz="-442,0,689" uv="8996,0"/>
-						<Vertex xyz="-452,64,577" uv="10604,1024"/>
+						<Vertex xyz="-452,200,577" uv="10604,1024"/>
 						<Vertex xyz="-452,0,577" uv="10604,0"/>
 					</VertexTable>
 					<TriangleList>
@@ -2867,49 +2886,49 @@
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
 					<VertexTable>
-						<Vertex xyz="-500,64,1000" uv="-29087,1024"/>
+						<Vertex xyz="-500,200,1000" uv="-29087,1024"/>
 						<Vertex xyz="-500,0,700" uv="-32751,0"/>
-						<Vertex xyz="-500,64,700" uv="-32751,1024"/>
+						<Vertex xyz="-500,200,700" uv="-32751,1024"/>
 						<Vertex xyz="-500,0,1000" uv="-29087,0"/>
-						<Vertex xyz="-187,64,1000" uv="-25265,1024"/>
+						<Vertex xyz="-187,200,1000" uv="-25265,1024"/>
 						<Vertex xyz="-187,0,1000" uv="-25265,0"/>
-						<Vertex xyz="-187,64,1100" uv="-24044,1024"/>
+						<Vertex xyz="-187,200,1100" uv="-24044,1024"/>
 						<Vertex xyz="-187,0,1100" uv="-24044,0"/>
-						<Vertex xyz="-87,64,1100" uv="-22822,1024"/>
+						<Vertex xyz="-87,200,1100" uv="-22822,1024"/>
 						<Vertex xyz="-87,0,1100" uv="-22822,0"/>
-						<Vertex xyz="-87,64,1000" uv="-21601,1024"/>
+						<Vertex xyz="-87,200,1000" uv="-21601,1024"/>
 						<Vertex xyz="-87,0,1000" uv="-21601,0"/>
-						<Vertex xyz="21,64,1000" uv="-20282,1024"/>
+						<Vertex xyz="21,200,1000" uv="-20282,1024"/>
 						<Vertex xyz="21,0,1000" uv="-20282,0"/>
-						<Vertex xyz="19,64,700" uv="-16618,1024"/>
+						<Vertex xyz="19,200,700" uv="-16618,1024"/>
 						<Vertex xyz="19,0,700" uv="-16618,0"/>
-						<Vertex xyz="-30,64,271" uv="-11345,1024"/>
+						<Vertex xyz="-30,200,271" uv="-11345,1024"/>
 						<Vertex xyz="-30,0,271" uv="-11345,0"/>
-						<Vertex xyz="-95,64,-260" uv="-4812,1024"/>
+						<Vertex xyz="-95,200,-260" uv="-4812,1024"/>
 						<Vertex xyz="-95,0,-260" uv="-4812,0"/>
-						<Vertex xyz="51,64,-773" uv="1701,1024"/>
+						<Vertex xyz="51,200,-773" uv="1701,1024"/>
 						<Vertex xyz="51,0,-773" uv="1701,0"/>
-						<Vertex xyz="119,64,-987" uv="4443,1024"/>
+						<Vertex xyz="119,200,-987" uv="4443,1024"/>
 						<Vertex xyz="119,0,-987" uv="4443,0"/>
-						<Vertex xyz="89,64,-1034" uv="5124,1024"/>
+						<Vertex xyz="89,200,-1034" uv="5124,1024"/>
 						<Vertex xyz="89,0,-1034" uv="5124,0"/>
-						<Vertex xyz="68,64,-1066" uv="5591,1024"/>
+						<Vertex xyz="68,200,-1066" uv="5591,1024"/>
 						<Vertex xyz="68,0,-1066" uv="5591,0"/>
-						<Vertex xyz="50,64,-1066" uv="5811,1024"/>
+						<Vertex xyz="50,200,-1066" uv="5811,1024"/>
 						<Vertex xyz="50,0,-1066" uv="5811,0"/>
-						<Vertex xyz="50,64,-1166" uv="7033,1024"/>
+						<Vertex xyz="50,200,-1166" uv="7033,1024"/>
 						<Vertex xyz="50,0,-1166" uv="7033,0"/>
-						<Vertex xyz="-50,64,-1166" uv="8254,1024"/>
+						<Vertex xyz="-50,200,-1166" uv="8254,1024"/>
 						<Vertex xyz="-50,0,-1166" uv="8254,0"/>
-						<Vertex xyz="-50,64,-1066" uv="10736,1024"/>
+						<Vertex xyz="-50,200,-1066" uv="10736,1024"/>
 						<Vertex xyz="-50,0,-1066" uv="10736,0"/>
-						<Vertex xyz="-319,64,-879" uv="14197,1024"/>
+						<Vertex xyz="-319,200,-879" uv="14197,1024"/>
 						<Vertex xyz="-319,0,-879" uv="14197,0"/>
-						<Vertex xyz="-473,64,-236" uv="21313,1024"/>
+						<Vertex xyz="-473,200,-236" uv="21313,1024"/>
 						<Vertex xyz="-473,0,-236" uv="21313,0"/>
-						<Vertex xyz="-497,64,283" uv="27658,1024"/>
+						<Vertex xyz="-497,200,283" uv="27658,1024"/>
 						<Vertex xyz="-497,0,283" uv="27658,0"/>
-						<Vertex xyz="-500,64,700" uv="32751,1024"/>
+						<Vertex xyz="-500,200,700" uv="32751,1024"/>
 						<Vertex xyz="-500,0,700" uv="32751,0"/>
 					</VertexTable>
 					<TriangleList>

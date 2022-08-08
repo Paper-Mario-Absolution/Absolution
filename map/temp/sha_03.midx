@@ -1,0 +1,10 @@
+$Script_Main#Script_Main#0#80240000#9C
+$Start#Unknown#0#80240000#0
+$Header#Header#9C#8024009C#40
+$Script_SetupMusic#Script#DC#802400DC#34
+$Function_Init#Function_Init#110#80240110#2C
+$EntryList#EntryList#13C#8024013C#20
+$Script_EnterMap#Script#15C#8024015C#10
+$Script_CreateExitTriggers#Script#16C#8024016C#10
+$ASCII_"iwa_tex"_Literal#ASCII#17C#8024017C#8
+$End#Unknown#190#80240190#27E70

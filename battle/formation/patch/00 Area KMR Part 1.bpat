@@ -1,5 +1,5 @@
-#import EB_LittleHorn.bpat
-#import EC_Slime.bpat
+#import enemy/EB_LittleHorn.bpat
+#import enemy/EC_Slime.bpat
 
 #new:Actor $22_DryBones {
     % stats

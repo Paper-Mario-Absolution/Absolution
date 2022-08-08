@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Map name="kmr_32" author="unnamed" background="iwa_bg" textures="kmr_tex">
 	<Editor>
-		<Camera pos="314.410797,218.100830,-157.962570" pitch="80.000000" yaw="90.879936"/>
+		<Camera pos="-53.144073,100.143494,261.259155" pitch="4.960028" yaw="168.319366"/>
 		<Camera pos="443.320892,65536.000000,-126.522804"/>
 		<Camera pos="65536.000000,-3.150534,-225.764252"/>
 		<Camera pos="230.086563,114.665619,65536.000000"/>
 	</Editor>
 	<ModelTree>
-		<Node name="Root" id="73">
+		<Node name="Root" id="74">
 			<Node name="Stage" id="A">
 				<Node name="MainFloor" id="0"/>
 				<Node name="main_edges" id="1"/>
@@ -101,7 +101,7 @@
 					<Node name="House3WallsInside" id="4B"/>
 				</Node>
 			</Node>
-			<Node name="House2" id="67">
+			<Node name="House2" id="68">
 				<Node name="House2WallsOuter" id="4E"/>
 				<Node name="House2Front" id="4F"/>
 				<Node name="Plants1" id="50"/>
@@ -109,38 +109,39 @@
 				<Node name="DoorGroup2" id="53">
 					<Node name="HouseDoor2" id="52"/>
 				</Node>
-				<Node name="House2Interior" id="66">
+				<Node name="House2Interior" id="67">
 					<Node name="House2Floor" id="54"/>
 					<Node name="StaircaseModel" id="55"/>
 					<Node name="UpperFloor2" id="56"/>
 					<Node name="House2WallsInner" id="57"/>
 					<Node name="Railing" id="58"/>
-					<Node name="Dresser1" id="59"/>
-					<Node name="Dresser2" id="5A"/>
-					<Node name="Dresser3" id="5B"/>
-					<Node name="Lamp1" id="5C"/>
-					<Node name="Lamp2" id="5D"/>
-					<Node name="Mattress" id="5E"/>
-					<Node name="Stovetop" id="5F"/>
-					<Node name="Burner1" id="60"/>
-					<Node name="Burner2" id="61"/>
-					<Node name="Hanger" id="62"/>
-					<Node name="Spoons" id="63"/>
-					<Node name="Cups" id="64"/>
-					<Node name="Spoons" id="65"/>
+					<Node name="Railing2" id="59"/>
+					<Node name="Dresser1" id="5A"/>
+					<Node name="Dresser2" id="5B"/>
+					<Node name="Dresser3" id="5C"/>
+					<Node name="Lamp1" id="5D"/>
+					<Node name="Lamp2" id="5E"/>
+					<Node name="Mattress" id="5F"/>
+					<Node name="Stovetop" id="60"/>
+					<Node name="Burner1" id="61"/>
+					<Node name="Burner2" id="62"/>
+					<Node name="Hanger" id="63"/>
+					<Node name="Spoons" id="64"/>
+					<Node name="Cups" id="65"/>
+					<Node name="Spoons" id="66"/>
 				</Node>
 			</Node>
-			<Node name="boo" id="68"/>
-			<Node name="OinkFence" id="69"/>
-			<Node name="OinkMud" id="6A"/>
-			<Node name="Flowers" id="72">
-				<Node name="Planar GridModel" id="6B"/>
+			<Node name="boo" id="69"/>
+			<Node name="OinkFence" id="6A"/>
+			<Node name="OinkMud" id="6B"/>
+			<Node name="Flowers" id="73">
 				<Node name="Planar GridModel" id="6C"/>
 				<Node name="Planar GridModel" id="6D"/>
 				<Node name="Planar GridModel" id="6E"/>
 				<Node name="Planar GridModel" id="6F"/>
 				<Node name="Planar GridModel" id="70"/>
 				<Node name="Planar GridModel" id="71"/>
+				<Node name="Planar GridModel" id="72"/>
 			</Node>
 		</Node>
 	</ModelTree>
@@ -267,13 +268,13 @@
 	</LightSets>
 	<Models>
 		<Model ver="2" type="ROOT" lightset="0">
-			<MapObject name="Root" id="73"/>
+			<MapObject name="Root" id="74"/>
 			<BoundingBox empty="false" min="-600,-100,-600" max="600,183,600"/>
 			<PropertyList>
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="GROUP" lightset="0">
-			<MapObject name="Flowers" id="72"/>
+			<MapObject name="Flowers" id="73"/>
 			<BoundingBox empty="false" min="404,0,-244" max="459,20,-223"/>
 			<PropertyList>
 				<Property v="60,0,0"/>
@@ -281,7 +282,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="Planar GridModel" id="71"/>
+			<MapObject name="Planar GridModel" id="72"/>
 			<ShapeMesh ver="3" texture="kmr_flower_01tif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -309,7 +310,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="Planar GridModel" id="70"/>
+			<MapObject name="Planar GridModel" id="71"/>
 			<ShapeMesh ver="3" texture="kmr_flower_01tif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -337,7 +338,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="Planar GridModel" id="6F"/>
+			<MapObject name="Planar GridModel" id="70"/>
 			<ShapeMesh ver="3" texture="kmr_flower_01tif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -365,7 +366,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="Planar GridModel" id="6E"/>
+			<MapObject name="Planar GridModel" id="6F"/>
 			<ShapeMesh ver="3" texture="kmr_flower_01tif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -393,7 +394,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="Planar GridModel" id="6D"/>
+			<MapObject name="Planar GridModel" id="6E"/>
 			<ShapeMesh ver="3" texture="kmr_flower_01tif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -421,7 +422,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="Planar GridModel" id="6C"/>
+			<MapObject name="Planar GridModel" id="6D"/>
 			<ShapeMesh ver="3" texture="kmr_flower_01tif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -449,7 +450,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="Planar GridModel" id="6B"/>
+			<MapObject name="Planar GridModel" id="6C"/>
 			<ShapeMesh ver="3" texture="kmr_flower_01tif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -475,7 +476,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="OinkMud" id="6A"/>
+			<MapObject name="OinkMud" id="6B"/>
 			<ShapeMesh ver="3" texture="kmr_s_road_3tif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -503,7 +504,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="OinkFence" id="69"/>
+			<MapObject name="OinkFence" id="6A"/>
 			<ShapeMesh ver="3" texture="kmr_fencetif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -533,7 +534,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="boo" id="68"/>
+			<MapObject name="boo" id="69"/>
 			<ShapeMesh ver="3" texture="">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -872,7 +873,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="GROUP" lightset="0">
-			<MapObject name="House2" id="67"/>
+			<MapObject name="House2" id="68"/>
 			<BoundingBox empty="false" min="-217,0,340" max="-47,157,500"/>
 			<PropertyList>
 				<Property v="60,0,0"/>
@@ -880,7 +881,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="GROUP" lightset="0">
-			<MapObject name="House2Interior" id="66"/>
+			<MapObject name="House2Interior" id="67"/>
 			<BoundingBox empty="false" min="-207,0,350" max="-57,157,500"/>
 			<PropertyList>
 				<Property v="60,0,0"/>
@@ -888,7 +889,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="Spoons" id="65"/>
+			<MapObject name="Spoons" id="66"/>
 			<ShapeMesh ver="3" texture="kmr_dec_planttif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -916,7 +917,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="Cups" id="64"/>
+			<MapObject name="Cups" id="65"/>
 			<ShapeMesh ver="3" texture="kmr_komonotif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -944,7 +945,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="Spoons" id="63"/>
+			<MapObject name="Spoons" id="64"/>
 			<ShapeMesh ver="3" texture="kmr_kitchentif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -970,7 +971,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="Hanger" id="62"/>
+			<MapObject name="Hanger" id="63"/>
 			<ShapeMesh ver="3" texture="kmr_woody_plate_jtif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -1020,7 +1021,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="Burner2" id="61"/>
+			<MapObject name="Burner2" id="62"/>
 			<ShapeMesh ver="3" texture="kmr_kitchentif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -1048,7 +1049,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="Burner1" id="60"/>
+			<MapObject name="Burner1" id="61"/>
 			<ShapeMesh ver="3" texture="kmr_kitchentif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -1076,7 +1077,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="Stovetop" id="5F"/>
+			<MapObject name="Stovetop" id="60"/>
 			<ShapeMesh ver="3" texture="kmr_block_smalltif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -1142,7 +1143,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="Mattress" id="5E"/>
+			<MapObject name="Mattress" id="5F"/>
 			<ShapeMesh ver="3" texture="kmr_m_carpettif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -1192,7 +1193,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="Lamp2" id="5D"/>
+			<MapObject name="Lamp2" id="5E"/>
 			<ShapeMesh ver="3" texture="">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -1284,7 +1285,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="Lamp1" id="5C"/>
+			<MapObject name="Lamp1" id="5D"/>
 			<ShapeMesh ver="3" texture="">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -1384,7 +1385,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="Dresser3" id="5B"/>
+			<MapObject name="Dresser3" id="5C"/>
 			<ShapeMesh ver="3" texture="kmr_frametif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -1420,7 +1421,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="Dresser2" id="5A"/>
+			<MapObject name="Dresser2" id="5B"/>
 			<ShapeMesh ver="3" texture="kmr_frametif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -1504,7 +1505,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="Dresser1" id="59"/>
+			<MapObject name="Dresser1" id="5A"/>
 			<ShapeMesh ver="3" texture="kmr_frametif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -1604,7 +1605,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="Railing" id="58"/>
+			<MapObject name="Railing2" id="59"/>
 			<ShapeMesh ver="3" texture="kmr_mac_hashigotif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -1616,14 +1617,36 @@
 							<Vertex xyz="-57,116,400" uv="1024,3532"/>
 							<Vertex xyz="-57,100,400" uv="496,3532"/>
 							<Vertex xyz="-107,100,400" uv="497,522"/>
-							<Vertex xyz="-107,116,475" uv="1026,-2488"/>
-							<Vertex xyz="-107,100,475" uv="497,-2488"/>
 						</VertexTable>
 						<TriangleList>
 							<Triangle ijk="0,1,2"/>
 							<Triangle ijk="2,3,0"/>
-							<Triangle ijk="4,3,0"/>
-							<Triangle ijk="3,4,5"/>
+						</TriangleList>
+					</TriangleBatch>
+				</DisplayList>
+			</ShapeMesh>
+			<PropertyList>
+				<Property v="5C,0,16"/>
+				<Property v="5F,0,0"/>
+			</PropertyList>
+		</Model>
+		<Model ver="2" type="MODEL" lightset="0">
+			<MapObject name="Railing" id="58"/>
+			<ShapeMesh ver="3" texture="kmr_mac_hashigotif">
+				<DisplayList>
+					<F3DEX2 cmd="E7000000,0"/>
+					<F3DEX2 cmd="D9FDFFFF,0"/>
+					<F3DEX2 cmd="D9FFFFFF,200400"/>
+					<TriangleBatch ver="0">
+						<VertexTable>
+							<Vertex xyz="-107,116,475" uv="1026,-2488"/>
+							<Vertex xyz="-107,100,400" uv="497,522"/>
+							<Vertex xyz="-107,116,400" uv="1025,522"/>
+							<Vertex xyz="-107,100,475" uv="497,-2488"/>
+						</VertexTable>
+						<TriangleList>
+							<Triangle ijk="0,1,2"/>
+							<Triangle ijk="1,0,3"/>
 						</TriangleList>
 					</TriangleBatch>
 				</DisplayList>
