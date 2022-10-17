@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SpriteTable>
 	<NpcSprites>
-		<Sprite id="1" src="01" name="World Goombario"/>
+		<Sprite id="1" src="01" name="World Virgil"/>
 		<Sprite id="2" src="02" name="World Kooper"/>
 		<Sprite id="3" src="03" name="World Bombette"/>
 		<Sprite id="4" src="04" name="World Parakarry"/>
