@@ -7,11 +7,11 @@
 [MaxHP]         2`b 
 [Coins]         1`b 
 [Flags]       00000200 
-[StatusTable] $StatusTable_8021A878_0D 
+[StatusTable] $StatusTable_Bzzap_0D 
 % ai
 [PartsCount]    6`s 
-[PartsTable]  $PartsTable_8021A924_0D 
-[Script]      $Script_Init_8021AA24_0D 
+[PartsTable]  $PartsTable_Bzzap_0D 
+[Script]      $Script_Init_Bzzap_0D 
 % move effectiveness
 [Escape]       40`b 
 [Item]         70`b 
@@ -173,7 +173,7 @@
 .Element:End
 }
 
-#new:StatusTable $StatusTable_8021A878_0D {
+#new:StatusTable $StatusTable_Bzzap_0D {
 .Status:Normal      0`
 .Status:Default     0`
 .Status:Sleep      60`
@@ -198,7 +198,7 @@
 .Status:End
 }
 
-#new:PartsTable $PartsTable_8021A924_0D {
+#new:PartsTable $PartsTable_Bzzap_0D {
 00800000 01000000 F92100FF $IdleAnimations_8021A820_0D $DefenseTable_8021A86C_0D 00000000 00000000 02F60000 00000000 
 00120001 02000000 001800FF $IdleAnimations_8021A820_0D $DefenseTable_8021A86C_0D 00000000 00000000 FFFB0000 00000000 
 00120001 03000000 001800FF $IdleAnimations_8021A820_0D $DefenseTable_8021A86C_0D 00000000 00000000 FFFB0000 00000000 
@@ -207,10 +207,10 @@
 00120001 06000000 001800FF $IdleAnimations_8021A820_0D $DefenseTable_8021A86C_0D 00000000 00000000 FFFB0000 00000000 
 }
 
-#new:Script $Script_Init_8021AA24_0D {
-    0:  Call  BindTakeTurn  ( .Actor:Self $Script_TakeTurn_8021D28C_0D )
-   14:  Call  BindIdle      ( .Actor:Self $Script_Idle_8021AB10_0D )
-   28:  Call  BindHandleEvent   ( .Actor:Self $Script_HandleEvent_8021ACA8_0D )
+#new:Script $Script_Init_Bzzap_0D {
+    0:  Call  BindTakeTurn  ( .Actor:Self $Script_TakeTurn_Bzzap_0D )
+   14:  Call  BindIdle      ( .Actor:Self $Script_Idle_Bzzap_0D )
+   28:  Call  BindHandleEvent   ( .Actor:Self $Script_HandleEvent_Bzzap_0D )
    3C:  Call  SetPartScale  ( .Actor:Self 00000002 *Fixed[0.4] *Fixed[0.4] *Fixed[0.4] )
    5C:  Call  SetPartScale  ( .Actor:Self 00000003 *Fixed[0.4] *Fixed[0.4] *Fixed[0.4] )
    7C:  Call  SetPartScale  ( .Actor:Self 00000004 *Fixed[0.4] *Fixed[0.4] *Fixed[0.4] )
@@ -220,7 +220,7 @@
    E4:  End
 }
 
-#new:Script $Script_Idle_8021AB10_0D {
+#new:Script $Script_Idle_Bzzap_0D {
     0:  Label  0
     C:  Call  GetStatusFlags    ( .Actor:Self *VarA )
    20:  If  *VarA  &  ~Flags:StatusFlags:Sleep|Dizzy % 41000
@@ -248,7 +248,7 @@
    80:  End
 }
 
-#new:Script $Script_HandleEvent_8021ACA8_0D {
+#new:Script $Script_HandleEvent_Bzzap_0D {
     0:  Call  UseIdleAnimation  ( .Actor:Self .False )
    14:  Call  EnableIdleScript  ( .Actor:Self 00000000 )
    28:  Call  GetLastEvent      ( .Actor:Self *Var0 )
@@ -762,7 +762,7 @@
  1610:  End
 }
 
-#new:Script $Script_TakeTurn_8021D28C_0D {
+#new:Script $Script_TakeTurn_Bzzap_0D {
     0:  Call  GetBattlePhase    ( *Var0 )
    10:  If  *Var0  ==  00000001 
    20:  	ExecWait  $Script_8021B28C_0D 

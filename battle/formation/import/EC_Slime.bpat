@@ -81,16 +81,19 @@
 }
 
 #new:Script $Script_Init_Slime {
-    0:  Call  BindTakeTurn      ( .Actor:Self $Script_TakeTurn_Slime )
-   14:  Call  BindIdle  ( .Actor:Self $Script_Idle_Slime )
-   28:  Call  BindHandleEvent   ( .Actor:Self $Script_HandleEvent_Slime )
-   3C:  Return
-   44:  End
+  Call  BindTakeTurn      ( .Actor:Self $Script_TakeTurn_Slime )
+  Call  BindIdle  ( .Actor:Self $Script_Idle_Slime )
+  Call  BindHandleEvent   ( .Actor:Self $Script_HandleEvent_Slime )
+  %Set *Var0 1`
+  Call  SetActorVar ( .Actor:Self 0` 1` )  
+
+  Return
+  End
 }
 
 #new:Script $Script_Idle_Slime {
-  2CC:  Return
-  2D4:  End
+  Return
+  End
 }
 
 #new:Script $Script_HandleEvent_Slime {
@@ -211,6 +214,19 @@
 }
 
 #new:Script $Script_TakeTurn_Slime {
+  Call  GetActorVar ( .Actor:Self 0` *Var0 )
+  If  *Var0 != 0`
+    ExecWait $Script_Special_Attack_Slime
+  Else
+    If *Var0 == 0`
+       ExecWait $Script_Bite_Slime
+    EndIf
+  EndIf
+  Return
+  End
+}
+
+#new:Script $Script_Bite_Slime {
   Call  UseIdleAnimation  ( .Actor:Self .False )
   Call  EnableIdleScript ( .Actor:Self .False )
   Call  SetTargetActor ( .Actor:Self .Actor:Player )
