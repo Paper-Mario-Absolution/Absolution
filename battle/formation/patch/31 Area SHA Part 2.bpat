@@ -1,6 +1,6 @@
 #import 27_BanditA.bpat
 #import 06_KoopaTroopa.bpat
-#import enemy/06_BillBlaster.bpat
+#import 06_BillBlaster.bpat
 #import 07_YNinjakoopa.bpat
 
 #new:FormationTable $FormationTable
@@ -17,7 +17,7 @@
 	$06_BillBlaster 00000007 00000007 00000000 00000000 00000000 00000000
 }
 
-@ $Script_TakeTurn_802313B4_07 { %YNinjaKoopa's turn
+@ $Script_TakeTurn_YNinjakoopa_07 { %YNinjaKoopa's turn
   0:  Call  UseIdleAnimation  ( .Actor:Self .False )
    14:  Call  EnableIdleScript  ( .Actor:Self 00000000 )
    28:  Call  SetTargetActor    ( .Actor:Self .Actor:Player )

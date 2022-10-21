@@ -63,7 +63,7 @@
 .Element:End
 }
 
-#new:StatusTable $StatusTable_80221610_27 {
+#new:StatusTable $StatusTable_BanditA_27 {
 .Status:Normal      0`
 .Status:Default     0`
 .Status:Sleep      70`
@@ -88,7 +88,7 @@
 .Status:End
 }
 
-#new:PartsTable $PartsTable_802216BC_27 {
+#new:PartsTable $PartsTable_BanditA_27 {
 00800000 01000000 FE1C00FF $IdleAnimations_80221560_27 $DefenseTable_80221604_27 00000000 00000000 00F40000 00000000 
 00020001 02001E00 000000FF $IdleAnimations_802215F8_27 $DefenseTable_80221604_27 00000000 00000000 00000000 00000000 
 }
@@ -104,7 +104,7 @@
 [MaxHP]         1`b 
 [Coins]         1`b 
 [Flags]       00600000 
-[StatusTable] $StatusTable_80221610_27 
+[StatusTable] $StatusTable_BanditA_27 
 % ai
 [PartsCount]    1`s 
 [PartsTable]  $PartsTable_80221704_27 
@@ -132,7 +132,7 @@
 $BanditB_27 $Vector3D_80221778_27 00000000 00000000 00000000 00000000 00000000 
 }
 
-#new:Script $Script_Init_802217A0_27 {
+#new:Script $Script_Init_BanditA_27 {
     0:  Call  BindTakeTurn  ( .Actor:Self $Script_TakeTurn_BanditA_27 )
    14:  Call  BindIdle      ( .Actor:Self $Script_Idle_BanditA_27 )
    28:  Call  BindHandleEvent   ( .Actor:Self $Script_HandleEvent_BanditA_27 )

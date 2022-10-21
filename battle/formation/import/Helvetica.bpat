@@ -556,7 +556,7 @@
       1B8:  		Call  SetActorVar       ( .Actor:Self 00000000 00000000 )
       1D0:  		Call  SetIdleAnimations ( .Actor:Self 00000001 $IdleAnimations_8021CA20_22 )
       1E8:  		Call  SetDefenseTable   ( .Actor:Self 00000001 $DefenseTable_8021CA84_22 )
-      200:  		Call  SetStatusTable    ( .Actor:Self $StatusTable_8021CABC_22 )
+      200:  		Call  SetStatusTable    ( .Actor:Self $StatusTable_Helvetica_22 )
       214:  		Call  SetPartFlagBits   ( .Actor:Self 00000001 00002000 .False )
       230:  		Call  SetTargetOffset   ( .Actor:Self 00000001  -8`  30` )
       24C:  		Call  8027D4C8  ( FFFFFF81 00000001 FFFFFFFF FFFFFFF6 )
@@ -596,7 +596,7 @@
                 ExecWait $Script_Skull_Attack_00
               Default
                 Call SetActorVar ( .Actor:Self 00000003 00000003)
-                ExecWait $Script_Bone_Attack_02
+                ExecWait $Script_Bone_Attack_00
               
             EndSwitch
       910:  Call  EnableIdleScript  ( .Actor:Self 00000001 )

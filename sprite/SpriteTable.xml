@@ -237,6 +237,7 @@
 		<Sprite id="EA" src="EA" name="Hefty Guy"/>
 		<Sprite id="EB" src="EB" name="Little Horn"/>
 		<Sprite id="EC" src="EC" name="Slime"/>
+		<Sprite id="ED" src="ED" name="Clock"/>
 	</NpcSprites>
 	<PlayerSprites>
 		<Sprite id="1" src="01" name="Mario 1"/>

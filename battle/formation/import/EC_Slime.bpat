@@ -216,7 +216,7 @@
 #new:Script $Script_TakeTurn_Slime {
   Call  GetActorVar ( .Actor:Self 0` *Var0 )
   If  *Var0 != 0`
-    ExecWait $Script_Special_Attack_Slime
+    ExecWait $Script_Bite_Slime
   Else
     If *Var0 == 0`
        ExecWait $Script_Bite_Slime
