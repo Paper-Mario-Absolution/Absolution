@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SpriteSheet maxComponents="1" paletteGroups="1">
+	<PaletteList>
+		<Palette id="0" src="Palette_00.png"/>
+		<Palette id="1" src="Palette_01.png"/>
+		<Palette id="2" src="Palette_02.png"/>
+		<Palette id="3" src="Palette_03.png"/>
+		<Palette id="4" src="Palette_04.png"/>
+	</PaletteList>
+	<RasterList>
+		<Raster id="0" palette="0" src="Raster_00.png"/>
+		<Raster id="1" palette="0" src="Raster_01.png"/>
+		<Raster id="2" palette="0" src="Raster_02.png"/>
+	</RasterList>
+	<AnimationList>
+		<Animation name="Static">
+			<Component name="Comp_00" xyz="0,0,0">
+				<Command val="1000"/>
+				<Command val="2"/>
+				<Command val="2000"/>
+			</Component>
+			<Component name="Foot" xyz="-8,-3,-1">
+				<Command val="1001"/>
+				<Command val="2"/>
+				<Command val="2000"/>
+			</Component>
+			<Component name="Foot2" xyz="8,-3,1">
+				<Command val="1001"/>
+				<Command val="2"/>
+				<Command val="2000"/>
+			</Component>
+			<Component name="Sign" xyz="-19,-2,-2">
+				<Command val="1002"/>
+				<Command val="2"/>
+				<Command val="2000"/>
+			</Component>
+		</Animation>
+		<Animation name="Idle">
+			<Component name="Comp_00" xyz="0,0,0">
+				<Command val="1000"/>
+				<Command val="10"/>
+				<Command val="3000"/>
+				<Command val="0"/>
+				<Command val="FFFF"/>
+				<Command val="0"/>
+				<Command val="10"/>
+				<Command val="2000"/>
+			</Component>
+			<Component name="Foot" xyz="-8,-3,-1">
+				<Command val="1001"/>
+				<Command val="2"/>
+				<Command val="2000"/>
+			</Component>
+			<Component name="Foot2" xyz="8,-3,1">
+				<Command val="1001"/>
+				<Command val="2"/>
+				<Command val="2000"/>
+			</Component>
+			<Component name="Sign" xyz="-19,-2,-2">
+				<Command val="1002"/>
+				<Command val="2"/>
+				<Command val="2000"/>
+			</Component>
+		</Animation>
+		<Animation name="Appear">
+			<Component name="Comp_00" xyz="0,0,0">
+				<Command val="5002"/>
+				<Command val="0"/>
+				<Command val="1000"/>
+				<Command val="2"/>
+				<Command val="5002"/>
+				<Command val="A"/>
+				<Command val="2"/>
+				<Command val="5002"/>
+				<Command val="14"/>
+				<Command val="2"/>
+				<Command val="5002"/>
+				<Command val="1E"/>
+				<Command val="2"/>
+				<Command val="5002"/>
+				<Command val="28"/>
+				<Command val="2"/>
+				<Command val="5002"/>
+				<Command val="32"/>
+				<Command val="2"/>
+				<Command val="5002"/>
+				<Command val="3C"/>
+				<Command val="2"/>
+				<Command val="5002"/>
+				<Command val="46"/>
+				<Command val="2"/>
+				<Command val="5002"/>
+				<Command val="50"/>
+				<Command val="2"/>
+				<Command val="5002"/>
+				<Command val="5A"/>
+				<Command val="2"/>
+				<Command val="5002"/>
+				<Command val="64"/>
+			</Component>
+			<Component name="Comp_01" xyz="-8,-3,-1">
+				<Command val="5002"/>
+				<Command val="0"/>
+				<Command val="1001"/>
+				<Command val="2"/>
+				<Command val="5002"/>
+				<Command val="A"/>
+				<Command val="2"/>
+				<Command val="5002"/>
+				<Command val="14"/>
+				<Command val="2"/>
+				<Command val="5002"/>
+				<Command val="1E"/>
+				<Command val="2"/>
+				<Command val="5002"/>
+				<Command val="28"/>
+				<Command val="2"/>
+				<Command val="5002"/>
+				<Command val="32"/>
+				<Command val="2"/>
+				<Command val="5002"/>
+				<Command val="3C"/>
+				<Command val="2"/>
+				<Command val="5002"/>
+				<Command val="46"/>
+				<Command val="2"/>
+				<Command val="5002"/>
+				<Command val="50"/>
+				<Command val="2"/>
+				<Command val="5002"/>
+				<Command val="5A"/>
+				<Command val="2"/>
+				<Command val="5002"/>
+				<Command val="64"/>
+			</Component>
+			<Component name="Comp_02" xyz="8,-3,1">
+				<Command val="5002"/>
+				<Command val="0"/>
+				<Command val="1001"/>
+				<Command val="2"/>
+				<Command val="5002"/>
+				<Command val="A"/>
+				<Command val="2"/>
+				<Command val="5002"/>
+				<Command val="14"/>
+				<Command val="2"/>
+				<Command val="5002"/>
+				<Command val="1E"/>
+				<Command val="2"/>
+				<Command val="5002"/>
+				<Command val="28"/>
+				<Command val="2"/>
+				<Command val="5002"/>
+				<Command val="32"/>
+				<Command val="2"/>
+				<Command val="5002"/>
+				<Command val="3C"/>
+				<Command val="2"/>
+				<Command val="5002"/>
+				<Command val="46"/>
+				<Command val="2"/>
+				<Command val="5002"/>
+				<Command val="50"/>
+				<Command val="2"/>
+				<Command val="5002"/>
+				<Command val="5A"/>
+				<Command val="2"/>
+				<Command val="5002"/>
+				<Command val="64"/>
+			</Component>
+			<Component name="Comp_03" xyz="-19,-2,-2">
+				<Command val="5002"/>
+				<Command val="0"/>
+				<Command val="1002"/>
+				<Command val="2"/>
+				<Command val="5002"/>
+				<Command val="A"/>
+				<Command val="2"/>
+				<Command val="5002"/>
+				<Command val="14"/>
+				<Command val="2"/>
+				<Command val="5002"/>
+				<Command val="1E"/>
+				<Command val="2"/>
+				<Command val="5002"/>
+				<Command val="28"/>
+				<Command val="2"/>
+				<Command val="5002"/>
+				<Command val="32"/>
+				<Command val="2"/>
+				<Command val="5002"/>
+				<Command val="3C"/>
+				<Command val="2"/>
+				<Command val="5002"/>
+				<Command val="46"/>
+				<Command val="2"/>
+				<Command val="5002"/>
+				<Command val="50"/>
+				<Command val="2"/>
+				<Command val="5002"/>
+				<Command val="5A"/>
+				<Command val="2"/>
+				<Command val="5002"/>
+				<Command val="64"/>
+			</Component>
+		</Animation>
+		<Animation name="Whack">
+			<Component name="Comp_00" xyz="0,0,0">
+				<Command val="1000"/>
+				<Command val="2"/>
+				<Command val="2000"/>
+			</Component>
+			<Component name="Foot" xyz="-8,-3,-1">
+				<Command val="1001"/>
+				<Command val="2"/>
+				<Command val="2000"/>
+			</Component>
+			<Component name="Foot2" xyz="8,-3,1">
+				<Command val="1001"/>
+				<Command val="2"/>
+				<Command val="2000"/>
+			</Component>
+			<Component name="Sign" xyz="-19,-2,-2">
+				<Command val="1002"/>
+				<Command val="8"/>
+				<Command val="4000"/>
+				<Command val="0"/>
+				<Command val="FFF6"/>
+				<Command val="20"/>
+				<Command val="4000"/>
+				<Command val="0"/>
+				<Command val="5A"/>
+				<Command val="3000"/>
+				<Command val="28"/>
+				<Command val="12"/>
+				<Command val="0"/>
+				<Command val="2"/>
+				<Command val="2006"/>
+			</Component>
+		</Animation>
+		<Animation name="Disappear">
+			<Component name="Comp_00" xyz="0,0,0">
+				<Command val="5001"/>
+				<Command val="64"/>
+				<Command val="1000"/>
+				<Command val="2"/>
+				<Command val="5001"/>
+				<Command val="5A"/>
+				<Command val="2"/>
+				<Command val="5001"/>
+				<Command val="50"/>
+				<Command val="2"/>
+				<Command val="5001"/>
+				<Command val="46"/>
+				<Command val="2"/>
+				<Command val="5001"/>
+				<Command val="3C"/>
+				<Command val="2"/>
+				<Command val="5001"/>
+				<Command val="32"/>
+				<Command val="2"/>
+				<Command val="5001"/>
+				<Command val="28"/>
+				<Command val="2"/>
+				<Command val="5001"/>
+				<Command val="1E"/>
+				<Command val="2"/>
+				<Command val="5001"/>
+				<Command val="14"/>
+				<Command val="2"/>
+				<Command val="5001"/>
+				<Command val="A"/>
+				<Command val="2"/>
+				<Command val="5001"/>
+				<Command val="0"/>
+				<Command val="201E"/>
+			</Component>
+			<Component name="Comp_01" xyz="-8,-3,-1">
+				<Command val="5001"/>
+				<Command val="64"/>
+				<Command val="1001"/>
+				<Command val="2"/>
+				<Command val="5001"/>
+				<Command val="5A"/>
+				<Command val="2"/>
+				<Command val="5001"/>
+				<Command val="50"/>
+				<Command val="2"/>
+				<Command val="5001"/>
+				<Command val="46"/>
+				<Command val="2"/>
+				<Command val="5001"/>
+				<Command val="3C"/>
+				<Command val="2"/>
+				<Command val="5001"/>
+				<Command val="32"/>
+				<Command val="2"/>
+				<Command val="5001"/>
+				<Command val="28"/>
+				<Command val="2"/>
+				<Command val="5001"/>
+				<Command val="1E"/>
+				<Command val="2"/>
+				<Command val="5001"/>
+				<Command val="14"/>
+				<Command val="2"/>
+				<Command val="5001"/>
+				<Command val="A"/>
+				<Command val="2"/>
+				<Command val="5001"/>
+				<Command val="0"/>
+				<Command val="201E"/>
+			</Component>
+			<Component name="Comp_02" xyz="8,-3,1">
+				<Command val="5001"/>
+				<Command val="64"/>
+				<Command val="1001"/>
+				<Command val="2"/>
+				<Command val="5001"/>
+				<Command val="5A"/>
+				<Command val="2"/>
+				<Command val="5001"/>
+				<Command val="50"/>
+				<Command val="2"/>
+				<Command val="5001"/>
+				<Command val="46"/>
+				<Command val="2"/>
+				<Command val="5001"/>
+				<Command val="3C"/>
+				<Command val="2"/>
+				<Command val="5001"/>
+				<Command val="32"/>
+				<Command val="2"/>
+				<Command val="5001"/>
+				<Command val="28"/>
+				<Command val="2"/>
+				<Command val="5001"/>
+				<Command val="1E"/>
+				<Command val="2"/>
+				<Command val="5001"/>
+				<Command val="14"/>
+				<Command val="2"/>
+				<Command val="5001"/>
+				<Command val="A"/>
+				<Command val="2"/>
+				<Command val="5001"/>
+				<Command val="0"/>
+				<Command val="201E"/>
+			</Component>
+			<Component name="Comp_03" xyz="-19,-2,-2">
+				<Command val="5001"/>
+				<Command val="64"/>
+				<Command val="1002"/>
+				<Command val="2"/>
+				<Command val="5001"/>
+				<Command val="5A"/>
+				<Command val="2"/>
+				<Command val="5001"/>
+				<Command val="50"/>
+				<Command val="2"/>
+				<Command val="5001"/>
+				<Command val="46"/>
+				<Command val="2"/>
+				<Command val="5001"/>
+				<Command val="3C"/>
+				<Command val="2"/>
+				<Command val="5001"/>
+				<Command val="32"/>
+				<Command val="2"/>
+				<Command val="5001"/>
+				<Command val="28"/>
+				<Command val="2"/>
+				<Command val="5001"/>
+				<Command val="1E"/>
+				<Command val="2"/>
+				<Command val="5001"/>
+				<Command val="14"/>
+				<Command val="2"/>
+				<Command val="5001"/>
+				<Command val="A"/>
+				<Command val="2"/>
+				<Command val="5001"/>
+				<Command val="0"/>
+				<Command val="201E"/>
+			</Component>
+		</Animation>
+	</AnimationList>
+</SpriteSheet>

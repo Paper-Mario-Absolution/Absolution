@@ -238,6 +238,7 @@
 		<Sprite id="EB" src="EB" name="Little Horn"/>
 		<Sprite id="EC" src="EC" name="Slime"/>
 		<Sprite id="ED" src="ED" name="Clock"/>
+		<Sprite id="EE" src="EE" name="Pak E Derm"/>
 	</NpcSprites>
 	<PlayerSprites>
 		<Sprite id="1" src="01" name="Mario 1"/>
