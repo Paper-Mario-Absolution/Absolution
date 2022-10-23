@@ -1,0 +1,13 @@
+$Script_Main#Script_Main#0#80240000#A8
+$Start#Unknown#0#80240000#0
+$Script_EnterMap#Script#A8#802400A8#70
+$Script_Exit_w#Script#118#80240118#5C
+$Header#Header#174#80240174#40
+$Script_MakeEntities#Script#1B4#802401B4#38
+$Script_SetupMusic#Script#1EC#802401EC#34
+$Function_Init#Function_Init#220#80240220#2C
+$Script_CreateExitTriggers#Script#24C#8024024C#2C
+$EntryList#EntryList#278#80240278#10
+$ASCII_"sha_02"_Literal#ASCII#288#80240288#C
+$ASCII_"iwa_tex"_Literal#ASCII#294#80240294#8
+$End#Unknown#2A0#802402A0#27D60

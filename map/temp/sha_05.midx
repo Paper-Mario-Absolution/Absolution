@@ -1,0 +1,14 @@
+$Script_Main#Script_Main#0#80240000#9C
+$Start#Unknown#0#80240000#0
+$Script_EnterMap#Script#9C#8024009C#90
+$Script_Exit_s#Script#12C#8024012C#5C
+$Script_Exit_w#Script#188#80240188#5C
+$Script_CreateExitTriggers#Script#1E4#802401E4#48
+$EntryList#EntryList#22C#8024022C#40
+$Header#Header#26C#8024026C#40
+$Script_SetupMusic#Script#2AC#802402AC#34
+$Function_Init#Function_Init#2E0#802402E0#2C
+$ASCII_"sha_04"_Literal#ASCII#30C#8024030C#C
+$ASCII_"sha_03"_Literal#ASCII#318#80240318#C
+$ASCII_"kmr_tex"_Literal#ASCII#324#80240324#8
+$End#Unknown#330#80240330#27CD0

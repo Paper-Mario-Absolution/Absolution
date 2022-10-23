@@ -588,6 +588,8 @@
 		<Map name="sha_02" nickname="Oasis"/>
 		<Map name="sha_03" nickname="Holdup Point"/>
 		<Map name="sha_04" nickname="Prickle Pass"/>
+		<Map name="sha_05" nickname="Bandit Base"/>
+		<Map name="sha_06" nickname="Syrup Sidepath"/>
 		<Stage name="sha_bt01"/>
 		<Stage name="sha_bt02"/>
 	</Area>

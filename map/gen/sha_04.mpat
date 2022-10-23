@@ -11,8 +11,8 @@
 #new:EntryList $EntryList
 {
 	~Vec4f:entry_e
-	~Vec4f:entry_se
-	~Vec4f:entry_ne
+	~Vec4f:entry_s
+	~Vec4f:entry_n
 }
 
 #new:Script_Main $Script_Main
@@ -51,8 +51,8 @@
 {
 	Call  GetEntryID    ( *Var[0] )
 	Switch  *Var[0]
-		CaseOR  ==  ~Entry:entry_ne
-		CaseOR  ==  ~Entry:entry_se
+		CaseOR  ==  ~Entry:entry_n
+		CaseOR  ==  ~Entry:entry_s
 			Set   *Var[0] $Script_CreateExitTriggers
 			Exec  EnterWalk
 		EndCaseGroup
@@ -63,8 +63,32 @@
 	End
 }
 
+#new:Script $Script_Exit_n
+{
+	SetGroup 0000001B
+	Call     UseExitHeading ( 60` ~Entry:entry_n )
+	Exec     ExitWalk
+	Call  GotoMap   ( "sha_05" ~Entry:sha_05:entry_w )
+	Wait  100`
+	Return
+	End
+}
+
+#new:Script $Script_Exit_s
+{
+	SetGroup 0000001B
+	Call     UseExitHeading ( 60` ~Entry:entry_s )
+	Exec     ExitWalk
+	Call  GotoMap   ( "sha_02" ~Entry:sha_02:entry_w )
+	Wait  100`
+	Return
+	End
+}
+
 #new:Script $Script_CreateExitTriggers
 {
+	Bind  $Script_Exit_n .Trigger:FloorAbove ~Collider:ExitNorth 00000001 00000000
+	Bind  $Script_Exit_s .Trigger:FloorAbove ~Collider:ExitSouth 00000001 00000000
 	Return
 	End
 }

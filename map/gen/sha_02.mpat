@@ -5,7 +5,7 @@
 	[MainScript] $Script_Main
 	[Background] 80200000
 	[EntryList] $EntryList
-	[EntryCount] 3
+	[EntryCount] 4
 }
 
 #new:EntryList $EntryList
@@ -13,6 +13,7 @@
 	~Vec4f:entry_n
 	~Vec4f:entry_s
 	~Vec4f:entry_w
+	~Vec4f:entry_e
 }
 
 #new:Script $Script_TexturePan_Update
@@ -680,9 +681,13 @@
 {
 	Call  GetEntryID    ( *Var[0] )
 	Switch  *Var[0]
-		Case  ==  ~Entry:entry_s
+		CaseOR  ==  ~Entry:entry_w
+		CaseOR  ==  ~Entry:entry_e
+		CaseOR  ==  ~Entry:entry_n
+		CaseOR  ==  ~Entry:entry_s
 			Set   *Var[0] $Script_CreateExitTriggers
 			Exec  EnterWalk
+		EndCaseGroup
 		Default
 			Exec  $Script_CreateExitTriggers
 	EndSwitch
@@ -690,7 +695,40 @@
 	End
 }
 
-#new:Script $Script_ExitS
+#new:Script $Script_Exit_e
+{
+	SetGroup 0000001B
+	Call     UseExitHeading ( 60` ~Entry:entry_e )
+	Exec     ExitWalk
+	Call  GotoMap   ( "sha_06" ~Entry:sha_06:entry_w )
+	Wait  100`
+	Return
+	End
+}
+
+#new:Script $Script_Exit_w
+{
+	SetGroup 0000001B
+	Call     UseExitHeading ( 60` ~Entry:entry_w )
+	Exec     ExitWalk
+	Call  GotoMap   ( "sha_04" ~Entry:sha_04:entry_s )
+	Wait  100`
+	Return
+	End
+}
+
+#new:Script $Script_Exit_n
+{
+	SetGroup 0000001B
+	Call     UseExitHeading ( 60` ~Entry:entry_n )
+	Exec     ExitWalk
+	Call  GotoMap   ( "sha_03" ~Entry:sha_03:entry_s )
+	Wait  100`
+	Return
+	End
+}
+
+#new:Script $Script_Exit_s
 {
 	SetGroup 0000001B
 	Call     UseExitHeading ( 60` ~Entry:entry_s )
@@ -703,7 +741,10 @@
 
 #new:Script $Script_CreateExitTriggers
 {
-	Bind  $Script_ExitS .Trigger:FloorAbove ~Collider:exit_trigger_s 00000001 00000000
+	Bind  $Script_Exit_e .Trigger:FloorAbove ~Collider:exit_trigger_e 00000001 00000000
+	Bind  $Script_Exit_w .Trigger:FloorAbove ~Collider:exit_trigger_w 00000001 00000000
+	Bind  $Script_Exit_n .Trigger:FloorAbove ~Collider:exit_trigger_n 00000001 00000000
+	Bind  $Script_Exit_s .Trigger:FloorAbove ~Collider:exit_trigger_s 00000001 00000000
 	Return
 	End
 }
