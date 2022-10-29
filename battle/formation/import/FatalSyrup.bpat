@@ -1,0 +1,320 @@
+% Define Animations
+#define .Anim:slimeStatic 00EC0200
+#define .Anim:slimeIdle 00EC0201
+#define .Anim:slimeWalk 00EC0202
+#define .Anim:slimeRun 00EC0203
+#define .Anim:slimeBite 00EC0204
+#define .Anim:slimeHurt 00EC0205
+
+% Define Parts
+#define .Part:fatalSyrup 1
+
+% Define Stats
+#define .HP:fatalSyrup 2`b
+#define .Damage:slimeBite 3`
+
+#new:Actor $FatalSyrup 
+{
+% stats
+[Index]         D4b 
+[Level]         5`b 
+[MaxHP]         .HP:fatalSyrup 
+[Coins]         1`b 
+[Flags]       00000000 
+[StatusTable] $StatusTable_Slime 
+% ai
+[PartsCount]    1`s 
+[PartsTable]  $PartsTable_FatalSyrup 
+[Script]      $Script_Init_Slime 
+% move effectiveness
+[Escape]       90`b 
+[Item]        100`b 
+[AirLift]     100`b 
+[Hurricane]    90`b % Bow's "Spook" as well
+[UpAndAway]    95`b 
+[PowerBounce] 100`b 
+[SpinSmash]     0`b % weight (0-4)
+% ui positions
+[Size]         64`b  64`b % width height
+[HealthBar]     0`b   0`b % dx dy
+[StatusTurn]  -10`b  20`b % dx dy
+[StatusIcon]   10`b  20`b % dx dy
+}
+
+#new:DefenseTable $DefenseTable_Slime 
+{
+.Element:Normal 0`
+.Element:End
+}
+
+#new:StatusTable $StatusTable_Slime 
+{
+.Status:Normal      0`
+.Status:Default     0`
+.Status:Sleep     100`
+.Status:Poison    100`
+.Status:Frozen    100`
+.Status:Dizzy     100`
+.Status:Fear      100`
+.Status:Static    100`
+.Status:Paralyze  100`
+.Status:Shrink    100`
+.Status:Stop      100`
+.Status:DefaultTurnMod    0`
+.Status:SleepTurnMod      0`
+.Status:PoisonTurnMod     0`
+.Status:FrozenTurnMod     0`
+.Status:DizzyTurnMod      0`
+.Status:FearTurnMod       0`
+.Status:StaticTurnMod     0`
+.Status:ParalyzeTurnMod   0`
+.Status:ShrinkTurnMod     0`
+.Status:StopTurnMod       0`
+.Status:End
+}
+
+#new:PartsTable $PartsTable_FatalSyrup { %ActorPartBlueprint struct in decomp
+  /% s32 flags %/                 00800000
+  /% s8 index %/                  ~Byte:.Part:fatalSyrup
+  /% Vec3b posOffset %/           00b 00b 00b
+  /% Vec2b targetOffset %/        00b 23b %for cursor when selecting to attack in battle
+  /% s16 opacity %/               00FFs
+  /% s32* IdleAnimations %/       $IdleAnimations_Slime
+  /% s32* defenseTable %/         $DefenseTable_Slime
+  /% s32 eventFlags %/            00000000
+  /% s32 elementImmunityFlags %/  00000000
+  /% s8 unk_1C %/                 FFb
+  /% s8 unk_1D %/                 F6b
+  /% s8 unk_1E %/                 00b
+  /% s8 unk_1F %/                 00b
+  /% s8 unk_20 %/                 00000000
+}
+
+#new:IdleAnimations $IdleAnimations_Slime 
+{
+.Status:Normal    .Anim:slimeIdle
+.Status:Stone     .Anim:slimeStatic
+.Status:Sleep     .Anim:slimeIdle
+.Status:Poison    .Anim:slimeIdle
+.Status:Stop      .Anim:slimeStatic
+.Status:Static    .Anim:slimeStatic
+.Status:Paralyze  .Anim:slimeStatic
+.Status:Dizzy     .Anim:slimeIdle
+.Status:Fear      .Anim:slimeRun
+.Status:End
+}
+
+#new:Script $Script_Init_Slime 
+{
+  Call  BindTakeTurn      ( .Actor:Self $Script_TakeTurn_Slime )
+  Call  BindIdle  ( .Actor:Self $Script_Idle_Slime )
+  Call  BindHandleEvent   ( .Actor:Self $Script_HandleEvent_Slime )
+  %Set *Var0 1`
+  Call  SetActorVar ( .Actor:Self 0` 1` )  
+
+  Return
+  End
+}
+
+#new:Script $Script_Idle_Slime 
+{
+  Return
+  End
+}
+
+#new:Script $Script_HandleEvent_Slime 
+{
+  Call  UseIdleAnimation  ( .Actor:Self .False )
+  Call  EnableIdleScript  ( .Actor:Self .False )
+  Call  SetActorScale     ( .Actor:Self *Fixed[1.0] *Fixed[1.0] *Fixed[1.0] )
+  Call  GetLastEvent      ( .Actor:Self *Var0 )
+  Switch  *Var0 
+    CaseOR  ==  .Event:HitCombo % 9
+    CaseOR  ==  .Event:Hit % A
+      SetConst  *Var0  .Part:fatalSyrup 
+      SetConst  *Var1  .Anim:slimeHurt 
+      ExecWait  DoNormalHit 
+    EndCaseGroup
+    Case  ==  .Event:BurnHit % E
+      SetConst  *Var0  .Part:fatalSyrup 
+      SetConst  *Var1  .Anim:slimeHurt 
+      SetConst  *Var2  .Anim:slimeHurt 
+      ExecWait  DoBurnHit 
+    Case  ==  .Event:BurnDeath % 24
+      SetConst  *Var0  .Part:fatalSyrup 
+      SetConst  *Var1  .Anim:slimeHurt 
+      SetConst  *Var2  .Anim:slimeHurt 
+      ExecWait  DoBurnHit 
+      SetConst  *Var0  .Part:fatalSyrup 
+      SetConst  *Var1  .Anim:slimeHurt 
+      ExecWait  DoDeath 
+      Return
+    Case  ==  .Event:SpinSmashHit % B
+      SetConst  *Var0  .Part:fatalSyrup 
+      SetConst  *Var1  .Anim:slimeHurt 
+      ExecWait  DoSpinSmashHit 
+    Case  ==  .Event:SpinSmashDeath % 21
+      SetConst  *Var0  .Part:fatalSyrup 
+      SetConst  *Var1  .Anim:slimeHurt 
+      ExecWait  DoSpinSmashHit 
+      SetConst  *Var0  .Part:fatalSyrup 
+      SetConst  *Var1  .Anim:slimeHurt 
+      ExecWait  DoDeath 
+      Return
+    Case  ==  .Event:ShockHit % 2F
+      SetConst  *Var0  .Part:fatalSyrup 
+      SetConst  *Var1  .Anim:slimeHurt 
+      ExecWait  DoShockHit 
+      SetConst  *Var0  .Part:fatalSyrup 
+      SetConst  *Var1  .Anim:slimeHurt 
+      ExecWait  DoJumpBack 
+      Call  JumpToGoal    ( .Actor:Self  5` .False .True .False )
+      Call  SetAnimationRate      ( .Actor:Self .Part:fatalSyrup *Fixed[2.0] )
+      Call  SetAnimation  ( .Actor:Self .Part:fatalSyrup .Anim:slimeHurt )
+      Call  SetGoalToHome ( .Actor:Self )
+      Call  SetActorSpeed ( .Actor:Self *Fixed[8.0] )
+      Call  RunToGoal     ( .Actor:Self  0` .False )
+      Call  SetAnimationRate      ( .Actor:Self .Part:fatalSyrup *Fixed[1.0] )
+      Wait  5`
+      Call  SetAnimation  ( .Actor:Self .Part:fatalSyrup .Anim:slimeHurt )
+      Call  SetActorJumpGravity   ( .Actor:Self *Fixed[1.6] )
+      Call  JumpToGoal    ( .Actor:Self  5` .False .True .False )
+    Case  ==  .Event:ShockDeath % 26
+      SetConst  *Var0  .Part:fatalSyrup 
+      SetConst  *Var1  .Anim:slimeHurt 
+      ExecWait  DoShockHit 
+      SetConst  *Var0  .Part:fatalSyrup 
+      SetConst  *Var1  .Anim:slimeHurt 
+      ExecWait  DoDeath 
+      Return
+    Case  ==  .Event:StarBeam % 13
+    CaseOR  ==  00000017 % 17
+    CaseOR  ==  .Event:Immune % 19
+    CaseOR  ==  .Event:AirLiftFailed % 1F
+      SetConst  *Var0  .Part:fatalSyrup 
+      SetConst  *Var1  .Anim:slimeHurt 
+      ExecWait  DoImmune 
+    EndCaseGroup
+    Case  ==  .Event:Death % 20
+      SetConst  *Var0  .Part:fatalSyrup 
+      SetConst  *Var1  .Anim:slimeHurt 
+      ExecWait  DoNormalHit 
+      Wait  10`
+      SetConst  *Var0  .Part:fatalSyrup 
+      SetConst  *Var1  .Anim:slimeHurt 
+      ExecWait  DoDeath 
+      Return
+    Case  ==  .Event:EndFirstStrike % 35
+      Call  SetAnimationRate  ( .Actor:Self .Part:fatalSyrup *Fixed[2.0] )
+      Call  SetAnimation  ( .Actor:Self .Part:fatalSyrup .Anim:slimeHurt )
+      Call  SetGoalToHome ( .Actor:Self )
+      Call  SetActorSpeed ( .Actor:Self *Fixed[4.0] )
+      Call  RunToGoal     ( .Actor:Self  0` .False )
+      Call  SetAnimationRate  ( .Actor:Self .Part:fatalSyrup *Fixed[1.0] )
+      Call  HPBarToHome   ( .Actor:Self )
+    Case  ==  .Event:RecoverStatus % 31
+      SetConst  *Var0  .Part:fatalSyrup 
+      SetConst  *Var1  .Anim:slimeIdle 
+      ExecWait  DoRecover 
+    Case  ==  .Event:ScareAway % 39
+      SetConst  *Var0  .Part:fatalSyrup 
+      SetConst  *Var1  .Anim:slimeHurt 
+      SetConst  *Var2  .Anim:slimeHurt 
+      ExecWait  DoScareAway 
+      Return
+    Case  ==  .Event:BeginAirLift % 3A
+      SetConst  *Var0  .Part:fatalSyrup 
+      SetConst  *Var1  .Anim:slimeHurt 
+      ExecWait  DoAirLift 
+    Case  ==  .Event:BlowAway % 16
+      SetConst  *Var0  .Part:fatalSyrup 
+      SetConst  *Var1  .Anim:slimeHurt 
+      ExecWait  DoBlowAway 
+      Return
+    Default
+  EndSwitch
+  Call  SetAnimation      ( .Actor:Self .Part:fatalSyrup .Anim:slimeIdle )
+  Call  EnableIdleScript  ( .Actor:Self .True )
+  Call  UseIdleAnimation  ( .Actor:Self .True )
+  Return
+  End
+}
+
+#new:Script $Script_TakeTurn_Slime 
+{
+  Call  GetActorVar ( .Actor:Self 0` *Var0 )
+  If  *Var0 != 0`
+    ExecWait $Script_Bite_Slime
+  Else
+    If *Var0 == 0`
+       ExecWait $Script_Bite_Slime
+    EndIf
+  EndIf
+  Return
+  End
+}
+
+#new:Script $Script_Bite_Slime 
+{
+  Call  UseIdleAnimation  ( .Actor:Self .False )
+  Call  EnableIdleScript ( .Actor:Self .False )
+  Call  SetTargetActor ( .Actor:Self .Actor:Player )
+  Call  SetAnimation ( .Actor:Self .Part:fatalSyrup .Anim:slimeRun )
+  Call  SetGoalToTarget ( .Actor:Self )
+  Call  AddGoalPos ( .Actor:Self 20` 0` 0` )
+  Call  SetActorSpeed ( .Actor:Self *Fixed[5.0] )
+  Call  RunToGoal ( .Actor:Self 0` .False )
+  Call  SetAnimation ( .Actor:Self .Part:fatalSyrup .Anim:slimeIdle )
+  Wait  10`
+  Call  SetAnimation ( .Actor:Self .Part:fatalSyrup .Anim:slimeRun )
+  Call  EnemyTestTarget   ( .Actor:Self *Var0 ~Flags:DamageType:0 00000000 00000001 00000010 )
+  Switch  *Var0
+    CaseOR == .HitResult:Miss % 6
+    CaseOR == .HitResult:Lucky % 5
+      Set    *VarA  *Var0
+      Wait 5`
+      If *VarA == .HitResult:Lucky % 5
+        Call  SetAnimation ( .Actor:Self .Part:fatalSyrup .Anim:slimeRun )
+        Wait  30`
+        Call  EnemyTestTarget ( .Actor:Self *Var0 ~Flags:DamageType:TriggerLucky 00000000 00000000 00000000 )
+      EndIf
+      Wait 5`
+      Call  YieldTurn ( )
+      Call  SetActorSpeed     ( .Actor:Self *Fixed[4.0] )
+      ExecWait $Script_Return_Home_Slime
+      Return
+    EndCaseGroup
+  EndSwitch
+  Call  SetAnimation ( .Actor:Self .Part:fatalSyrup .Anim:slimeRun )
+  Wait  20`
+  Call  SetGoalToTarget ( .Actor:Self )
+  Call  EnemyDamageTarget ( .Actor:Self *Var0 ~Flags:DamageType:0 00000000 00000000 .Damage:slimeBite 00000020 )
+  Wait  10`
+  Switch *Var0
+    CaseOR == .HitResult:Hit % 0
+    CaseOR == .HitResult:QuakeImmune % 2
+      Call  SetAnimation ( .Actor:Self .Part:fatalSyrup .Anim:slimeIdle )
+      Wait 15`
+      Call  YieldTurn ( )
+      ExecWait $Script_Return_Home_Slime
+    EndCaseGroup
+  EndSwitch
+  Call  UseIdleAnimation  ( .Actor:Self .True )
+  Call  EnableIdleScript ( .Actor:Self .True )
+  Return
+  End
+}
+
+#new:Script $Script_Return_Home_Slime 
+{
+  Call  UseBattleCamPreset    ( 00000002 )
+  Call  MoveBattleCamOver (  20` )
+  Call  SetAnimationRate      ( .Actor:Self .Part:fatalSyrup *Fixed[2.0] )
+  Call  SetAnimation      ( .Actor:Self .Part:fatalSyrup .Anim:slimeWalk )
+  Call  SetGoalToHome     ( .Actor:Self )
+  Call  SetActorSpeed ( .Actor:Self *Fixed[4.0] )
+  Call  RunToGoal     ( .Actor:Self  0` .False )
+  Call  SetAnimationRate      ( .Actor:Self .Part:fatalSyrup *Fixed[1.0] )
+  Return
+  End
+}
