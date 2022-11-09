@@ -11,6 +11,7 @@
     Exec  $Script_SetupTexturePan
     Exec  $Script_BindFoliage
     Exec  $Script_BindStuff
+    Exec  $Script_KnockStuffDown
     Exec  $Script_EnterMap
     Return
     End
@@ -61,7 +62,7 @@
 
 #new:Script $Script_KnockTree
 {
-    Call  MakeLerp  ( 00000000 88` 00000025 .Easing:Linear )
+    Call  MakeLerp  ( 00000000 88` 00000025 .Easing:QuadraticIn )
                     Label  0
                 Call  UpdateLerp ( )
                 Call  RotateModel ( ~Model:FallingTree *Var0 FFFFFFFF 00000000 FFFFFFFF )
@@ -69,7 +70,23 @@
                 If  *Var1  ==  00000001 
                   	Goto  0
                 EndIf
+    Call GetModelCenter ( ~Model:FallingTree )
+    Call  PlaySoundAt   ( 000000DD 00000000 *Var0 *Var1 *Var2 )
+    Thread
+   	    Call  ShakeCam  ( .Cam:Default 00000000  15` *Fixed[1.0] )
+    EndThread
     Call  ModifyColliderFlags   ( 00000000 ~Collider:TreeF 7FFFFE00 )
+    Set   *GB_StoryProgress  .Story:Ch0_FoundGatehouseSwitch
+    Return
+    End
+}
+
+#new:Script $Script_KnockStuffDown
+{
+    If  *GB_StoryProgress >=  .Story:Ch0_FoundGatehouseSwitch
+        Call  RotateModel ( ~Model:FallingTree 88` FFFFFFFF 00000000 FFFFFFFF )
+        Call  ModifyColliderFlags   ( 00000000 ~Collider:TreeF 7FFFFE00 )
+    EndIf
     Return
     End
 }
@@ -77,10 +94,12 @@
 #new:Script $Script_AnswerGate
 {
     Call  DisablePlayerInput    ( .True )
+    Call  DisablePartnerAI ( .True )
     Call  SpeakToPlayer ( .NpcID:Brigand1 00290014 00290004 00000000 000C000C )
     Call  SpeakToPlayer ( .Npc:Partner 00010008 00010001 00000000 000C000D )
     Call  SpeakToPlayer ( .NpcID:Brigand1 00290014 00290004 00000000 000C000E )
     Call  DisablePlayerInput    ( .False )
+    Call  EnablePartnerAI ( )
     Return
     End
 }

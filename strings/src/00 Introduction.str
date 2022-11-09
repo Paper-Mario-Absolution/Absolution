@@ -160,57 +160,86 @@
 
 #message:00:008
 {
-	[CenterX 159]which has the power to grant[BR]
-	all wishes.[End]
+	[Style Left]
+	Sorry, buddy. Can't in good[BR]
+	conscience let you pass.[BR]
+	There's bandits out there.[Wait][End]
 }
 
 #message:00:009
 {
-	[CenterX 159]Using this wondrous Star Rod,[BR]
-	the seven revered Star Spirits[End]
+	[Style Right]
+	It's cool, Lance. This guy's with[BR]
+	me. We're gonna take care of the[BR]
+	bandits together.[Wait][End]
 }
 
 #message:00:00A
 {
-	[CenterX 159]watched over our peaceful world[End]
+	[Style Left]
+	Oh hey, Virgil! You've always[BR]
+	come back from the valley just[BR]
+	fine, so...[BR]
+	[Wait][Next]
+	Sure, I guess I can let you[BR]
+	pass by.[Wait][End]
 }
 
 #message:00:00B
 {
-	[CenterX 159]carefully...very carefully.[End]
+	[Style Left]
+	Stay safe out there, buds.[Wait][End]
 }
 
 #message:00:00C
 {
-	[CenterX 159]And then...[End]
+	[Style Right]Well howdy doodly doo! That's[BR]
+	close enough, friend.[BR]
+	[Wait][Next]
+	Unluckily for you, you've just[BR]
+	run headlong into the Sandbag[BR]
+	Brigands![Wait][End]
 }
 
 #message:00:00D
 {
-	[CenterX 159]Oh dear... What the...?[End]
+	[Style Right]Now, what have we here?[Pause 20] Virgil?[BR]
+	Is that Virgil cowering back[BR]
+	there?[Wait][End]
 }
 
 #message:00:00E
 {
-	[CenterX 159]Who stuck that weird thing[BR]
-	into this story?[End]
+	[Style Left]Uh... Hi, guys. We're just...[BR]
+	Y'know, passing through... So...[Wait][End]
 }
 
 #message:00:00F
 {
-	[CenterX 159]Ha ha ha! Yeah! I did![End]
+	[Style Right]Ha ha ha! And here I thought[BR]
+	you'd gone and lost your nerve![BR]
+	[Wait][Next]
+	I'll do you a solid, buddy. Why[BR]
+	don't you scurry on home while[BR]
+	we beat the tar out of your[BR]
+	friend here?[Wait][End]
 }
 
 #message:00:010
 {
-	[CenterX 159][Wave]Gwa ha ha ha ha ha ha ha!![BR]
-	[/fx][End]
+	[Style Left][Wave]Gulp...[BR]
+	[/fx][Wait][Next]
+	I'm not running any more![BR]
+	Bring it, punks![Wait][End]
 }
 
 #message:00:011
 {
-	[CenterX 159]So I can, at long last, beat my[BR]
-	archenemy, Mario,[End]
+	[Style Right]Your choice, bud![BR]
+	[Wait][Next]
+	Come on, fellas! Let's show these[BR]
+	weenies just what the Sandbag[BR]
+	Brigands are all about![Wait][End]
 }
 
 #message:00:012

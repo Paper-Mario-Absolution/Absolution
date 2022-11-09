@@ -20,6 +20,9 @@
     Call  SetCamEnabled      ( .Cam:Default .True )
     Call  SetCamLeadPlayer   ( .Cam:Default .False )
     Call  MakeNpcs  ( .False $NpcGroupList_RuinRoad )
+    If *GB_StoryProgress >= .Story:Ch0_DefeatedGoombaKing
+      Exec  $Script_MoveGate
+    EndIf
     Exec  $Script_SetupMusic
     Exec  $Script_EnterMap
     Return
@@ -61,8 +64,16 @@
 
 #new:Script $Script_Interact_GuardToad
 {
-  Call  SpeakToPlayer ( .Npc:Self 00870104 00870101 00000000 00000001 ) % String
-  Call  MakeLerp  ( 00000000 FFFFFFA5 00000025 .Easing:Linear )
+  If    *GB_StoryProgress  <=  .Story:Ch0_SmashedGateBlock
+      Call  SpeakToPlayer ( .Npc:Self 00870104 00870101 00000000 00000008 ) % String
+  EndIf
+  If *GB_StoryProgress ==  .Story:Ch0_DefeatedGoombaBros
+      Call  SpeakToPlayer ( .Npc:Self 00870104 00870101 00000000 00000008 ) % String
+      Call  DisablePartnerAI ( .True )
+      Call  SpeakToNpc ( .Npc:Partner 00010008 00010001 00000000 .Npc:Self 00000009 )
+      Call  EnablePartnerAI ( )
+      Call  SpeakToPlayer ( .Npc:Self 00870104 00870101 00000000 0000000A ) % String
+  Call  MakeLerp  ( 00000000 FFFFFFA5 00000020 .Easing:Linear )
                     Label  0
                 Call  UpdateLerp ( )
                 Call  RotateModel ( ~Model:Gate *Var0 00000000 00000000 FFFFFFFF )
@@ -71,8 +82,21 @@
                   	Goto  0
                 EndIf
    Call  ModifyColliderFlags   ( 00000000 ~Collider:GateCollider 7FFFFE00 )
+   Set   *GB_StoryProgress  .Story:Ch0_DefeatedGoombaKing
+  EndIf
+  If *GB_StoryProgress >= .Story:Ch0_DefeatedGoombaKing
+      Call  SpeakToPlayer ( .Npc:Self 00870104 00870101 00000000 0000000B ) % String
+  EndIf
   Return
   End
+}
+
+#new:Script $Script_MoveGate
+{
+      Call  RotateModel ( ~Model:Gate FFFFFFA5 00000000 00000000 FFFFFFFF )
+      Call  ModifyColliderFlags   ( 00000000 ~Collider:GateCollider 7FFFFE00 )
+      Return
+      End
 }
 
 #new:NpcGroup $NpcGroup_Bandito1

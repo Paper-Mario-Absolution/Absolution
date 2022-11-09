@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Map name="sha_03" author="unnamed" background="iwa_bg" textures="iwa_tex">
 	<Editor>
-		<Camera pos="-19.105812,124.036812,-872.658936" pitch="10.000000" yaw="178.745773"/>
+		<Camera pos="466.712097,80.089714,-2.082818" pitch="10.960000" yaw="271.545959"/>
 		<Camera pos="42.005486,65536.000000,-439.428619"/>
 		<Camera pos="65536.000000,0.000835,451.459869"/>
 		<Camera pos="-52.107765,64.278862,65536.000000"/>
@@ -5705,7 +5705,7 @@
 		</Generators>
 		<Camera vfov="25" near="16" far="4096" bgcolor="0,0,0" leadsPlayer="false"/>
 		<Fog world="0,10,10,10,255,950,1000" entity="0,10,10,10,255,950,1000"/>
-		<Options location="1F" hasMusic="false" hasSounds="false" sounds="1" hasShading="false" shadingName="None"/>
+		<Options location="1F" hasMusic="true" song="11" hasSounds="false" sounds="1" hasShading="false" shadingName="None"/>
 		<Override tex="true"/>
 	</ScriptData>
 </Map>

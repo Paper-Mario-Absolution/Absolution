@@ -94,7 +94,8 @@
 			Call  GetPlayerPos      ( *Var0 *Var1 *Var2 )
 			Call  UseSettingsFrom   ( .Cam:Default *Var0 *Var1 *Var2 )
 			Wait  1`
-			Call  PanToTarget       ( .Cam:Default 00000000 00000000 )
+            Call  ResetCam ( .Cam:Default 20` )
+		%	Call  PanToTarget       ( .Cam:Default 00000000 00000000 )
             Call  DisablePlayerInput    ( .False )
 		Case  ==  ~Entry:entry_w
             Call  TranslateModel   ( ~Model:EntryPipe 00000000 00000100 00000000 )
